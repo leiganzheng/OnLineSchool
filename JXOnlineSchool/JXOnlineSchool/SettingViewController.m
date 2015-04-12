@@ -9,6 +9,7 @@
 #import "SettingViewController.h"
 #import "Define.h"
 #import "ChangeNicknameViewController.h"
+#import "ChangPasswordViewController.h"
 #import "UIResponder+StoryBoard.h"
 
 #define kCellHeight 44
@@ -118,6 +119,11 @@
         UINavigationController *nav = (UINavigationController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
         [nav pushViewController:VC animated:YES];
 
+    }
+    else if (indexPath.section == 0 && indexPath.row == 2) {
+        ChangPasswordViewController *VC = [ChangPasswordViewController CreateFromMainStoryboard];
+        UINavigationController *nav = (UINavigationController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
+        [nav pushViewController:VC animated:YES];
     }
     if (indexPath.section == 2) {
         [self logout];
