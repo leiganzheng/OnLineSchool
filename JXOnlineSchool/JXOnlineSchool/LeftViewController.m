@@ -9,7 +9,13 @@
 #import "LeftViewController.h"
 #import "Define.h"
 #import "UIResponder+StoryBoard.h"
+#import "DownLoadViewController.h"
 #import "SettingViewController.h"
+#import "CustomerServiceViewController.h"
+#import "MyCollectionViewController.h"
+#import "MyCourseViewController.h"
+#import "RecommendViewController.h"
+
 @interface LeftViewController ()
 
 @end
@@ -37,25 +43,25 @@
     switch (sender.tag) {
         case 1000:
         {
-            VC = (JXBaseViewController *)[SettingViewController CreateFromMainStoryboard];
+            VC = (RecommendViewController *)[RecommendViewController CreateFromMainStoryboard];
 
         }
             break;
         case 1001:
         {
-            VC = (JXBaseViewController *)[SettingViewController CreateFromMainStoryboard];
+            VC = (DownLoadViewController *)[DownLoadViewController CreateFromMainStoryboard];
 
         }
             break;
         case 1002:
         {
-            VC = (JXBaseViewController *)[SettingViewController CreateFromMainStoryboard];
+            VC = (MyCourseViewController *)[MyCourseViewController CreateFromMainStoryboard];
 
         }
             break;
         case 1003:
         {
-            VC = (JXBaseViewController *)[SettingViewController CreateFromMainStoryboard];
+            VC = (MyCollectionViewController *)[MyCollectionViewController CreateFromMainStoryboard];
             
         }
             break;
@@ -69,7 +75,7 @@
 
         case 1005:
         {
-            VC = (JXBaseViewController *)[SettingViewController CreateFromMainStoryboard];
+            VC = (CustomerServiceViewController *)[CustomerServiceViewController CreateFromMainStoryboard];
             
         }
             break;
