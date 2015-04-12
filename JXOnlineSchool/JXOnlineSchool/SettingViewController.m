@@ -8,6 +8,8 @@
 
 #import "SettingViewController.h"
 #import "Define.h"
+#import "ChangeNicknameViewController.h"
+#import "UIResponder+StoryBoard.h"
 
 #define kCellHeight 44
 
@@ -111,6 +113,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 0 && indexPath.row == 1) {
+        ChangeNicknameViewController *VC = [ChangeNicknameViewController CreateFromMainStoryboard];
+        UINavigationController *nav = (UINavigationController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
+        [nav pushViewController:VC animated:YES];
+
+    }
     if (indexPath.section == 2) {
         [self logout];
     }

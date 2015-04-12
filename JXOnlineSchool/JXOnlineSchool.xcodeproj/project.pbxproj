@@ -19,6 +19,7 @@
 		716A857E1AD9037700B3FC22 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716A857D1AD9037700B3FC22 /* SettingViewController.m */; };
 		716A85821AD9069700B3FC22 /* UIResponder+StoryBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 716A85811AD9069700B3FC22 /* UIResponder+StoryBoard.m */; };
 		716A85851AD919EF00B3FC22 /* CourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 716A85841AD919EF00B3FC22 /* CourseCell.m */; };
+		71C04FB41ADA613E00CAA2FD /* ChangeNicknameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C04FB31ADA613E00CAA2FD /* ChangeNicknameViewController.m */; };
 		71C8FBC21AD934EF00F45CF1 /* CourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C8FBC01AD934EF00F45CF1 /* CourseTableViewCell.m */; };
 		71C8FBC31AD934EF00F45CF1 /* CourseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C8FBC11AD934EF00F45CF1 /* CourseTableViewCell.xib */; };
 		BBE16ED41AD7AC8B000B150D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE16ED31AD7AC8B000B150D /* main.m */; };
@@ -64,6 +65,8 @@
 		716A85811AD9069700B3FC22 /* UIResponder+StoryBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+StoryBoard.m"; sourceTree = "<group>"; };
 		716A85831AD919EF00B3FC22 /* CourseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseCell.h; sourceTree = "<group>"; };
 		716A85841AD919EF00B3FC22 /* CourseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseCell.m; sourceTree = "<group>"; };
+		71C04FB21ADA613E00CAA2FD /* ChangeNicknameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeNicknameViewController.h; sourceTree = "<group>"; };
+		71C04FB31ADA613E00CAA2FD /* ChangeNicknameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeNicknameViewController.m; sourceTree = "<group>"; };
 		71C8FBBF1AD934EF00F45CF1 /* CourseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseTableViewCell.h; sourceTree = "<group>"; };
 		71C8FBC01AD934EF00F45CF1 /* CourseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseTableViewCell.m; sourceTree = "<group>"; };
 		71C8FBC11AD934EF00F45CF1 /* CourseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseTableViewCell.xib; sourceTree = "<group>"; };
@@ -114,8 +117,6 @@
 		711FBAB91AD8166F00DC8632 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				716A857C1AD9037700B3FC22 /* SettingViewController.h */,
-				716A857D1AD9037700B3FC22 /* SettingViewController.m */,
 				711FBABA1AD8168A00DC8632 /* LeftViewController.h */,
 				711FBABB1AD8168A00DC8632 /* LeftViewController.m */,
 				711FBABD1AD8169600DC8632 /* MainViewController.h */,
@@ -144,6 +145,17 @@
 				71361EDC1AD8247800051EF9 /* UIViewController+MLTransition.m */,
 			);
 			name = MLTransition;
+			sourceTree = "<group>";
+		};
+		71C04FB11ADA60E300CAA2FD /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				716A857C1AD9037700B3FC22 /* SettingViewController.h */,
+				716A857D1AD9037700B3FC22 /* SettingViewController.m */,
+				71C04FB21ADA613E00CAA2FD /* ChangeNicknameViewController.h */,
+				71C04FB31ADA613E00CAA2FD /* ChangeNicknameViewController.m */,
+			);
+			name = Setting;
 			sourceTree = "<group>";
 		};
 		BBE16EC51AD7AC8B000B150D = {
@@ -211,6 +223,7 @@
 		BBE16EFA1AD7AE68000B150D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				71C04FB11ADA60E300CAA2FD /* Setting */,
 				711FBAB91AD8166F00DC8632 /* Main */,
 				711FBAB51AD8143D00DC8632 /* SliderViewController */,
 				BBE16F031AD7AF83000B150D /* Base */,
@@ -376,6 +389,7 @@
 				BBE16F021AD7AF75000B150D /* UIViewController+Appearence.m in Sources */,
 				71C8FBC21AD934EF00F45CF1 /* CourseTableViewCell.m in Sources */,
 				711FBAB81AD8146900DC8632 /* SliderViewController.m in Sources */,
+				71C04FB41ADA613E00CAA2FD /* ChangeNicknameViewController.m in Sources */,
 				716A85781AD8FB7900B3FC22 /* CourseViewController.m in Sources */,
 				711FBABF1AD8169600DC8632 /* MainViewController.m in Sources */,
 				716A85821AD9069700B3FC22 /* UIResponder+StoryBoard.m in Sources */,
