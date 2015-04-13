@@ -13,9 +13,11 @@
 #import "CourseDetailViewController.h"
 #import "SliderViewController.h"
 #import "UIResponder+StoryBoard.h"
+#import "STAlertView.h"
 
 @interface MainViewController ()
 @property (nonatomic, strong) NSArray *dataArray;
+@property (nonatomic, strong) STAlertView *stAlertView;
 
 @end
 
@@ -84,7 +86,18 @@
 }
 
 - (void)searchButtonAction{
-    
+        self.stAlertView = [[STAlertView alloc] initWithTitle:@"Alert view with a textfield"
+                                                      message:@"I'm a native UIAlertView with a textfiled."
+                                                textFieldHint:@"What do you think about me?"
+                                               textFieldValue:nil
+                                            cancelButtonTitle:@"Cancel"
+                                            otherButtonTitles:@"Store"
+                            
+                                            cancelButtonBlock:^{
+                                                NSLog(@"Please, give me some feedback!");
+                                            } otherButtonBlock:^(NSString * result){
+                                                NSLog(@" You have said %@, but I can't store it :( . If you want, you can send it to me at hello@nestor.cat or via twitter @NestorMalet!", result);
+                                            }];
 }
 
 - (void)userLogoButtonAction{

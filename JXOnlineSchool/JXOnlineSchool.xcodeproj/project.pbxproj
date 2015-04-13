@@ -19,6 +19,7 @@
 		716A857E1AD9037700B3FC22 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716A857D1AD9037700B3FC22 /* SettingViewController.m */; };
 		716A85821AD9069700B3FC22 /* UIResponder+StoryBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 716A85811AD9069700B3FC22 /* UIResponder+StoryBoard.m */; };
 		716A85851AD919EF00B3FC22 /* CourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 716A85841AD919EF00B3FC22 /* CourseCell.m */; };
+		71A26F081ADB511D00191E67 /* STAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A26F071ADB511D00191E67 /* STAlertView.m */; };
 		71C04FB41ADA613E00CAA2FD /* ChangeNicknameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C04FB31ADA613E00CAA2FD /* ChangeNicknameViewController.m */; };
 		71C04FB81ADA79A400CAA2FD /* DownLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C04FB71ADA79A400CAA2FD /* DownLoadViewController.m */; };
 		71C04FBB1ADA7B1B00CAA2FD /* DownLoadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C04FBA1ADA7B1B00CAA2FD /* DownLoadTableViewCell.m */; };
@@ -72,6 +73,8 @@
 		716A85811AD9069700B3FC22 /* UIResponder+StoryBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+StoryBoard.m"; sourceTree = "<group>"; };
 		716A85831AD919EF00B3FC22 /* CourseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseCell.h; sourceTree = "<group>"; };
 		716A85841AD919EF00B3FC22 /* CourseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseCell.m; sourceTree = "<group>"; };
+		71A26F061ADB511D00191E67 /* STAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STAlertView.h; sourceTree = "<group>"; };
+		71A26F071ADB511D00191E67 /* STAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STAlertView.m; sourceTree = "<group>"; };
 		71C04FB21ADA613E00CAA2FD /* ChangeNicknameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeNicknameViewController.h; sourceTree = "<group>"; };
 		71C04FB31ADA613E00CAA2FD /* ChangeNicknameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeNicknameViewController.m; sourceTree = "<group>"; };
 		71C04FB61ADA79A400CAA2FD /* DownLoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadViewController.h; sourceTree = "<group>"; };
@@ -164,6 +167,15 @@
 				71361EDC1AD8247800051EF9 /* UIViewController+MLTransition.m */,
 			);
 			name = MLTransition;
+			sourceTree = "<group>";
+		};
+		71A26F051ADB50E400191E67 /* STAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				71A26F061ADB511D00191E67 /* STAlertView.h */,
+				71A26F071ADB511D00191E67 /* STAlertView.m */,
+			);
+			name = STAlertView;
 			sourceTree = "<group>";
 		};
 		71C04FB11ADA60E300CAA2FD /* Setting */ = {
@@ -291,6 +303,7 @@
 		BBE16EFD1AD7AE92000B150D /* Librarys */ = {
 			isa = PBXGroup;
 			children = (
+				71A26F051ADB50E400191E67 /* STAlertView */,
 				711FBAC61AD81A5500DC8632 /* MLTransition */,
 				BBE16EFF1AD7AF5D000B150D /* Categories */,
 			);
@@ -440,6 +453,7 @@
 				711FBABF1AD8169600DC8632 /* MainViewController.m in Sources */,
 				71C04FBF1ADA7CDA00CAA2FD /* MyCourseViewController.m in Sources */,
 				716A85821AD9069700B3FC22 /* UIResponder+StoryBoard.m in Sources */,
+				71A26F081ADB511D00191E67 /* STAlertView.m in Sources */,
 				BBE16ED71AD7AC8B000B150D /* AppDelegate.m in Sources */,
 				711FBABC1AD8168A00DC8632 /* LeftViewController.m in Sources */,
 				BBE16ED41AD7AC8B000B150D /* main.m in Sources */,
