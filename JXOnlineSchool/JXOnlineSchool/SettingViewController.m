@@ -11,6 +11,7 @@
 #import "ChangeNicknameViewController.h"
 #import "ChangPasswordViewController.h"
 #import "UIResponder+StoryBoard.h"
+#import "AboutViewController.h"
 
 #define kCellHeight 44
 
@@ -114,20 +115,29 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    JXBaseViewController *VC;
     if (indexPath.section == 0 && indexPath.row == 1) {
-        ChangeNicknameViewController *VC = [ChangeNicknameViewController CreateFromMainStoryboard];
-        UINavigationController *nav = (UINavigationController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
-        [nav pushViewController:VC animated:YES];
+        VC = (ChangeNicknameViewController *)[ChangeNicknameViewController CreateFromMainStoryboard];
 
     }
     else if (indexPath.section == 0 && indexPath.row == 2) {
-        ChangPasswordViewController *VC = [ChangPasswordViewController CreateFromMainStoryboard];
-        UINavigationController *nav = (UINavigationController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
-        [nav pushViewController:VC animated:YES];
+        VC = (ChangPasswordViewController *)[ChangPasswordViewController CreateFromMainStoryboard];
+    }else if (indexPath.section == 0 && indexPath.row == 0){
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:nil];
+        UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@"从手机相册选择" style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:cancelAction];
+        [alertController addAction:deleteAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }else if (indexPath.section == 1 && indexPath.row == 2){
+        VC = (AboutViewController *)[AboutViewController CreateFromMainStoryboard];
     }
     if (indexPath.section == 2) {
         [self logout];
     }
+    UINavigationController *nav = (UINavigationController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
+    [nav pushViewController:VC animated:YES];
+
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -137,7 +147,12 @@
 #pragma mark - private method
 
 - (void)logout{
-
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"您将退出此次登陆，是否确定" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+    [alertController addAction:cancelAction];
+    [alertController addAction:okAction];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)swichAction:(UISwitch *)sender{

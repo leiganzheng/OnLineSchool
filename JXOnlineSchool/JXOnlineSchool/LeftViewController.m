@@ -15,6 +15,7 @@
 #import "MyCollectionViewController.h"
 #import "MyCourseViewController.h"
 #import "RecommendViewController.h"
+#import "ChangeNicknameViewController.h"
 
 @interface LeftViewController ()
 
@@ -38,6 +39,14 @@
 #pragma mark -
 
 #pragma mark - Action Method
+- (void)userLogoButtonAction{
+    NSLog(@"userlogo");
+}
+- (void)nickButtonAction{
+    UINavigationController *nav = (UINavigationController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
+    [nav pushViewController:[ChangeNicknameViewController CreateFromMainStoryboard] animated:YES];
+}
+
 - (void)buttonAction:(UIButton *)sender{
     JXBaseViewController *VC;
     switch (sender.tag) {
@@ -92,17 +101,30 @@
     UIImageView *imageBgV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth,kScreenHeight)];
     [self.view addSubview:imageBgV];
     
-    UIImageView *userLogo = [[UIImageView alloc] initWithFrame:CGRectMake(70, 56, 80, 80)];
+    UIButton *userLogo = [[UIButton alloc] initWithFrame:CGRectMake(70, 56, 80, 80)];
     userLogo.backgroundColor = [UIColor orangeColor];
     userLogo.layer.cornerRadius = userLogo.frame.size.width/2;
     userLogo.layer.masksToBounds = YES;
+    [userLogo addTarget:self action:@selector(userLogoButtonAction) forControlEvents:UIControlEventTouchUpInside];
+
     [self.view addSubview:userLogo];
     
     UILabel *userName= [[UILabel alloc] initWithFrame:CGRectMake(50, 140, 120, 30)];
     userName.text = @"努力的猫咪";
+    userName.textColor = [UIColor whiteColor];
     userName.backgroundColor = [UIColor clearColor];
+    userName.font = [UIFont boldSystemFontOfSize:18.0f];
     userName.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:userName];
+    
+    UIButton *nickBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    nickBtn.frame = CGRectMake(userName.frame.origin.x + userName.frame.size.width-10, userName.frame.origin.y-6, 40, 40);
+    nickBtn.backgroundColor = [UIColor lightGrayColor];
+    [nickBtn setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
+    [nickBtn addTarget:self action:@selector(nickButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:nickBtn];
+
+    
     
     CGFloat y = 210;
     CGFloat x = 20;

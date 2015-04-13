@@ -14,6 +14,7 @@
 #import "SliderViewController.h"
 #import "UIResponder+StoryBoard.h"
 #import "STAlertView.h"
+#import "CourseTableViewCell.h"
 
 @interface MainViewController ()
 @property (nonatomic, strong) NSArray *dataArray;
@@ -43,14 +44,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *MyIdentifier = @"Information";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    CourseTableViewCell *cell = (CourseTableViewCell *)[tableView dequeueReusableCellWithIdentifier:MyIdentifier];
     if (cell == nil)
     {
         // Use the default cell style.
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier];
+        cell = (CourseTableViewCell *)[[[NSBundle mainBundle] loadNibNamed:@"CourseTableViewCell" owner:self options:nil] objectAtIndex:0];
     }
     // Set up the cell.
-    cell.textLabel.text= self.dataArray[indexPath.row];
+//    cell.textLabel.text= self.dataArray[indexPath.row];
     return cell;
 }
 

@@ -19,6 +19,7 @@
 		716A857E1AD9037700B3FC22 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716A857D1AD9037700B3FC22 /* SettingViewController.m */; };
 		716A85821AD9069700B3FC22 /* UIResponder+StoryBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 716A85811AD9069700B3FC22 /* UIResponder+StoryBoard.m */; };
 		716A85851AD919EF00B3FC22 /* CourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 716A85841AD919EF00B3FC22 /* CourseCell.m */; };
+		718D30B91ADC01AB008C1D42 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 718D30B81ADC01AB008C1D42 /* AboutViewController.m */; };
 		71A26F081ADB511D00191E67 /* STAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A26F071ADB511D00191E67 /* STAlertView.m */; };
 		71C04FB41ADA613E00CAA2FD /* ChangeNicknameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C04FB31ADA613E00CAA2FD /* ChangeNicknameViewController.m */; };
 		71C04FB81ADA79A400CAA2FD /* DownLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C04FB71ADA79A400CAA2FD /* DownLoadViewController.m */; };
@@ -73,6 +74,8 @@
 		716A85811AD9069700B3FC22 /* UIResponder+StoryBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+StoryBoard.m"; sourceTree = "<group>"; };
 		716A85831AD919EF00B3FC22 /* CourseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseCell.h; sourceTree = "<group>"; };
 		716A85841AD919EF00B3FC22 /* CourseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseCell.m; sourceTree = "<group>"; };
+		718D30B71ADC01AB008C1D42 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		718D30B81ADC01AB008C1D42 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		71A26F061ADB511D00191E67 /* STAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STAlertView.h; sourceTree = "<group>"; };
 		71A26F071ADB511D00191E67 /* STAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STAlertView.m; sourceTree = "<group>"; };
 		71C04FB21ADA613E00CAA2FD /* ChangeNicknameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeNicknameViewController.h; sourceTree = "<group>"; };
@@ -187,6 +190,8 @@
 				71C04FB31ADA613E00CAA2FD /* ChangeNicknameViewController.m */,
 				BA971AE51ADA6B8C00C06A68 /* ChangPasswordViewController.h */,
 				BA971AE61ADA6B8C00C06A68 /* ChangPasswordViewController.m */,
+				718D30B71ADC01AB008C1D42 /* AboutViewController.h */,
+				718D30B81ADC01AB008C1D42 /* AboutViewController.m */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -463,6 +468,7 @@
 				BA971AE71ADA6B8C00C06A68 /* ChangPasswordViewController.m in Sources */,
 				716A857B1AD8FBE100B3FC22 /* CourseDetailViewController.m in Sources */,
 				71C04FB81ADA79A400CAA2FD /* DownLoadViewController.m in Sources */,
+				718D30B91ADC01AB008C1D42 /* AboutViewController.m in Sources */,
 				BBE16F061AD7AFA9000B150D /* JXBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
