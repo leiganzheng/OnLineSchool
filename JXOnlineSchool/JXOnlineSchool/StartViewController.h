@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JXBaseViewController.h"
+typedef void(^Finish)();
 
-@interface StartViewController : UIViewController <UIScrollViewDelegate>
-
+@interface StartViewController : JXBaseViewController <UIScrollViewDelegate>
+@property (nonatomic,strong) Finish finish;
 @end

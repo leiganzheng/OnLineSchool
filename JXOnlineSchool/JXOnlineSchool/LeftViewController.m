@@ -16,6 +16,7 @@
 #import "MyCourseViewController.h"
 #import "RecommendViewController.h"
 #import "ChangeNicknameViewController.h"
+#import "LoginViewController.h"
 
 @interface LeftViewController ()
 
@@ -40,7 +41,9 @@
 
 #pragma mark - Action Method
 - (void)userLogoButtonAction{
-    NSLog(@"userlogo");
+   [self presentViewController:[LoginViewController CreateFromMainStoryboard] animated:YES completion:^{
+       
+   }];
 }
 - (void)nickButtonAction{
     UINavigationController *nav = (UINavigationController *)[[UIApplication sharedApplication] keyWindow].rootViewController;

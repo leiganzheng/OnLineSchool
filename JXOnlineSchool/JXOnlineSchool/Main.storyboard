@@ -128,6 +128,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="register:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="JQq-ZV-7f8"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0QC-42-qlB">
                                 <rect key="frame" x="0.0" y="58" width="320" height="412"/>
@@ -169,6 +172,9 @@
                                             <color key="titleColor" red="0.1917827289" green="0.71337670679999998" blue="0.86802917820000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="forgetPassWord:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="cil-KS-Ctm"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muw-Ki-KWZ">
                                         <rect key="frame" x="44" y="309" width="234" height="38"/>
@@ -177,6 +183,9 @@
                                             <color key="titleColor" red="0.1917827289" green="0.71337670679999998" blue="0.86802917820000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginButtonAction:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="vdY-qH-CMM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -187,6 +196,9 @@
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="back:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="4cV-Xj-x5A"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70H-St-niD">
                                 <rect key="frame" x="0.0" y="531" width="320" height="37"/>
@@ -195,6 +207,9 @@
                                     <color key="titleColor" red="0.1917827289" green="0.71337670679999998" blue="0.86802917820000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="oneKeyButtonAction:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="Og5-p1-4l9"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="一键登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGB-gU-QSh">
                                 <rect key="frame" x="0.0" y="502" width="320" height="21"/>
@@ -206,6 +221,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="muw-Ki-KWZ" id="zjH-Vi-Xq7"/>
+                        <outlet property="oneKeyLoginButton" destination="70H-St-niD" id="mfa-2Q-JNv"/>
+                        <outlet property="passWord" destination="Op7-VI-OQY" id="Qhg-LT-1sJ"/>
+                        <outlet property="userName" destination="HEw-6p-8QM" id="LvO-Qq-ScO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FBV-BZ-3dR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -252,7 +273,7 @@
         <!--启动页面-->
         <scene sceneID="hH6-D6-IRI">
             <objects>
-                <viewController title="启动页面" id="fJ2-0D-zbk" customClass="StartViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartViewController" title="启动页面" id="fJ2-0D-zbk" customClass="StartViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U86-ZM-yU9"/>
                         <viewControllerLayoutGuide type="bottom" id="Ryf-Uw-gCH"/>

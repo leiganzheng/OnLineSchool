@@ -7,9 +7,15 @@
 //
 
 #import "LoginViewController.h"
+#import "Define.h"
 
 @interface LoginViewController ()
 @property (strong, nonatomic) IBOutlet UIView *logiView;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UITextField *userName;
+@property (weak, nonatomic) IBOutlet UITextField *passWord;
+@property (weak, nonatomic) IBOutlet UIButton *oneKeyLoginButton;
+@property (weak, nonatomic) IBOutlet UIButton *closeOnekeyLoginButton;
 
 @end
 
@@ -17,7 +23,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"loginView" owner:self options:nil];
+    self.logiView = views[0];
+    self.logiView.frame = CGRectMake(0,  kScreenHeight + self.logiView.frame.size.width, self.logiView.frame.size.width, self.logiView.frame.size.height);
+    [self.view addSubview:self.logiView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,14 +34,41 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+//MARK:- Delegate or DataSource
+
+//MARK:- NSNotification Method
+
+//MARK:- Action Method
+- (IBAction)oneKeyButtonAction:(id)sender {
+   [UIView animateWithDuration:0.5 animations:^{
+       self.logiView.frame = CGRectMake(0,  kScreenHeight - self.logiView.frame.size.height , self.logiView.frame.size.width, self.logiView.frame.size.height);
+   } completion:^(BOOL finished) {
+       
+   }];
 }
-*/
+- (IBAction)loginButtonAction:(id)sender {
+}
+- (IBAction)forgetPassWord:(id)sender {
+}
+- (IBAction)register:(id)sender {
+}
+- (IBAction)back:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+- (IBAction)closeOnekeyLoginButtonAction:(id)sender {
+    [UIView animateWithDuration:0.5 animations:^{
+       self.logiView.frame = CGRectMake(0,  kScreenHeight + self.logiView.frame.size.width, self.logiView.frame.size.width, self.logiView.frame.size.height);
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+
+//MARK:- Private Method
+
 
 @end

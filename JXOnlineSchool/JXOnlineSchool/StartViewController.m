@@ -37,15 +37,31 @@
         }else{
             imageView.backgroundColor = [UIColor orangeColor];
         }
-
         [self.customScrollView addSubview:imageView];
     }
-
+    UIButton *enterButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    enterButton.frame = CGRectMake(self.view.bounds.size.width/2 - 100, self.view.bounds.size.height - 64, 200, 44);
+    [enterButton setTitle:@"进入App" forState:UIControlStateNormal];
+    enterButton.backgroundColor = [UIColor blueColor];
+    [enterButton addTarget:self action:@selector(enterButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:enterButton];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+//MARK:- Delegate or DataSource
+
+//MARK:- NSNotification Method
+
+//MARK:- Action Method
+- (void)enterButtonAction{
+    self.finish();
+}
+//MARK:- Private Method
+
 
 @end
