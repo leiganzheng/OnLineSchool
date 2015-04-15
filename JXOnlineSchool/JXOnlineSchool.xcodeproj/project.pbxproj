@@ -31,6 +31,10 @@
 		71C8FBC21AD934EF00F45CF1 /* CourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C8FBC01AD934EF00F45CF1 /* CourseTableViewCell.m */; };
 		71C8FBC31AD934EF00F45CF1 /* CourseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C8FBC11AD934EF00F45CF1 /* CourseTableViewCell.xib */; };
 		BA971AE71ADA6B8C00C06A68 /* ChangPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA971AE61ADA6B8C00C06A68 /* ChangPasswordViewController.m */; };
+		BB62FD6D1ADE2EC500B7B7A6 /* VedioPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB62FD6C1ADE2EC500B7B7A6 /* VedioPlayerViewController.m */; };
+		BB62FD711ADE30FA00B7B7A6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB62FD701ADE30FA00B7B7A6 /* LoginViewController.m */; };
+		BB62FD731ADE346000B7B7A6 /* loginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB62FD721ADE346000B7B7A6 /* loginView.xib */; };
+		BB62FD791ADE371000B7B7A6 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB62FD781ADE371000B7B7A6 /* StartViewController.m */; };
 		BBE16ED41AD7AC8B000B150D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE16ED31AD7AC8B000B150D /* main.m */; };
 		BBE16ED71AD7AC8B000B150D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE16ED61AD7AC8B000B150D /* AppDelegate.m */; };
 		BBE16EDF1AD7AC8B000B150D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBE16EDE1AD7AC8B000B150D /* Images.xcassets */; };
@@ -97,6 +101,13 @@
 		71C8FBC11AD934EF00F45CF1 /* CourseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseTableViewCell.xib; sourceTree = "<group>"; };
 		BA971AE51ADA6B8C00C06A68 /* ChangPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangPasswordViewController.h; sourceTree = "<group>"; };
 		BA971AE61ADA6B8C00C06A68 /* ChangPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangPasswordViewController.m; sourceTree = "<group>"; };
+		BB62FD6B1ADE2EC500B7B7A6 /* VedioPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VedioPlayerViewController.h; sourceTree = "<group>"; };
+		BB62FD6C1ADE2EC500B7B7A6 /* VedioPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VedioPlayerViewController.m; sourceTree = "<group>"; };
+		BB62FD6F1ADE30FA00B7B7A6 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		BB62FD701ADE30FA00B7B7A6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		BB62FD721ADE346000B7B7A6 /* loginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = loginView.xib; sourceTree = "<group>"; };
+		BB62FD771ADE371000B7B7A6 /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
+		BB62FD781ADE371000B7B7A6 /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
 		BBE16ECE1AD7AC8B000B150D /* JXOnlineSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXOnlineSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE16ED21AD7AC8B000B150D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBE16ED31AD7AC8B000B150D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -217,6 +228,27 @@
 			name = Left;
 			sourceTree = "<group>";
 		};
+		BB62FD6A1ADE2E9000B7B7A6 /* Vedio */ = {
+			isa = PBXGroup;
+			children = (
+				BB62FD6B1ADE2EC500B7B7A6 /* VedioPlayerViewController.h */,
+				BB62FD6C1ADE2EC500B7B7A6 /* VedioPlayerViewController.m */,
+			);
+			name = Vedio;
+			sourceTree = "<group>";
+		};
+		BB62FD6E1ADE30EA00B7B7A6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BB62FD6F1ADE30FA00B7B7A6 /* LoginViewController.h */,
+				BB62FD701ADE30FA00B7B7A6 /* LoginViewController.m */,
+				BB62FD721ADE346000B7B7A6 /* loginView.xib */,
+				BB62FD771ADE371000B7B7A6 /* StartViewController.h */,
+				BB62FD781ADE371000B7B7A6 /* StartViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		BBE16EC51AD7AC8B000B150D = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +314,8 @@
 		BBE16EFA1AD7AE68000B150D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BB62FD6E1ADE30EA00B7B7A6 /* Login */,
+				BB62FD6A1ADE2E9000B7B7A6 /* Vedio */,
 				71C04FC01ADA7E1600CAA2FD /* Left */,
 				71C04FB11ADA60E300CAA2FD /* Setting */,
 				711FBAB91AD8166F00DC8632 /* Main */,
@@ -427,6 +461,7 @@
 				71361EE01AD825C000051EF9 /* Main.storyboard in Resources */,
 				BBE16EF91AD7ADDF000B150D /* readme in Resources */,
 				BBE16EDF1AD7AC8B000B150D /* Images.xcassets in Resources */,
+				BB62FD731ADE346000B7B7A6 /* loginView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,10 +479,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB62FD791ADE371000B7B7A6 /* StartViewController.m in Sources */,
 				71361EDE1AD8247800051EF9 /* UIViewController+MLTransition.m in Sources */,
 				716A85751AD8F78500B3FC22 /* LatestViewController.m in Sources */,
 				716A857E1AD9037700B3FC22 /* SettingViewController.m in Sources */,
 				BBE16F021AD7AF75000B150D /* UIViewController+Appearence.m in Sources */,
+				BB62FD711ADE30FA00B7B7A6 /* LoginViewController.m in Sources */,
 				71C04FC31ADA7E8B00CAA2FD /* MyCollectionViewController.m in Sources */,
 				71C04FC91ADA801D00CAA2FD /* RecommendViewController.m in Sources */,
 				71C8FBC21AD934EF00F45CF1 /* CourseTableViewCell.m in Sources */,
@@ -461,6 +498,7 @@
 				71A26F081ADB511D00191E67 /* STAlertView.m in Sources */,
 				BBE16ED71AD7AC8B000B150D /* AppDelegate.m in Sources */,
 				711FBABC1AD8168A00DC8632 /* LeftViewController.m in Sources */,
+				BB62FD6D1ADE2EC500B7B7A6 /* VedioPlayerViewController.m in Sources */,
 				BBE16ED41AD7AC8B000B150D /* main.m in Sources */,
 				716A85851AD919EF00B3FC22 /* CourseCell.m in Sources */,
 				71361EDD1AD8247800051EF9 /* MLTransitionAnimation.m in Sources */,
