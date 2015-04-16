@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSArray  *pictureArray = @[@"1",@"2",@"3"];
+    NSArray  *pictureArray = @[@"start",@"start1",@"start2"];
     
     CGRect scrollViewRect = [self.view bounds];
     _customScrollView.contentSize = CGSizeMake(scrollViewRect.size.width * pictureArray.count,1);
@@ -32,19 +32,19 @@
     
     for (int i = 1; i<=pictureArray.count; i++) {
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width *(i-1), 0, self.view.bounds.size.width, self.view.bounds.size.height)];
-        if (i%2 == 0) {
-            imageView.backgroundColor = [UIColor grayColor];
-        }else{
-            imageView.backgroundColor = [UIColor orangeColor];
+        imageView.backgroundColor = [UIColor clearColor];
+        imageView.image = [UIImage imageNamed:pictureArray[i-1]];
+        if (i == 3) {
+            UIButton *enterButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            enterButton.frame = CGRectMake(self.view.bounds.size.width/2 - 100, self.view.bounds.size.height - 64, 200, 44);
+            enterButton.backgroundColor = [UIColor clearColor];            
+            [enterButton addTarget:self action:@selector(enterButtonAction) forControlEvents:UIControlEventTouchUpInside];
+            imageView.userInteractionEnabled = YES;
+            [imageView addSubview:enterButton];
         }
         [self.customScrollView addSubview:imageView];
     }
-    UIButton *enterButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    enterButton.frame = CGRectMake(self.view.bounds.size.width/2 - 100, self.view.bounds.size.height - 64, 200, 44);
-    [enterButton setTitle:@"进入App" forState:UIControlStateNormal];
-    enterButton.backgroundColor = [UIColor blueColor];
-    [enterButton addTarget:self action:@selector(enterButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:enterButton];
+   
 }
 
 - (void)didReceiveMemoryWarning {

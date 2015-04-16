@@ -49,6 +49,9 @@
    }];
 }
 - (IBAction)loginButtonAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 - (IBAction)forgetPassWord:(id)sender {
 }

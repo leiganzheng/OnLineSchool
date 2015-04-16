@@ -13,6 +13,8 @@
 		71361EDD1AD8247800051EF9 /* MLTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 71361EDA1AD8247800051EF9 /* MLTransitionAnimation.m */; };
 		71361EDE1AD8247800051EF9 /* UIViewController+MLTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 71361EDC1AD8247800051EF9 /* UIViewController+MLTransition.m */; };
 		71361EE01AD825C000051EF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71361EDF1AD825C000051EF9 /* Main.storyboard */; };
+		7168B2BD1AE010C700FE3000 /* MyCourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7168B2BC1AE010C700FE3000 /* MyCourseTableViewCell.m */; };
+		7168B2BF1AE014C900FE3000 /* MyCourseSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7168B2BE1AE014C900FE3000 /* MyCourseSection.xib */; };
 		716A85751AD8F78500B3FC22 /* LatestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716A85741AD8F78500B3FC22 /* LatestViewController.m */; };
 		716A85781AD8FB7900B3FC22 /* CourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716A85771AD8FB7900B3FC22 /* CourseViewController.m */; };
 		716A857B1AD8FBE100B3FC22 /* CourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716A857A1AD8FBE100B3FC22 /* CourseDetailViewController.m */; };
@@ -66,6 +68,9 @@
 		71361EDB1AD8247800051EF9 /* UIViewController+MLTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MLTransition.h"; sourceTree = "<group>"; };
 		71361EDC1AD8247800051EF9 /* UIViewController+MLTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MLTransition.m"; sourceTree = "<group>"; };
 		71361EDF1AD825C000051EF9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7168B2BB1AE010C700FE3000 /* MyCourseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCourseTableViewCell.h; sourceTree = "<group>"; };
+		7168B2BC1AE010C700FE3000 /* MyCourseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCourseTableViewCell.m; sourceTree = "<group>"; };
+		7168B2BE1AE014C900FE3000 /* MyCourseSection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCourseSection.xib; sourceTree = "<group>"; };
 		716A85731AD8F78500B3FC22 /* LatestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatestViewController.h; sourceTree = "<group>"; };
 		716A85741AD8F78500B3FC22 /* LatestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestViewController.m; sourceTree = "<group>"; };
 		716A85761AD8FB7900B3FC22 /* CourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseViewController.h; sourceTree = "<group>"; };
@@ -224,6 +229,9 @@
 				71C04FC51ADA7EF200CAA2FD /* CustomerServiceViewController.m */,
 				71C04FC71ADA801D00CAA2FD /* RecommendViewController.h */,
 				71C04FC81ADA801D00CAA2FD /* RecommendViewController.m */,
+				7168B2BB1AE010C700FE3000 /* MyCourseTableViewCell.h */,
+				7168B2BC1AE010C700FE3000 /* MyCourseTableViewCell.m */,
+				7168B2BE1AE014C900FE3000 /* MyCourseSection.xib */,
 			);
 			name = Left;
 			sourceTree = "<group>";
@@ -459,6 +467,7 @@
 			files = (
 				71C8FBC31AD934EF00F45CF1 /* CourseTableViewCell.xib in Resources */,
 				71361EE01AD825C000051EF9 /* Main.storyboard in Resources */,
+				7168B2BF1AE014C900FE3000 /* MyCourseSection.xib in Resources */,
 				BBE16EF91AD7ADDF000B150D /* readme in Resources */,
 				BBE16EDF1AD7AC8B000B150D /* Images.xcassets in Resources */,
 				BB62FD731ADE346000B7B7A6 /* loginView.xib in Resources */,
@@ -493,6 +502,7 @@
 				71C04FB41ADA613E00CAA2FD /* ChangeNicknameViewController.m in Sources */,
 				716A85781AD8FB7900B3FC22 /* CourseViewController.m in Sources */,
 				711FBABF1AD8169600DC8632 /* MainViewController.m in Sources */,
+				7168B2BD1AE010C700FE3000 /* MyCourseTableViewCell.m in Sources */,
 				71C04FBF1ADA7CDA00CAA2FD /* MyCourseViewController.m in Sources */,
 				716A85821AD9069700B3FC22 /* UIResponder+StoryBoard.m in Sources */,
 				71A26F081ADB511D00191E67 /* STAlertView.m in Sources */,

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "JXBaseViewController.h"
-@interface RecommendViewController : JXBaseViewController
+@interface RecommendViewController : JXBaseViewController  <UITableViewDataSource,UITableViewDelegate>
 
 @end

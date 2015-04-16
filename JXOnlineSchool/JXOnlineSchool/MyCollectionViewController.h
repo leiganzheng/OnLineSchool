@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "JXBaseViewController.h"
-@interface MyCollectionViewController : JXBaseViewController
+@interface MyCollectionViewController : JXBaseViewController <UITableViewDataSource,UITableViewDelegate>
 
 @end

@@ -55,6 +55,7 @@
         // Use the default cell style.
         cell = (CourseTableViewCell *)[[[NSBundle mainBundle] loadNibNamed:@"CourseTableViewCell" owner:self options:nil] objectAtIndex:0];
     }
+    
     return cell;
 }
 
