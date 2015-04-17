@@ -8,6 +8,9 @@
 
 #import "MyCourseViewController.h"
 #import "MyCourseTableViewCell.h"
+#import "VideoPlayerViewController.h"
+#import "DownLoadViewController.h"
+#import "UIResponder+StoryBoard.h"
 
 @interface MyCourseViewController ()
 @property (nonatomic, strong) NSArray *dataArray;
@@ -71,6 +74,8 @@ viewForHeaderInSection:(NSInteger)section
         // Use the default cell style.
         cell = [[MyCourseTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:MyIdentifier];
     }
+    [cell.playButton addTarget:self action:@selector(play) forControlEvents:UIControlEventTouchUpInside];
+    [cell.downLoadButton addTarget:self action:@selector(downLoad) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
 }
@@ -91,7 +96,16 @@ viewForHeaderInSection:(NSInteger)section
     
 }
 #pragma mark - Private Method
-
+- (void)play{
+    VideoPlayerViewController *latestVC = [VideoPlayerViewController CreateFromMainStoryboard];
+    UINavigationController *nav = (UINavigationController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
+    [nav pushViewController:latestVC animated:YES];
+}
+- (void)downLoad{
+    DownLoadViewController *latestVC = [DownLoadViewController CreateFromMainStoryboard];
+    UINavigationController *nav = (UINavigationController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
+    [nav pushViewController:latestVC animated:YES];
+}
 
 
 @end

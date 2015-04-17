@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface MyCourseTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIButton *playButton;
+@property (weak, nonatomic) IBOutlet UIButton *downLoadButton;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 
 @end

@@ -48,7 +48,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *MyIdentifier = @"Information";
+    static NSString *MyIdentifier = @"courseDetailCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
     if (cell == nil)
     {
@@ -56,7 +56,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier];
     }
     // Set up the cell.
-    cell.textLabel.text= self.dataArray[indexPath.row];
+//    cell.textLabel.text= self.dataArray[indexPath.row];
     return cell;
 }
 
@@ -64,7 +64,7 @@
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
+    return 50;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
