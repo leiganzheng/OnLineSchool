@@ -7,9 +7,19 @@
 //
 
 #import "CourseDetailViewController.h"
+#import "CommentTableViewCell.h"
+
+typedef enum {
+    comment = 0,
+    directory = 1,
+} kVCtype;
+
 
 @interface CourseDetailViewController ()
 @property (nonatomic, strong) NSArray *dataArray;
+@property (nonatomic, strong) NSArray *commentDataArray;
+@property (nonatomic,assign) kVCtype type;
+@property (weak, nonatomic) IBOutlet UITableView *customTableView;
 
 @end
 
@@ -24,6 +34,8 @@
     [searchBtn setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:searchBtn];
     self.dataArray = @[@"2015年山东二级建造师报名入口",@"2015年甘肃二级建造师报名入口",@"2015年云南二级建造师考试资格审查报名入口",@"2015年北京二级建造师报名入口"];
+    self.commentDataArray =  @[@"2015年山东二级建造师报名入口",@"2015年甘肃二级建造师报名入口",@"2015年云南二级建造师考试资格审查报名入口",@"2015年北京二级建造师报名入口"];
+    self.type = directory;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,27 +56,67 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_dataArray count];
+    switch (self.type) {
+        case comment:
+        {
+            return [_commentDataArray count];
+        }
+            break;
+        case directory:
+        {
+           return  [_dataArray count];
+        }
+            break;
+            
+        default:
+            return 0;
+            break;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *MyIdentifier = @"courseDetailCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
-    if (cell == nil)
-    {
-        // Use the default cell style.
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier];
+    if (self.type == comment) {
+        static NSString *MyIdentifier = @"Information";
+        CommentTableViewCell *cell = (CommentTableViewCell *)[tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+        if (cell == nil)
+        {
+            // Use the default cell style.
+            cell = (CommentTableViewCell *)[[[NSBundle mainBundle] loadNibNamed:@"CommentTableViewCell" owner:self options:nil] objectAtIndex:0];
+        }
+        return cell;
+    }else if(self.type == directory){
+        static NSString *MyIdentifier = @"courseDetailCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+        if (cell == nil)
+        {
+            // Use the default cell style.
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier];
+        }
+        return cell;
     }
-    // Set up the cell.
-//    cell.textLabel.text= self.dataArray[indexPath.row];
-    return cell;
+    return nil;
 }
 
 
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 50;
+    switch (self.type) {
+        case comment:
+        {
+            return 90;
+        }
+            break;
+        case directory:
+        {
+            return 50;
+        }
+            break;
+
+        default:
+            return 0;
+            break;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -75,6 +127,15 @@
 #pragma mark - Action Method
 - (void)searchButtonAction{
     
+}
+- (IBAction)courseButtonAction:(id)sender {
+    self.type = directory;
+    [self.customTableView reloadData];
+
+}
+- (IBAction)commentButtonAction:(id)sender {
+    self.type = comment;
+    [self.customTableView reloadData];
 }
 #pragma mark - Private Method
 

@@ -8,9 +8,16 @@
 
 #import "CourseViewController.h"
 #import "CourseTableViewCell.h"
+typedef enum {
+    kConstruction = 0,
+    kFinance = 1,
+    kEducation = 2,
+} kCourseType;
 
 @interface CourseViewController ()
+@property (nonatomic,assign) kCourseType type;
 @property (nonatomic, strong) NSArray *dataArray;
+@property (weak, nonatomic) IBOutlet UITableView *customTableView;
 @end
 
 @implementation CourseViewController
@@ -24,11 +31,11 @@
     [searchBtn setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:searchBtn];
     self.dataArray = @[@"2015年山东二级建造师报名入口",@"2015年甘肃二级建造师报名入口",@"2015年云南二级建造师考试资格审查报名入口",@"2015年北京二级建造师报名入口"];
+    self.type = kConstruction;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -74,6 +81,18 @@
 #pragma mark - Action Method
 - (void)searchButtonAction{
     
+}
+- (IBAction)constructionButtonAction:(id)sender {
+    self.type = kConstruction;
+    [self.customTableView reloadData];
+}
+- (IBAction)financeButtonAction:(id)sender {
+    self.type = kFinance;
+    [self.customTableView reloadData];
+}
+- (IBAction)educationButtonAction:(id)sender {
+    self.type = kEducation;
+    [self.customTableView reloadData];
 }
 #pragma mark - Private Method
 

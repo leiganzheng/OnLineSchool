@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"更多设置";
-    self.settingWords = @[@[@"头",@"修改昵称",@"更改密码"], @[@"允许2G/3G下缓存视频",@"连续播放",@"关于建迅",@"当前版本",@"意见反馈"],@[@"退出登录"]];
+    self.settingWords = @[@[@"头像",@"修改昵称",@"更改密码"], @[@"允许2G/3G下缓存视频",@"连续播放",@"关于建迅",@"当前版本",@"意见反馈"],@[@"退出登录"]];
 }
 
 - (void)didReceiveMemoryWarning {
