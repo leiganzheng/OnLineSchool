@@ -10,6 +10,9 @@
 #import "CourseTableViewCell.h"
 
 @interface LatestViewController ()
+{
+    UISearchDisplayController *searchDisplayController;
+}
 @property (weak, nonatomic) IBOutlet UITableView *customTableView;
 @property (nonatomic, strong) NSArray *dataArray;
 @end
@@ -75,7 +78,17 @@
 
 #pragma mark - Action Method
 - (void)searchButtonAction{
+    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width
+                                                                           , 44)];
+    searchBar.placeholder = @"搜索";
+        // 用 searchbar 初始化 SearchDisplayController
+    // 并把 searchDisplayController 和当前 controller 关联起来
+    searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
     
+    // searchResultsDataSource 就是 UITableViewDataSource
+    searchDisplayController.searchResultsDataSource = self;
+    // searchResultsDelegate 就是 UITableViewDelegate
+    searchDisplayController.searchResultsDelegate = self;
 }
 #pragma mark - Private Method
 
