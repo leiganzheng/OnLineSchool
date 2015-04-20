@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,42 +15,86 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwF-Cf-RQG">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwF-Cf-RQG">
                         <rect key="frame" x="8" y="8" width="46" height="47"/>
                         <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="47" id="TGG-hb-Pmv"/>
+                            <constraint firstAttribute="width" constant="46" id="cMt-Fk-Y9x"/>
+                        </constraints>
                         <state key="normal" title="Button">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="院长他爹" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCp-bU-7Pv">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="院长他爹" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCp-bU-7Pv">
                         <rect key="frame" x="64" y="8" width="77" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="77" id="YVI-eg-13Z"/>
+                            <constraint firstAttribute="height" constant="21" id="ysZ-rd-r9S"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="建迅用户" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHT-x1-1A0">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="建迅用户" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHT-x1-1A0">
                         <rect key="frame" x="68" y="29" width="68" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="68" id="Tfe-Z6-gvf"/>
+                            <constraint firstAttribute="height" constant="21" id="ma7-DO-klI"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2013-09-08" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gge-Zt-zbq">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2013-09-08" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gge-Zt-zbq">
                         <rect key="frame" x="216" y="8" width="96" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Hqw-cB-N5X"/>
+                            <constraint firstAttribute="width" constant="96" id="bTs-DA-N7B"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zef-qr-Ym2">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zef-qr-Ym2">
                         <rect key="frame" x="8" y="54" width="304" height="37"/>
                         <color key="backgroundColor" red="1" green="0.50196078430000002" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="304" id="emG-k4-sKg"/>
+                            <constraint firstAttribute="height" constant="37" id="zhH-Nd-G56"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="emG-k4-sKg"/>
+                            </mask>
+                        </variation>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="讲的不错，大赞" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPY-FW-9i4">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="讲的不错，大赞" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPY-FW-9i4">
                         <rect key="frame" x="30" y="62" width="249" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="249" id="rxW-p2-v2Y"/>
+                            <constraint firstAttribute="height" constant="21" id="z0z-Gs-ES3"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="gge-Zt-zbq" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="6Sd-0j-34V"/>
+                    <constraint firstItem="bHT-x1-1A0" firstAttribute="top" secondItem="zCp-bU-7Pv" secondAttribute="bottom" id="Cah-vx-UYc"/>
+                    <constraint firstItem="gge-Zt-zbq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="T7f-hu-mGU"/>
+                    <constraint firstItem="zef-qr-Ym2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="UCB-wG-zU3"/>
+                    <constraint firstItem="rwF-Cf-RQG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="VRc-8C-G6m"/>
+                    <constraint firstItem="tPY-FW-9i4" firstAttribute="top" secondItem="rwF-Cf-RQG" secondAttribute="bottom" constant="7" id="YCv-LO-Z6g"/>
+                    <constraint firstItem="rwF-Cf-RQG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="YMv-UM-5sP"/>
+                    <constraint firstItem="zCp-bU-7Pv" firstAttribute="leading" secondItem="rwF-Cf-RQG" secondAttribute="trailing" constant="10" id="a25-a1-Lav"/>
+                    <constraint firstItem="tPY-FW-9i4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="22" id="cV4-EA-aV2"/>
+                    <constraint firstItem="zCp-bU-7Pv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="jxS-sK-ffH"/>
+                    <constraint firstItem="bHT-x1-1A0" firstAttribute="leading" secondItem="rwF-Cf-RQG" secondAttribute="trailing" constant="14" id="nqo-KG-Gep"/>
+                    <constraint firstItem="zef-qr-Ym2" firstAttribute="top" secondItem="bHT-x1-1A0" secondAttribute="bottom" constant="4" id="rOQ-Vy-U9p"/>
+                    <constraint firstItem="zef-qr-Ym2" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="rwX-fY-aYI"/>
+                </constraints>
             </tableViewCellContentView>
         </tableViewCell>
     </objects>

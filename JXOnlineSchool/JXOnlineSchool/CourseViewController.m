@@ -15,6 +15,7 @@ typedef enum {
 } kCourseType;
 
 @interface CourseViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *lineLabel;
 @property (nonatomic,assign) kCourseType type;
 @property (nonatomic, strong) NSArray *dataArray;
 @property (weak, nonatomic) IBOutlet UITableView *customTableView;
@@ -83,14 +84,26 @@ typedef enum {
     
 }
 - (IBAction)constructionButtonAction:(id)sender {
+    UIButton *temp = (UIButton *)sender;
+    [UIView animateWithDuration:0.5 animations:^{
+        self.lineLabel.center = CGPointMake(temp.center.x, self.lineLabel.center.y);
+    }];
     self.type = kConstruction;
     [self.customTableView reloadData];
 }
 - (IBAction)financeButtonAction:(id)sender {
+    UIButton *temp = (UIButton *)sender;
+    [UIView animateWithDuration:0.5 animations:^{
+        self.lineLabel.center = CGPointMake(temp.center.x, self.lineLabel.center.y);
+    }];
     self.type = kFinance;
     [self.customTableView reloadData];
 }
 - (IBAction)educationButtonAction:(id)sender {
+    UIButton *temp = (UIButton *)sender;
+    [UIView animateWithDuration:0.5 animations:^{
+        self.lineLabel.center = CGPointMake(temp.center.x, self.lineLabel.center.y);
+    }];
     self.type = kEducation;
     [self.customTableView reloadData];
 }

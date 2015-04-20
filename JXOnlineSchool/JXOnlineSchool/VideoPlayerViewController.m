@@ -121,7 +121,7 @@ typedef enum {
 
 //MARK:- Action Method
 - (IBAction)backAction:(id)sender {
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)offlineAction:(id)sender {
 }

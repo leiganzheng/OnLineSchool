@@ -32,12 +32,12 @@
     
     for (int i = 1; i<=pictureArray.count; i++) {
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width *(i-1), 0, self.view.bounds.size.width, self.view.bounds.size.height)];
-        imageView.backgroundColor = [UIColor clearColor];
+        imageView.backgroundColor = [UIColor lightGrayColor];
         imageView.image = [UIImage imageNamed:pictureArray[i-1]];
         if (i == 3) {
             UIButton *enterButton = [UIButton buttonWithType:UIButtonTypeCustom];
-            enterButton.frame = CGRectMake(self.view.bounds.size.width/2 - 100, self.view.bounds.size.height - 64, 200, 44);
-            enterButton.backgroundColor = [UIColor clearColor];            
+            enterButton.frame = CGRectMake(self.view.bounds.size.width/2 - 100, self.view.bounds.size.height - 80, 200, 60);
+            enterButton.backgroundColor = [UIColor orangeColor];
             [enterButton addTarget:self action:@selector(enterButtonAction) forControlEvents:UIControlEventTouchUpInside];
             imageView.userInteractionEnabled = YES;
             [imageView addSubview:enterButton];
