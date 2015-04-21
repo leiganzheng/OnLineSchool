@@ -1554,6 +1554,9 @@
                                 <state key="normal" title="立即报名">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUp:" destination="mTh-K2-pjX" eventType="touchUpInside" id="zov-gs-g4w"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1607,6 +1610,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="olH-N7-QrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1037" y="1914.9999999999998"/>
+        </scene>
+        <!--支付-->
+        <scene sceneID="hwd-Hd-TyX">
+            <objects>
+                <viewController storyboardIdentifier="PayViewController" title="支付" id="Bby-Zc-Uge" customClass="PayViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ja2-al-yR3"/>
+                        <viewControllerLayoutGuide type="bottom" id="csI-Hq-LXm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="47n-Pu-h6p">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="do7-jn-YNj">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wjb-XR-u07">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wjb-XR-u07" id="YOE-fE-eRd">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Bby-Zc-Uge" id="vfc-Nu-etY"/>
+                                    <outlet property="delegate" destination="Bby-Zc-Uge" id="kK7-3F-km2"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="do7-jn-YNj" secondAttribute="trailing" constant="-16" id="5yU-AK-1p1"/>
+                            <constraint firstItem="do7-jn-YNj" firstAttribute="leading" secondItem="47n-Pu-h6p" secondAttribute="leadingMargin" constant="-16" id="NUa-Ni-Khi"/>
+                            <constraint firstItem="do7-jn-YNj" firstAttribute="top" secondItem="47n-Pu-h6p" secondAttribute="topMargin" id="ox1-s0-yAZ"/>
+                            <constraint firstItem="csI-Hq-LXm" firstAttribute="top" secondItem="do7-jn-YNj" secondAttribute="bottom" id="sjD-bY-ABi"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yDR-5d-gzl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-787" y="2087"/>
         </scene>
         <!--离线下载-->
         <scene sceneID="BJC-d7-C9M">

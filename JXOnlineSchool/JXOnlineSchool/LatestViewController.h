@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JXBaseViewController.h"
-@interface LatestViewController : JXBaseViewController <UITableViewDataSource,UITableViewDelegate>
+#import "MainBaseViewController.h"
+@interface LatestViewController : MainBaseViewController <UITableViewDataSource,UITableViewDelegate>
 
 @end

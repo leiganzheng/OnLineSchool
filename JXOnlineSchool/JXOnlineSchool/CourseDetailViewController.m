@@ -8,6 +8,8 @@
 
 #import "CourseDetailViewController.h"
 #import "CommentTableViewCell.h"
+#import "UIResponder+StoryBoard.h"
+#import "PayViewController.h"
 
 typedef enum {
     comment = 0,
@@ -27,12 +29,6 @@ typedef enum {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIButton *searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    searchBtn.frame = CGRectMake(0, 0 ,40, 40);
-    searchBtn.backgroundColor = [UIColor orangeColor];
-    [searchBtn addTarget:self action:@selector(searchButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [searchBtn setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:searchBtn];
     self.dataArray = @[@"2015年山东二级建造师报名入口",@"2015年甘肃二级建造师报名入口",@"2015年云南二级建造师考试资格审查报名入口",@"2015年北京二级建造师报名入口"];
     self.commentDataArray =  @[@"2015年山东二级建造师报名入口",@"2015年甘肃二级建造师报名入口",@"2015年云南二级建造师考试资格审查报名入口",@"2015年北京二级建造师报名入口"];
     self.type = directory;
@@ -125,9 +121,6 @@ typedef enum {
 }
 
 #pragma mark - Action Method
-- (void)searchButtonAction{
-    
-}
 - (IBAction)courseButtonAction:(id)sender {
     self.type = directory;
     [self.customTableView reloadData];
@@ -136,6 +129,9 @@ typedef enum {
 - (IBAction)commentButtonAction:(id)sender {
     self.type = comment;
     [self.customTableView reloadData];
+}
+- (IBAction)signUp:(id)sender {
+    [self.navigationController pushViewController:[PayViewController CreateFromMainStoryboard] animated:YES];
 }
 #pragma mark - Private Method
 

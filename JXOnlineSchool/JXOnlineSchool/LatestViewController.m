@@ -14,19 +14,18 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *customTableView;
 @property (nonatomic, strong) NSArray *dataArray;
-@property (nonatomic,strong) SearchController *searchController;
 @end
 
 @implementation LatestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIButton *searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    searchBtn.frame = CGRectMake(0, 0 ,40, 40);
-    searchBtn.backgroundColor = [UIColor orangeColor];
-    [searchBtn addTarget:self action:@selector(searchButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [searchBtn setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:searchBtn];
+//    UIButton *searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    searchBtn.frame = CGRectMake(0, 0 ,40, 40);
+//    searchBtn.backgroundColor = [UIColor orangeColor];
+//    [searchBtn addTarget:self action:@selector(searchButtonAction) forControlEvents:UIControlEventTouchUpInside];
+//    [searchBtn setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:searchBtn];
     self.dataArray = @[@"2015年山东二级建造师报名入口",@"2015年甘肃二级建造师报名入口",@"2015年云南二级建造师考试资格审查报名入口",@"2015年北京二级建造师报名入口"];
 }
 
@@ -77,12 +76,7 @@
 }
 
 #pragma mark - Action Method
-- (void)searchButtonAction{
-    _searchController = [[SearchController alloc] initWithContentsController:self searchBarFrame:CGRectMake(0, 20, self.view.bounds.size.width, 44) selected:^(id data) {
-        
-    } cancel:nil];
-    [_searchController becomeFirstResponder];
-}
+
 #pragma mark - Private Method
 
 

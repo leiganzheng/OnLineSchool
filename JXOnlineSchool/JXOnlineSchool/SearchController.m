@@ -1,18 +1,16 @@
 //
-//  QNSearchController.m
-//  QooccNews
+//  SearchController.h
+//  JXOnlineSchool
 //
-//  Created by GuJinyou on 14-7-22.
-//  Copyright (c) 2014年 巨细科技. All rights reserved.
+//  Created by leiganzheng on 15/4/15.
+//  Copyright (c) 2015年 leiganzheng. All rights reserved.
 //
-
 #import "SearchController.h"
 
 @interface SearchController () <UISearchBarDelegate, UISearchDisplayDelegate, UISearchControllerDelegate,
 UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UISearchDisplayController *searchDisplayController;
-@property (nonatomic, assign) UIEdgeInsets      contentInsets;
-@property (nonatomic, strong)         UITableView *customTableView;
+@property (nonatomic, assign) UIEdgeInsets  contentInsets;
 @end
 
 
@@ -24,12 +22,6 @@ UITableViewDataSource, UITableViewDelegate>
         self.selectedBlock = selectedBlock;
         self.cancelBlock = cancelBlock;
         
-        _customTableView= [[UITableView alloc] initWithFrame:viewController.view.bounds style:UITableViewStylePlain];
-        _customTableView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-        _customTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _customTableView.backgroundColor = [UIColor clearColor];
-        _customTableView.backgroundView = nil;
-                
         UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:frame];
         searchBar.showsCancelButton = YES;
         searchBar.backgroundColor = [UIColor lightGrayColor];
@@ -45,7 +37,6 @@ UITableViewDataSource, UITableViewDelegate>
         self.contentInsets = UIEdgeInsetsMake(0, 0, 0, 0);
         self.searchDisplayController.searchResultsTableView.contentInset = self.contentInsets;
         
-        _customTableView = self.searchDisplayController.searchResultsTableView;
     }
     return self;
 }
@@ -61,14 +52,6 @@ UITableViewDataSource, UITableViewDelegate>
 - (void)cancel {
     [self.searchDisplayController.searchBar resignFirstResponder];
     [self.searchDisplayController.searchBar removeFromSuperview];
-    
-    // 需要延迟0.5秒～ 等动画完成，然后cancel；
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if (self.cancelBlock != nil) {
-            self.cancelBlock();
-            self.cancelBlock = nil;
-        }
-    });
 }
 
 #pragma mark - UISearchDisplayControllerDelegate
@@ -118,7 +101,7 @@ UITableViewDataSource, UITableViewDelegate>
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellId = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    if (cell = nil) {
+    if (cell ==  nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     return cell;

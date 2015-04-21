@@ -30,6 +30,7 @@
 		71C04FC31ADA7E8B00CAA2FD /* MyCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C04FC21ADA7E8B00CAA2FD /* MyCollectionViewController.m */; };
 		71C04FC61ADA7EF200CAA2FD /* CustomerServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C04FC51ADA7EF200CAA2FD /* CustomerServiceViewController.m */; };
 		71C04FC91ADA801D00CAA2FD /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C04FC81ADA801D00CAA2FD /* RecommendViewController.m */; };
+		71C334FA1AE695E6007C29D6 /* MainBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C334F91AE695E6007C29D6 /* MainBaseViewController.m */; };
 		71C8FBC21AD934EF00F45CF1 /* CourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C8FBC01AD934EF00F45CF1 /* CourseTableViewCell.m */; };
 		71C8FBC31AD934EF00F45CF1 /* CourseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71C8FBC11AD934EF00F45CF1 /* CourseTableViewCell.xib */; };
 		BA971AE71ADA6B8C00C06A68 /* ChangPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA971AE61ADA6B8C00C06A68 /* ChangPasswordViewController.m */; };
@@ -106,6 +107,8 @@
 		71C04FC51ADA7EF200CAA2FD /* CustomerServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerServiceViewController.m; sourceTree = "<group>"; };
 		71C04FC71ADA801D00CAA2FD /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
 		71C04FC81ADA801D00CAA2FD /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
+		71C334F81AE695E6007C29D6 /* MainBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBaseViewController.h; sourceTree = "<group>"; };
+		71C334F91AE695E6007C29D6 /* MainBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainBaseViewController.m; sourceTree = "<group>"; };
 		71C8FBBF1AD934EF00F45CF1 /* CourseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseTableViewCell.h; sourceTree = "<group>"; };
 		71C8FBC01AD934EF00F45CF1 /* CourseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseTableViewCell.m; sourceTree = "<group>"; };
 		71C8FBC11AD934EF00F45CF1 /* CourseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseTableViewCell.xib; sourceTree = "<group>"; };
@@ -189,6 +192,8 @@
 				71C8FBC11AD934EF00F45CF1 /* CourseTableViewCell.xib */,
 				BBE7F4441AE61557008A3ED6 /* PayViewController.h */,
 				BBE7F4451AE61557008A3ED6 /* PayViewController.m */,
+				71C334F81AE695E6007C29D6 /* MainBaseViewController.h */,
+				71C334F91AE695E6007C29D6 /* MainBaseViewController.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -532,6 +537,7 @@
 				71C04FBB1ADA7B1B00CAA2FD /* DownLoadTableViewCell.m in Sources */,
 				BBE7F4461AE61557008A3ED6 /* PayViewController.m in Sources */,
 				711FBAB81AD8146900DC8632 /* SliderViewController.m in Sources */,
+				71C334FA1AE695E6007C29D6 /* MainBaseViewController.m in Sources */,
 				BBFB97F31AE6596B00E93D23 /* SearchController.m in Sources */,
 				71C04FB41ADA613E00CAA2FD /* ChangeNicknameViewController.m in Sources */,
 				716A85781AD8FB7900B3FC22 /* CourseViewController.m in Sources */,
