@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *customTableView;
 @property (nonatomic, strong) NSArray *dataArray;
+@property (nonatomic,strong) SearchController *searchController;
 @end
 
 @implementation LatestViewController
@@ -77,10 +78,10 @@
 
 #pragma mark - Action Method
 - (void)searchButtonAction{
-    SearchController *searchController = [[SearchController alloc] initWithContentsController:self searchBarFrame:CGRectMake(0, 20, self.view.bounds.size.width, 44) selected:^(id data) {
+    _searchController = [[SearchController alloc] initWithContentsController:self searchBarFrame:CGRectMake(0, 20, self.view.bounds.size.width, 44) selected:^(id data) {
         
     } cancel:nil];
-    [searchController becomeFirstResponder];
+    [_searchController becomeFirstResponder];
 }
 #pragma mark - Private Method
 

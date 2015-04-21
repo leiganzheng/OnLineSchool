@@ -12,8 +12,7 @@
 UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UISearchDisplayController *searchDisplayController;
 @property (nonatomic, assign) UIEdgeInsets      contentInsets;
-@property (nonatomic, retain) id selfRetain;
-
+@property (nonatomic, strong)         UITableView *customTableView;
 @end
 
 
@@ -22,15 +21,21 @@ UITableViewDataSource, UITableViewDelegate>
 - (instancetype)initWithContentsController:(UIViewController *)viewController searchBarFrame:(CGRect)frame selected:(void (^)(id))selectedBlock cancel:(void (^)())cancelBlock {
     self = [super init];
     if (self) {
-        self.selfRetain = self;
         self.selectedBlock = selectedBlock;
         self.cancelBlock = cancelBlock;
         
+        _customTableView= [[UITableView alloc] initWithFrame:viewController.view.bounds style:UITableViewStylePlain];
+        _customTableView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        _customTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _customTableView.backgroundColor = [UIColor clearColor];
+        _customTableView.backgroundView = nil;
+                
         UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:frame];
         searchBar.showsCancelButton = YES;
         searchBar.backgroundColor = [UIColor lightGrayColor];
         searchBar.delegate = self;
         [viewController.view addSubview:searchBar];
+        
         self.searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:viewController];
         
         self.searchDisplayController.delegate = self;
@@ -39,6 +44,8 @@ UITableViewDataSource, UITableViewDelegate>
         self.searchDisplayController.searchResultsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         self.contentInsets = UIEdgeInsetsMake(0, 0, 0, 0);
         self.searchDisplayController.searchResultsTableView.contentInset = self.contentInsets;
+        
+        _customTableView = self.searchDisplayController.searchResultsTableView;
     }
     return self;
 }
@@ -61,7 +68,6 @@ UITableViewDataSource, UITableViewDelegate>
             self.cancelBlock();
             self.cancelBlock = nil;
         }
-        self.selfRetain = nil;
     });
 }
 
@@ -76,7 +82,6 @@ UITableViewDataSource, UITableViewDelegate>
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
     controller.searchResultsTableView.separatorStyle = UITableViewCellSelectionStyleNone;
-    [self removeNoResultsView:controller];
     return YES;
 }
 
@@ -111,7 +116,12 @@ UITableViewDataSource, UITableViewDelegate>
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-        return nil;
+    static NSString *cellId = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (cell = nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+    }
+    return cell;
 }
 
 #pragma mark - UITableViewDelegate
