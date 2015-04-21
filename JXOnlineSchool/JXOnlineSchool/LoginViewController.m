@@ -8,6 +8,8 @@
 
 #import "LoginViewController.h"
 #import "Define.h"
+#import "RegisterViewController.h"
+#import "UIResponder+StoryBoard.h"
 
 @interface LoginViewController ()
 @property (strong, nonatomic) IBOutlet UIView *logiView;
@@ -55,8 +57,16 @@
 }
 - (IBAction)forgetPassWord:(id)sender {
 }
-- (IBAction)register:(id)sender {
+- (IBAction)RegisterAction:(id)sender {
+    RegisterViewController *latestVC = [RegisterViewController CreateFromMainStoryboard];
+    [self presentViewController:latestVC animated:YES completion:^{
+        
+    }];
+//    UINavigationController *nav = (UINavigationController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
+//    [nav pushViewController:latestVC animated:YES];
+
 }
+
 - (IBAction)back:(id)sender {
     [self dismissViewControllerAnimated:YES completion:^{
         

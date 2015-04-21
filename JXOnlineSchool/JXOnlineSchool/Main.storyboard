@@ -295,7 +295,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="register:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="JQq-ZV-7f8"/>
+                                    <action selector="RegisterAction:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="fDy-bC-Mpc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -330,6 +330,130 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FBV-BZ-3dR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="489" y="1518"/>
+        </scene>
+        <!--注册-->
+        <scene sceneID="PAY-es-J57">
+            <objects>
+                <viewController storyboardIdentifier="RegisterViewController" title="注册" id="4xQ-od-OS3" customClass="RegisterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g8D-mr-JOD"/>
+                        <viewControllerLayoutGuide type="bottom" id="nkQ-k4-evr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="77c-HY-tla">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P6i-2M-PlE">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pie-uJ-zQT">
+                                <rect key="frame" x="0.0" y="58" width="320" height="412"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ec6-bZ-UIm">
+                                        <rect key="frame" x="85" y="8" width="150" height="150"/>
+                                        <color key="backgroundColor" red="0.1917827289" green="0.71337670679999998" blue="0.86802917820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NdP-eP-VaC">
+                                        <rect key="frame" x="91" y="183" width="187" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZsC-bs-a2q">
+                                        <rect key="frame" x="53" y="183" width="30" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.16623263890000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入验证码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yfw-qD-pV6">
+                                        <rect key="frame" x="91" y="221" width="127" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5AK-Qp-gHl">
+                                        <rect key="frame" x="53" y="221" width="30" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.16623263890000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBE-Uh-axR">
+                                        <rect key="frame" x="44" y="347" width="234" height="38"/>
+                                        <color key="backgroundColor" red="0.38823529410000002" green="0.80000000000000004" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="登录">
+                                            <color key="titleColor" red="0.1917827289" green="0.71337670679999998" blue="0.86802917820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginButtonAction:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="yMb-Le-e52"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lue-Mj-yJM">
+                                        <rect key="frame" x="91" y="265" width="187" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wzy-fT-mGD">
+                                        <rect key="frame" x="53" y="265" width="30" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.16623263890000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Aa-Ia-BfD">
+                                        <rect key="frame" x="221" y="217" width="62" height="38"/>
+                                        <color key="backgroundColor" red="0.38823529410000002" green="0.80000000000000004" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="获取验证码">
+                                            <color key="titleColor" red="0.1917827289" green="0.71337670679999998" blue="0.86802917820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginButtonAction:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="6KW-YC-HWj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQ5-Bd-py4">
+                                <rect key="frame" x="0.0" y="531" width="320" height="37"/>
+                                <color key="backgroundColor" red="0.38823529410000002" green="0.80000000000000004" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="一键登录">
+                                    <color key="titleColor" red="0.1917827289" green="0.71337670679999998" blue="0.86802917820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="oneKeyButtonAction:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="do3-aW-Bzj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNs-cw-rWP">
+                                <rect key="frame" x="16" y="20" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.16623263890000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="back:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="XL9-ox-WSg"/>
+                                    <action selector="backAction:" destination="4xQ-od-OS3" eventType="touchUpInside" id="2mN-AB-JMF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="一键登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQa-iT-94q">
+                                <rect key="frame" x="0.0" y="502" width="320" height="21"/>
+                                <color key="backgroundColor" red="1" green="0.50196078430000002" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l9F-gr-iO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="883" y="1597"/>
         </scene>
         <!--客服电话-->
         <scene sceneID="MqQ-YZ-pdX">
