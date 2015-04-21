@@ -46,6 +46,9 @@
 		BBE16EF91AD7ADDF000B150D /* readme in Resources */ = {isa = PBXBuildFile; fileRef = BBE16EF81AD7ADDF000B150D /* readme */; };
 		BBE16F021AD7AF75000B150D /* UIViewController+Appearence.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE16F011AD7AF75000B150D /* UIViewController+Appearence.m */; };
 		BBE16F061AD7AFA9000B150D /* JXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE16F051AD7AFA9000B150D /* JXBaseViewController.m */; };
+		BBE7F4431AE6153A008A3ED6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE7F4421AE6153A008A3ED6 /* RegisterViewController.m */; };
+		BBE7F4461AE61557008A3ED6 /* PayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE7F4451AE61557008A3ED6 /* PayViewController.m */; };
+		BBFB97F31AE6596B00E93D23 /* SearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFB97F21AE6596B00E93D23 /* SearchController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +136,12 @@
 		BBE16F011AD7AF75000B150D /* UIViewController+Appearence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Appearence.m"; sourceTree = "<group>"; };
 		BBE16F041AD7AFA9000B150D /* JXBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXBaseViewController.h; sourceTree = "<group>"; };
 		BBE16F051AD7AFA9000B150D /* JXBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXBaseViewController.m; sourceTree = "<group>"; };
+		BBE7F4411AE6153A008A3ED6 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		BBE7F4421AE6153A008A3ED6 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		BBE7F4441AE61557008A3ED6 /* PayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayViewController.h; sourceTree = "<group>"; };
+		BBE7F4451AE61557008A3ED6 /* PayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayViewController.m; sourceTree = "<group>"; };
+		BBFB97F11AE6596B00E93D23 /* SearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchController.h; sourceTree = "<group>"; };
+		BBFB97F21AE6596B00E93D23 /* SearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +187,8 @@
 				71C8FBBF1AD934EF00F45CF1 /* CourseTableViewCell.h */,
 				71C8FBC01AD934EF00F45CF1 /* CourseTableViewCell.m */,
 				71C8FBC11AD934EF00F45CF1 /* CourseTableViewCell.xib */,
+				BBE7F4441AE61557008A3ED6 /* PayViewController.h */,
+				BBE7F4451AE61557008A3ED6 /* PayViewController.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -261,6 +272,8 @@
 				BB62FD721ADE346000B7B7A6 /* loginView.xib */,
 				BB62FD771ADE371000B7B7A6 /* StartViewController.h */,
 				BB62FD781ADE371000B7B7A6 /* StartViewController.m */,
+				BBE7F4411AE6153A008A3ED6 /* RegisterViewController.h */,
+				BBE7F4421AE6153A008A3ED6 /* RegisterViewController.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -330,6 +343,7 @@
 		BBE16EFA1AD7AE68000B150D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BBFB97ED1AE656C000E93D23 /* Search */,
 				BB62FD6E1ADE30EA00B7B7A6 /* Login */,
 				BB62FD6A1ADE2E9000B7B7A6 /* Vedio */,
 				71C04FC01ADA7E1600CAA2FD /* Left */,
@@ -391,6 +405,15 @@
 				BBE16F051AD7AFA9000B150D /* JXBaseViewController.m */,
 			);
 			name = Base;
+			sourceTree = "<group>";
+		};
+		BBFB97ED1AE656C000E93D23 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				BBFB97F11AE6596B00E93D23 /* SearchController.h */,
+				BBFB97F21AE6596B00E93D23 /* SearchController.m */,
+			);
+			name = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -507,7 +530,9 @@
 				71C04FC91ADA801D00CAA2FD /* RecommendViewController.m in Sources */,
 				71C8FBC21AD934EF00F45CF1 /* CourseTableViewCell.m in Sources */,
 				71C04FBB1ADA7B1B00CAA2FD /* DownLoadTableViewCell.m in Sources */,
+				BBE7F4461AE61557008A3ED6 /* PayViewController.m in Sources */,
 				711FBAB81AD8146900DC8632 /* SliderViewController.m in Sources */,
+				BBFB97F31AE6596B00E93D23 /* SearchController.m in Sources */,
 				71C04FB41ADA613E00CAA2FD /* ChangeNicknameViewController.m in Sources */,
 				716A85781AD8FB7900B3FC22 /* CourseViewController.m in Sources */,
 				711FBABF1AD8169600DC8632 /* MainViewController.m in Sources */,
@@ -520,6 +545,7 @@
 				BB62FD6D1ADE2EC500B7B7A6 /* VideoPlayerViewController.m in Sources */,
 				BBE16ED41AD7AC8B000B150D /* main.m in Sources */,
 				716A85851AD919EF00B3FC22 /* CourseCell.m in Sources */,
+				BBE7F4431AE6153A008A3ED6 /* RegisterViewController.m in Sources */,
 				71361EDD1AD8247800051EF9 /* MLTransitionAnimation.m in Sources */,
 				BBD647051AE0D19400253851 /* CommentTableViewCell.m in Sources */,
 				71C04FC61ADA7EF200CAA2FD /* CustomerServiceViewController.m in Sources */,
