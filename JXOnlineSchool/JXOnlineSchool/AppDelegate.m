@@ -28,7 +28,7 @@
     
     do {
         [UIApplication sharedApplication].statusBarHidden = YES;
-        StartViewController *VC = [StartViewController CreateFromMainStoryboard];
+        StartViewController *VC = [[StartViewController alloc] init];
         self.window.rootViewController = VC;
         VC.finish = ^(){
             [self mainView];
