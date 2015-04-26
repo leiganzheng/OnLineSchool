@@ -10,6 +10,7 @@
 
 @interface PayViewController ()
 @property (nonatomic,strong) NSArray *settingWords;
+@property (nonatomic,strong) NSArray *icons;
 @end
 
 @implementation PayViewController
@@ -17,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.settingWords = @[@[@"商品名称"],@[@"银联手机支付",@"财付通支付",@"支付宝支付",@"微信支付"]];
+    self.icons = @[@[@"商品名称"],@[@"icons_pay_unionpay",@"icons_pay_tenpay",@"icons_pay_alipay",@"icons_pay_weixin"]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,6 +54,7 @@
     }
     // Set up the cell.
     cell.textLabel.text = _settingWords[indexPath.section][indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:_icons[indexPath.row]];
     return cell;
 }
 

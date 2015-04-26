@@ -27,7 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blueColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.dataArray = @[@"2015年山东二级建造师报名入口",@"2015年甘肃二级建造师报名入口",@"2015年云南二级建造师考试资格审查报名入口",@"2015年北京二级建造师报名入口"];
     [self initSubviews];
 }
@@ -117,8 +117,13 @@
     CGFloat heigt = 24;
     
     UIView *headerV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 242)];
-    headerV.backgroundColor = [UIColor lightGrayColor];
+    headerV.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:headerV];
+    
+    UIImageView *bg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 66, headerV.frame.size.width, headerV.frame.size.height-106)];
+    bg.backgroundColor = [UIColor clearColor];
+    bg.image = [UIImage imageNamed:@"index_banner"];
+    [headerV addSubview:bg];
     
     UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 66)];
     v.backgroundColor = kCyColorFromRGB(35, 181, 236);
@@ -134,45 +139,50 @@
     
     UIButton *userLogo = [UIButton buttonWithType:UIButtonTypeCustom];
     userLogo.frame = CGRectMake(0, heigt, 40, 40);
-    userLogo.backgroundColor = [UIColor redColor];
+    userLogo.backgroundColor = [UIColor clearColor];
     userLogo.layer.cornerRadius = userLogo.frame.size.width/2;
     userLogo.layer.masksToBounds = YES;
-    [userLogo setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
+    [userLogo setImage: [UIImage imageNamed: @"index_avatar"] forState: UIControlStateNormal];
 
     [userLogo addTarget:self action:@selector(userLogoButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [v addSubview:userLogo];
     
     UIButton *searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     searchBtn.frame = CGRectMake(kScreenWidth-42, heigt, 40, 40);
-    searchBtn.backgroundColor = [UIColor orangeColor];
-    [searchBtn setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
+    searchBtn.backgroundColor = [UIColor clearColor];
+    [searchBtn setImage: [UIImage imageNamed: @"icons_search"] forState: UIControlStateNormal];
     
     [searchBtn addTarget:self action:@selector(searchButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [v addSubview:searchBtn];
     
     
     UIButton *lastestBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    lastestBtn.frame = CGRectMake(0, headerV.frame.size.height-40, kScreenWidth/2-4, 40);
-    lastestBtn.backgroundColor = [UIColor redColor];
+    lastestBtn.frame = CGRectMake(0, headerV.frame.size.height-40, kScreenWidth/2-2, 40);
+    lastestBtn.backgroundColor = kCyColorFromRGB(128, 205, 234);
     [lastestBtn setTitle:@"最新课程" forState:UIControlStateNormal];
     [lastestBtn addTarget:self action:@selector(lastestButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [lastestBtn setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
+    [lastestBtn setImage: [UIImage imageNamed: @"icons_index_news"] forState: UIControlStateNormal];
     [lastestBtn setImageEdgeInsets: UIEdgeInsetsMake(0, -8, 0, 0)];
-//    [lastestBtn setTitleEdgeInsets: UIEdgeInsetsMake(0, 0, -60, 0)];
     [headerV addSubview:lastestBtn];
     
     
     UIButton *courseBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    courseBtn.frame = CGRectMake(kScreenWidth/2+4, headerV.frame.size.height-40, kScreenWidth/2-4, 40);
-    courseBtn.backgroundColor = [UIColor orangeColor];
+    courseBtn.frame = CGRectMake(kScreenWidth/2+2, headerV.frame.size.height-40, kScreenWidth/2-2, 40);
+    courseBtn.backgroundColor = kCyColorFromRGB(128, 205, 234);
     [courseBtn setTitle:@"课程分类" forState:UIControlStateNormal];
     [courseBtn setImageEdgeInsets: UIEdgeInsetsMake(0, -8, 0, 0)];
     [courseBtn addTarget:self action:@selector(courseButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [courseBtn setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
+    [courseBtn setImage: [UIImage imageNamed: @"icons_index_category"] forState: UIControlStateNormal];
     [headerV addSubview:courseBtn];
     
+    UIImageView *index = [[UIImageView alloc] initWithFrame:CGRectMake(lastestBtn.frame.origin.x + lastestBtn.frame.size.width, lastestBtn.frame.origin.y, 4, 40)];
+    index.backgroundColor = [UIColor clearColor];
+    index.image = [UIImage imageNamed:@"icons_index_line"];
+    [headerV addSubview:index];
+    
+    
     UITableView *customTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, headerV.frame.size.height, kScreenWidth, kScreenHeight-headerV.frame.size.height)];
-    customTableView.backgroundColor = [UIColor whiteColor];
+    customTableView.backgroundColor = [UIColor clearColor];
     customTableView.delegate = self;
     customTableView.dataSource = self;
     [self.view addSubview:customTableView];

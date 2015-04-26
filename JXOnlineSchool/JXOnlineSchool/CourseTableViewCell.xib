@@ -23,7 +23,7 @@
                             <constraint firstAttribute="width" constant="57" id="XMj-ts-FcG"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <state key="normal" title="116:05" image="common">
+                        <state key="normal" title="116:05" image="icons_time">
                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
@@ -37,9 +37,9 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xcG-l0-eD4">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="index_list_cover" translatesAutoresizingMaskIntoConstraints="NO" id="xcG-l0-eD4">
                         <rect key="frame" x="11" y="11" width="70" height="60"/>
-                        <color key="backgroundColor" red="1" green="0.37272515950000001" blue="0.49911318269999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="60" id="Lts-l4-3bg"/>
                             <constraint firstAttribute="width" constant="70" id="ZnP-oR-IaJ"/>
@@ -53,7 +53,7 @@
                             <constraint firstAttribute="width" constant="49" id="miQ-g9-yQr"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <state key="normal" title="2.3万" image="common">
+                        <state key="normal" title="2.3万" image="icons_start">
                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
@@ -75,7 +75,7 @@
                             <constraint firstAttribute="width" constant="70" id="x3y-wY-HRR"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <state key="normal" title="周永康" image="common">
+                        <state key="normal" title="周永康" image="icons_user">
                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
@@ -108,6 +108,9 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="common" width="21" height="14"/>
+        <image name="icons_start" width="10" height="10"/>
+        <image name="icons_time" width="10" height="10"/>
+        <image name="icons_user" width="8" height="9"/>
+        <image name="index_list_cover" width="80" height="60"/>
     </resources>
 </document>

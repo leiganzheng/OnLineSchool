@@ -77,7 +77,8 @@
 
     }else if (indexPath.section == 0 && indexPath.row == 0){
         UIImageView *userLogo = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-        userLogo.backgroundColor = [UIColor orangeColor];
+        userLogo.backgroundColor = [UIColor clearColor];
+        userLogo.image = [UIImage imageNamed:@"index_avatar"];
         userLogo.layer.cornerRadius = userLogo.frame.size.width/2;
         userLogo.layer.masksToBounds = YES;
         cell.accessoryView = userLogo;

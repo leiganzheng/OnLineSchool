@@ -18,9 +18,9 @@
     [super viewDidLoad];
     UIButton *searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     searchBtn.frame = CGRectMake(0, 0 ,40, 40);
-    searchBtn.backgroundColor = [UIColor orangeColor];
+    searchBtn.backgroundColor = [UIColor clearColor];
     [searchBtn addTarget:self action:@selector(searchButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    [searchBtn setImage: [UIImage imageNamed: @"common"] forState: UIControlStateNormal];
+    [searchBtn setImage: [UIImage imageNamed: @"icons_search"] forState: UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:searchBtn];
 }
 

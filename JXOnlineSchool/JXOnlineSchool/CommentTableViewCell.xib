@@ -15,19 +15,19 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwF-Cf-RQG">
-                        <rect key="frame" x="8" y="8" width="46" height="47"/>
-                        <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwF-Cf-RQG">
+                        <rect key="frame" x="8" y="8" width="38" height="38"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="47" id="TGG-hb-Pmv"/>
                             <constraint firstAttribute="width" constant="46" id="cMt-Fk-Y9x"/>
                         </constraints>
-                        <state key="normal" title="Button">
+                        <state key="normal" image="comment_avatar">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="院长他爹" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCp-bU-7Pv">
-                        <rect key="frame" x="64" y="8" width="77" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="院长他爹" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCp-bU-7Pv">
+                        <rect key="frame" x="56" y="8" width="77" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="77" id="YVI-eg-13Z"/>
                             <constraint firstAttribute="height" constant="21" id="ysZ-rd-r9S"/>
@@ -36,8 +36,8 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="建迅用户" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHT-x1-1A0">
-                        <rect key="frame" x="68" y="29" width="68" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="建迅用户" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHT-x1-1A0">
+                        <rect key="frame" x="60" y="29" width="68" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="68" id="Tfe-Z6-gvf"/>
                             <constraint firstAttribute="height" constant="21" id="ma7-DO-klI"/>
@@ -69,8 +69,8 @@
                             </mask>
                         </variation>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="讲的不错，大赞" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPY-FW-9i4">
-                        <rect key="frame" x="30" y="62" width="249" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="讲的不错，大赞" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPY-FW-9i4">
+                        <rect key="frame" x="30" y="53" width="249" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="249" id="rxW-p2-v2Y"/>
                             <constraint firstAttribute="height" constant="21" id="z0z-Gs-ES3"/>
@@ -98,4 +98,7 @@
             </tableViewCellContentView>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="comment_avatar" width="38" height="38"/>
+    </resources>
 </document>

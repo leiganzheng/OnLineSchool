@@ -29,6 +29,13 @@
     self.logiView = views[0];
     self.logiView.frame = CGRectMake(0,  kScreenHeight + self.logiView.frame.size.width, self.logiView.frame.size.width, self.logiView.frame.size.height);
     [self.view addSubview:self.logiView];
+    
+    self.loginButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.loginButton.backgroundColor = [UIColor clearColor];
+    self.loginButton.layer.borderWidth = 0.5;
+    self.loginButton.layer.masksToBounds = YES;
+    self.loginButton.layer.cornerRadius = 5;
+    
 }
 
 - (void)didReceiveMemoryWarning {

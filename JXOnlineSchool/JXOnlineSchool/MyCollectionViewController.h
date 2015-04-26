@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JXBaseViewController.h"
-@interface MyCollectionViewController : JXBaseViewController <UITableViewDataSource,UITableViewDelegate>
+#import "MainBaseViewController.h"
+@interface MyCollectionViewController : MainBaseViewController <UITableViewDataSource,UITableViewDelegate>
 
 @end

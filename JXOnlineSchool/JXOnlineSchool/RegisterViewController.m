@@ -9,6 +9,8 @@
 #import "RegisterViewController.h"
 
 @interface RegisterViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *yanzhengma;
 
 @end
 
@@ -17,6 +19,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.loginButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.loginButton.backgroundColor = [UIColor clearColor];
+    self.loginButton.layer.borderWidth = 0.5;
+    self.loginButton.layer.masksToBounds = YES;
+    self.loginButton.layer.cornerRadius = 5;
+    
+    self.yanzhengma.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.yanzhengma.backgroundColor = [UIColor clearColor];
+    self.yanzhengma.layer.borderWidth = 0.5;
+    self.yanzhengma.layer.masksToBounds = YES;
+    self.yanzhengma.layer.cornerRadius = 5;
+
 }
 
 - (void)didReceiveMemoryWarning {

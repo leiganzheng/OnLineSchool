@@ -140,60 +140,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ip2-fM-Jio">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_background" translatesAutoresizingMaskIntoConstraints="NO" id="ip2-fM-Jio">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QC-42-qlB">
-                                <rect key="frame" x="0.0" y="58" width="320" height="412"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0QC-42-qlB">
+                                <rect key="frame" x="0.0" y="50" width="320" height="407"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="joU-dt-NIS">
-                                        <rect key="frame" x="85" y="8" width="150" height="150"/>
-                                        <color key="backgroundColor" red="0.1917827289" green="0.71337670679999998" blue="0.86802917820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="joU-dt-NIS">
+                                        <rect key="frame" x="55" y="0.0" width="210" height="155"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="Uwa-8W-HwV"/>
                                             <constraint firstAttribute="height" constant="150" id="YWi-A5-Dj6"/>
                                         </constraints>
-                                        <state key="normal" title="Button">
+                                        <state key="normal" image="icons_login_avatar">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入账号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HEw-6p-8QM">
-                                        <rect key="frame" x="91" y="183" width="187" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入账号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HEw-6p-8QM">
+                                        <rect key="frame" x="75" y="183" width="203" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="86D-0a-aKP"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMt-cE-df3">
-                                        <rect key="frame" x="53" y="183" width="30" height="30"/>
-                                        <color key="backgroundColor" red="1" green="0.16623263890000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMt-cE-df3">
+                                        <rect key="frame" x="53" y="183" width="14" height="22"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="8d0-KN-U96"/>
                                             <constraint firstAttribute="height" constant="30" id="X3b-pl-QDK"/>
                                         </constraints>
-                                        <state key="normal">
+                                        <state key="normal" image="icons_login_username">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Op7-VI-OQY">
-                                        <rect key="frame" x="91" y="221" width="187" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Op7-VI-OQY">
+                                        <rect key="frame" x="76" y="221" width="202" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="O56-fJ-YwY"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jel-3o-DrR">
-                                        <rect key="frame" x="53" y="221" width="30" height="30"/>
-                                        <color key="backgroundColor" red="1" green="0.16623263890000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jel-3o-DrR">
+                                        <rect key="frame" x="53" y="213" width="15" height="22"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="4rM-dM-zSb"/>
                                             <constraint firstAttribute="width" constant="30" id="Gqe-YD-gpW"/>
                                         </constraints>
-                                        <state key="normal">
+                                        <state key="normal" image="icons_login_password">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muw-Ki-KWZ">
+                                        <rect key="frame" x="44" y="309" width="234" height="38"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="S08-lA-BAo"/>
+                                        </constraints>
+                                        <state key="normal" title="登录">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginButtonAction:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="vdY-qH-CMM"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8g-71-T5L">
                                         <rect key="frame" x="202" y="270" width="76" height="22"/>
@@ -201,30 +218,17 @@
                                             <constraint firstAttribute="height" constant="22" id="AiF-tr-ezu"/>
                                             <constraint firstAttribute="width" constant="76" id="fWo-j8-5ng"/>
                                         </constraints>
-                                        <state key="normal" title="忘记密码">
-                                            <color key="titleColor" red="0.1917827289" green="0.71337670679999998" blue="0.86802917820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="忘记密码？">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="forgetPassWord:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="cil-KS-Ctm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muw-Ki-KWZ">
-                                        <rect key="frame" x="44" y="309" width="234" height="38"/>
-                                        <color key="backgroundColor" red="0.38823529410000002" green="0.80000000000000004" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="38" id="S08-lA-BAo"/>
-                                        </constraints>
-                                        <state key="normal" title="登录">
-                                            <color key="titleColor" red="0.1917827289" green="0.71337670679999998" blue="0.86802917820000003" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="loginButtonAction:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="vdY-qH-CMM"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="joU-dt-NIS" secondAttribute="centerX" id="9yY-oo-KDC"/>
                                     <constraint firstAttribute="centerY" secondItem="joU-dt-NIS" secondAttribute="centerY" constant="123" id="Dgr-Bt-dE0"/>
@@ -246,36 +250,36 @@
                                     <constraint firstItem="muw-Ki-KWZ" firstAttribute="leading" secondItem="0QC-42-qlB" secondAttribute="leading" constant="44" id="zST-RJ-taZ"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMt-jD-vLb">
-                                <rect key="frame" x="16" y="20" width="46" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.16623263890000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMt-jD-vLb">
+                                <rect key="frame" x="16" y="20" width="22" height="22"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="cL7-jw-yLq"/>
                                     <constraint firstAttribute="height" constant="30" id="uFL-O6-owA"/>
                                 </constraints>
-                                <state key="normal">
+                                <state key="normal" image="icons_login_cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="back:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="4cV-Xj-x5A"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70H-St-niD">
-                                <rect key="frame" x="0.0" y="531" width="320" height="37"/>
-                                <color key="backgroundColor" red="0.38823529410000002" green="0.80000000000000004" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70H-St-niD">
+                                <rect key="frame" x="0.0" y="546" width="22" height="22"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="j9X-m7-x5q"/>
                                 </constraints>
-                                <state key="normal" title="一键登录">
-                                    <color key="titleColor" red="0.1917827289" green="0.71337670679999998" blue="0.86802917820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="icons_login_arrow_up">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="oneKeyButtonAction:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="Og5-p1-4l9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一键登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGB-gU-QSh">
-                                <rect key="frame" x="0.0" y="502" width="320" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="一键登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGB-gU-QSh">
+                                <rect key="frame" x="0.0" y="517" width="320" height="21"/>
                                 <color key="backgroundColor" red="1" green="0.50196078430000002" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="whp-hg-TZ9"/>
@@ -329,7 +333,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FBV-BZ-3dR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="489" y="1518"/>
+            <point key="canvasLocation" x="649" y="1518"/>
         </scene>
         <!--注册-->
         <scene sceneID="PAY-es-J57">
@@ -343,103 +347,142 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P6i-2M-PlE">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_background" translatesAutoresizingMaskIntoConstraints="NO" id="P6i-2M-PlE">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pie-uJ-zQT">
-                                <rect key="frame" x="0.0" y="58" width="320" height="412"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQ5-Bd-py4">
+                                <rect key="frame" x="0.0" y="546" width="94" height="22"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="Z0o-Q9-D4d"/>
+                                </constraints>
+                                <state key="normal" image="icons_login_arrow_up">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="oneKeyButtonAction:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="do3-aW-Bzj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNs-cw-rWP">
+                                <rect key="frame" x="16" y="20" width="22" height="22"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3fv-pd-GtY"/>
+                                    <constraint firstAttribute="width" constant="46" id="NcK-VO-oIK"/>
+                                </constraints>
+                                <state key="normal" image="icons_login_cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="back:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="XL9-ox-WSg"/>
+                                    <action selector="backAction:" destination="4xQ-od-OS3" eventType="touchUpInside" id="2mN-AB-JMF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="一键登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQa-iT-94q">
+                                <rect key="frame" x="0.0" y="517" width="320" height="21"/>
+                                <color key="backgroundColor" red="1" green="0.50196078430000002" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="qJe-Pi-4ps"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pie-uJ-zQT">
+                                <rect key="frame" x="0.0" y="50" width="320" height="428"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ec6-bZ-UIm">
-                                        <rect key="frame" x="85" y="8" width="150" height="150"/>
-                                        <color key="backgroundColor" red="0.1917827289" green="0.71337670679999998" blue="0.86802917820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ec6-bZ-UIm">
+                                        <rect key="frame" x="55" y="16" width="210" height="155"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="Otb-mL-GAF"/>
                                             <constraint firstAttribute="height" constant="150" id="aGg-FA-skJ"/>
                                         </constraints>
-                                        <state key="normal" title="Button">
+                                        <state key="normal" image="icons_login_avatar">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NdP-eP-VaC">
-                                        <rect key="frame" x="91" y="183" width="187" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NdP-eP-VaC">
+                                        <rect key="frame" x="75" y="191" width="203" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="KBn-kM-klC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZsC-bs-a2q">
-                                        <rect key="frame" x="53" y="183" width="30" height="30"/>
-                                        <color key="backgroundColor" red="1" green="0.16623263890000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZsC-bs-a2q">
+                                        <rect key="frame" x="53" y="191" width="14" height="22"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="cWK-Hm-ii4"/>
                                             <constraint firstAttribute="height" constant="30" id="wpY-yx-aGa"/>
                                         </constraints>
-                                        <state key="normal">
+                                        <state key="normal" image="icons_login_username">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入验证码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yfw-qD-pV6">
-                                        <rect key="frame" x="91" y="221" width="127" height="30"/>
+                                        <rect key="frame" x="76" y="229" width="127" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="ff3-Mn-zbi"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5AK-Qp-gHl">
-                                        <rect key="frame" x="53" y="221" width="30" height="30"/>
-                                        <color key="backgroundColor" red="1" green="0.16623263890000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5AK-Qp-gHl">
+                                        <rect key="frame" x="53" y="229" width="15" height="22"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="axK-88-hAB"/>
                                             <constraint firstAttribute="height" constant="30" id="mxs-sT-Hcx"/>
                                         </constraints>
-                                        <state key="normal">
+                                        <state key="normal" image="icons_login_message">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBE-Uh-axR">
-                                        <rect key="frame" x="44" y="347" width="234" height="38"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBE-Uh-axR">
+                                        <rect key="frame" x="44" y="355" width="234" height="38"/>
                                         <color key="backgroundColor" red="0.38823529410000002" green="0.80000000000000004" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38" id="rGK-Bl-WHW"/>
                                         </constraints>
                                         <state key="normal" title="登录">
-                                            <color key="titleColor" red="0.1917827289" green="0.71337670679999998" blue="0.86802917820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="loginButtonAction:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="yMb-Le-e52"/>
-                                        </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lue-Mj-yJM">
-                                        <rect key="frame" x="91" y="265" width="187" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="输入密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lue-Mj-yJM">
+                                        <rect key="frame" x="76" y="273" width="202" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="FnM-Z8-acO"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wzy-fT-mGD">
-                                        <rect key="frame" x="53" y="265" width="30" height="30"/>
-                                        <color key="backgroundColor" red="1" green="0.16623263890000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wzy-fT-mGD">
+                                        <rect key="frame" x="53" y="273" width="15" height="22"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="PDg-D9-C6f"/>
                                             <constraint firstAttribute="width" constant="30" id="eg3-6a-xzg"/>
                                         </constraints>
-                                        <state key="normal">
+                                        <state key="normal" image="icons_login_password">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Aa-Ia-BfD">
-                                        <rect key="frame" x="221" y="217" width="62" height="38"/>
-                                        <color key="backgroundColor" red="0.38823529410000002" green="0.80000000000000004" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="221" y="225" width="62" height="38"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38" id="Ulq-cD-2Dg"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="获取验证码">
-                                            <color key="titleColor" red="0.1917827289" green="0.71337670679999998" blue="0.86802917820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -447,7 +490,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="NdP-eP-VaC" secondAttribute="trailing" constant="42" id="2l0-y4-PME"/>
                                     <constraint firstItem="SBE-Uh-axR" firstAttribute="top" secondItem="Wzy-fT-mGD" secondAttribute="bottom" constant="52" id="9au-AW-Pht"/>
@@ -473,45 +516,6 @@
                                     <constraint firstItem="8Aa-Ia-BfD" firstAttribute="top" secondItem="NdP-eP-VaC" secondAttribute="bottom" constant="4" id="wog-2m-v4g"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQ5-Bd-py4">
-                                <rect key="frame" x="0.0" y="531" width="320" height="37"/>
-                                <color key="backgroundColor" red="0.38823529410000002" green="0.80000000000000004" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="Z0o-Q9-D4d"/>
-                                </constraints>
-                                <state key="normal" title="一键登录">
-                                    <color key="titleColor" red="0.1917827289" green="0.71337670679999998" blue="0.86802917820000003" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="oneKeyButtonAction:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="do3-aW-Bzj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNs-cw-rWP">
-                                <rect key="frame" x="16" y="20" width="46" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.16623263890000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="3fv-pd-GtY"/>
-                                    <constraint firstAttribute="width" constant="46" id="NcK-VO-oIK"/>
-                                </constraints>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="back:" destination="6QS-x3-7Sp" eventType="touchUpInside" id="XL9-ox-WSg"/>
-                                    <action selector="backAction:" destination="4xQ-od-OS3" eventType="touchUpInside" id="2mN-AB-JMF"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一键登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQa-iT-94q">
-                                <rect key="frame" x="0.0" y="502" width="320" height="21"/>
-                                <color key="backgroundColor" red="1" green="0.50196078430000002" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="qJe-Pi-4ps"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -534,10 +538,14 @@
                             <constraint firstItem="P6i-2M-PlE" firstAttribute="leading" secondItem="77c-HY-tla" secondAttribute="leadingMargin" constant="-16" id="uCy-FT-EbR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="SBE-Uh-axR" id="ngN-7W-rHs"/>
+                        <outlet property="yanzhengma" destination="8Aa-Ia-BfD" id="cij-cp-WOc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l9F-gr-iO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="883" y="1597"/>
+            <point key="canvasLocation" x="1028" y="1567"/>
         </scene>
         <!--客服电话-->
         <scene sceneID="MqQ-YZ-pdX">
@@ -680,13 +688,13 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7s-If-G28">
                                                     <rect key="frame" x="272" y="11" width="40" height="22"/>
-                                                    <state key="normal" image="common">
+                                                    <state key="normal" image="icons_play">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4f-9A-Hc4">
                                                     <rect key="frame" x="230" y="11" width="40" height="22"/>
-                                                    <state key="normal" image="common">
+                                                    <state key="normal" image="icons_down">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
@@ -838,8 +846,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lI0-dB-TbG">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="224"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gC0-g9-Chi">
-                                        <rect key="frame" x="0.0" y="190" width="105" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gC0-g9-Chi">
+                                        <rect key="frame" x="0.0" y="192" width="105" height="34"/>
                                         <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="JvN-ze-4er"/>
@@ -851,8 +859,8 @@
                                             <action selector="dictoryButtonAction:" destination="ZE1-fz-MIb" eventType="touchUpInside" id="rZc-fa-6CP"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gY3-qZ-urN">
-                                        <rect key="frame" x="215" y="190" width="105" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gY3-qZ-urN">
+                                        <rect key="frame" x="215" y="192" width="105" height="34"/>
                                         <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="1q8-72-cqF"/>
@@ -864,42 +872,42 @@
                                             <action selector="relatedButtonAction:" destination="ZE1-fz-MIb" eventType="touchUpInside" id="e84-6o-dHK"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qv1-hJ-ZvZ">
-                                        <rect key="frame" x="212" y="23" width="46" height="30"/>
-                                        <color key="backgroundColor" red="1" green="0.16623263890000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qv1-hJ-ZvZ">
+                                        <rect key="frame" x="226" y="23" width="32" height="32"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="Cdq-L6-8Ze"/>
                                             <constraint firstAttribute="height" constant="30" id="pc2-ku-Cle"/>
                                         </constraints>
-                                        <state key="normal">
+                                        <state key="normal" image="icons_player_down">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="offlineAction:" destination="ZE1-fz-MIb" eventType="touchUpInside" id="Z1Y-2T-V1F"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCy-7M-c0h">
-                                        <rect key="frame" x="266" y="23" width="46" height="30"/>
-                                        <color key="backgroundColor" red="1" green="0.16623263890000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCy-7M-c0h">
+                                        <rect key="frame" x="280" y="23" width="32" height="32"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="btd-wn-cM8"/>
                                             <constraint firstAttribute="width" constant="46" id="qge-m5-MHA"/>
                                         </constraints>
-                                        <state key="normal">
+                                        <state key="normal" image="icons_player_share">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="shareAction:" destination="ZE1-fz-MIb" eventType="touchUpInside" id="EoL-S8-eBG"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8k0-oC-PEo">
-                                        <rect key="frame" x="8" y="23" width="46" height="30"/>
-                                        <color key="backgroundColor" red="1" green="0.16623263890000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8k0-oC-PEo">
+                                        <rect key="frame" x="8" y="23" width="32" height="32"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="CkA-0j-F27"/>
                                             <constraint firstAttribute="width" constant="46" id="oQA-wg-Soa"/>
                                         </constraints>
-                                        <state key="normal">
+                                        <state key="normal" image="icons_player_back">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1282,8 +1290,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kuc-A3-eMc" id="83y-yi-wQI">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vqe-Ru-cya">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="index_list_cover" translatesAutoresizingMaskIntoConstraints="NO" id="Vqe-Ru-cya">
                                                     <rect key="frame" x="8" y="11" width="70" height="60"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2014一级建造师" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAj-Hh-Ulq">
                                                     <rect key="frame" x="94" y="8" width="160" height="21"/>
@@ -1414,7 +1423,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="43" id="8gx-kt-ioS"/>
                                         </constraints>
-                                        <state key="normal" title="目录" image="common">
+                                        <state key="normal" title="目录" image="icons_list">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1427,7 +1436,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="43" id="YBs-dL-k8e"/>
                                         </constraints>
-                                        <state key="normal" title="评论" image="common">
+                                        <state key="normal" title="评论" image="icons_comment">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1469,7 +1478,7 @@
                                     <constraint firstItem="vBX-a3-65c" firstAttribute="leading" secondItem="dOC-p7-rlt" secondAttribute="leading" id="xoW-kz-Bao"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jxV-Fa-Dei">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jxV-Fa-Dei">
                                 <rect key="frame" x="0.0" y="248" width="320" height="264"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1496,7 +1505,7 @@
                                                         <constraint firstAttribute="height" constant="22" id="kYI-bY-Mrn"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <state key="normal" title="Button" image="common">
+                                                    <state key="normal" title="Button" image="icons_start">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
@@ -1508,7 +1517,7 @@
                                                         <constraint firstAttribute="width" constant="76" id="nRE-lj-G1p"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <state key="normal" title="Button" image="common">
+                                                    <state key="normal" title="Button" image="icons_user">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
@@ -1520,12 +1529,12 @@
                                                         <constraint firstAttribute="height" constant="22" id="mcz-Fg-w9f"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <state key="normal" title="Button" image="common">
+                                                    <state key="normal" title="Button" image="icons_time">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="erk-C8-Nib" firstAttribute="top" secondItem="EhN-rY-cZa" secondAttribute="bottom" constant="4" id="72P-U6-9Th"/>
                                                 <constraint firstItem="erk-C8-Nib" firstAttribute="leading" secondItem="N1k-jD-8Iy" secondAttribute="trailing" id="QVS-4q-Ocx"/>
@@ -1752,7 +1761,7 @@
                                                                 <constraint firstAttribute="width" constant="21" id="JXy-td-2vj"/>
                                                                 <constraint firstAttribute="height" constant="22" id="XB5-1t-n0A"/>
                                                             </constraints>
-                                                            <state key="normal" image="common">
+                                                            <state key="normal" image="icons_cancel">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                         </button>
@@ -1834,6 +1843,25 @@
     </scenes>
     <resources>
         <image name="common" width="21" height="14"/>
+        <image name="icons_cancel" width="22" height="22"/>
+        <image name="icons_comment" width="16" height="20"/>
+        <image name="icons_down" width="22" height="22"/>
+        <image name="icons_list" width="20" height="17"/>
+        <image name="icons_login_arrow_up" width="22" height="19"/>
+        <image name="icons_login_avatar" width="155" height="155"/>
+        <image name="icons_login_cancel" width="22" height="22"/>
+        <image name="icons_login_message" width="15" height="13"/>
+        <image name="icons_login_password" width="15" height="18"/>
+        <image name="icons_login_username" width="14" height="14"/>
+        <image name="icons_play" width="22" height="22"/>
+        <image name="icons_player_back" width="32" height="32"/>
+        <image name="icons_player_down" width="32" height="32"/>
+        <image name="icons_player_share" width="32" height="32"/>
+        <image name="icons_start" width="10" height="10"/>
+        <image name="icons_time" width="10" height="10"/>
+        <image name="icons_user" width="8" height="9"/>
+        <image name="index_list_cover" width="80" height="60"/>
+        <image name="login_background" width="320" height="568"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
