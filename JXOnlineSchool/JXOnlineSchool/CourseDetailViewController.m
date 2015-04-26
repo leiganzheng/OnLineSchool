@@ -29,7 +29,7 @@ typedef enum {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.dataArray = @[@"2015年山东二级建造师报名入口",@"2015年甘肃二级建造师报名入口",@"2015年云南二级建造师考试资格审查报名入口",@"2015年北京二级建造师报名入口"];
+    self.dataArray = @[@"2015年山东二级建造师报名入口",@"2015年甘肃二级建造师报名入口",@"2015年云南二级建造师考试资格审查报名入口",@"2015年北京二级建造师报名入口",@"2015年云南二级建造师考试资格审查报名入口",@"2015年北京二级建造师报名入口"];
     self.commentDataArray =  @[@"2015年山东二级建造师报名入口",@"2015年甘肃二级建造师报名入口",@"2015年云南二级建造师考试资格审查报名入口",@"2015年北京二级建造师报名入口"];
     self.type = directory;
 }
@@ -79,6 +79,7 @@ typedef enum {
             // Use the default cell style.
             cell = (CommentTableViewCell *)[[[NSBundle mainBundle] loadNibNamed:@"CommentTableViewCell" owner:self options:nil] objectAtIndex:0];
         }
+        tableView.separatorStyle =  UITableViewCellSeparatorStyleNone;
         return cell;
     }else if(self.type == directory){
         static NSString *MyIdentifier = @"courseDetailCell";
@@ -88,6 +89,7 @@ typedef enum {
             // Use the default cell style.
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier];
         }
+        tableView.separatorStyle =  UITableViewCellSeparatorStyleSingleLine;
         return cell;
     }
     return nil;

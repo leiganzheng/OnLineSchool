@@ -19,6 +19,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *oneKeyLoginButton;
 @property (weak, nonatomic) IBOutlet UIButton *closeOnekeyLoginButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *qqBtn;
+@property (weak, nonatomic) IBOutlet UIButton *weixinBtn;
+@property (weak, nonatomic) IBOutlet UIButton *sinaBtn;
+@property (weak, nonatomic) IBOutlet UIButton *tengxunBtn;
 @end
 
 @implementation LoginViewController
@@ -35,6 +39,16 @@
     self.loginButton.layer.borderWidth = 0.5;
     self.loginButton.layer.masksToBounds = YES;
     self.loginButton.layer.cornerRadius = 5;
+    
+
+    [self.qqBtn setImageEdgeInsets: UIEdgeInsetsMake(-8, 20, 0, 0)];
+    [self.qqBtn setTitleEdgeInsets: UIEdgeInsetsMake(0, -60, -70, 0)];
+    [self.weixinBtn setImageEdgeInsets: UIEdgeInsetsMake(-8, 20, 0, 0)];
+    [self.weixinBtn setTitleEdgeInsets: UIEdgeInsetsMake(0, -60, -70, 0)];
+    [self.sinaBtn setImageEdgeInsets: UIEdgeInsetsMake(-8, 20, 0, 0)];
+    [self.sinaBtn setTitleEdgeInsets: UIEdgeInsetsMake(0, -60, -70, 0)];
+    [self.tengxunBtn setImageEdgeInsets: UIEdgeInsetsMake(-8, 20, 0, 0)];
+    [self.tengxunBtn setTitleEdgeInsets: UIEdgeInsetsMake(0, -60, -70, 0)];
     
 }
 

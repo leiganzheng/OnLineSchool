@@ -54,7 +54,7 @@
     }
     // Set up the cell.
     cell.textLabel.text = _settingWords[indexPath.section][indexPath.row];
-    cell.imageView.image = [UIImage imageNamed:_icons[indexPath.row]];
+    cell.imageView.image = [UIImage imageNamed:_icons[indexPath.section][indexPath.row]];
     return cell;
 }
 
