@@ -21,6 +21,7 @@
 		716A857E1AD9037700B3FC22 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 716A857D1AD9037700B3FC22 /* SettingViewController.m */; };
 		716A85821AD9069700B3FC22 /* UIResponder+StoryBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 716A85811AD9069700B3FC22 /* UIResponder+StoryBoard.m */; };
 		716A85851AD919EF00B3FC22 /* CourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 716A85841AD919EF00B3FC22 /* CourseCell.m */; };
+		717CBFAF1AED3B8100E4AB09 /* shareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 717CBFAE1AED3B8100E4AB09 /* shareView.xib */; };
 		718D30B91ADC01AB008C1D42 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 718D30B81ADC01AB008C1D42 /* AboutViewController.m */; };
 		71A26F081ADB511D00191E67 /* STAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71A26F071ADB511D00191E67 /* STAlertView.m */; };
 		71C04FB41ADA613E00CAA2FD /* ChangeNicknameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C04FB31ADA613E00CAA2FD /* ChangeNicknameViewController.m */; };
@@ -89,6 +90,7 @@
 		716A85811AD9069700B3FC22 /* UIResponder+StoryBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+StoryBoard.m"; sourceTree = "<group>"; };
 		716A85831AD919EF00B3FC22 /* CourseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseCell.h; sourceTree = "<group>"; };
 		716A85841AD919EF00B3FC22 /* CourseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseCell.m; sourceTree = "<group>"; };
+		717CBFAE1AED3B8100E4AB09 /* shareView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = shareView.xib; sourceTree = "<group>"; };
 		718D30B71ADC01AB008C1D42 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		718D30B81ADC01AB008C1D42 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		71A26F061ADB511D00191E67 /* STAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STAlertView.h; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			children = (
 				BB62FD6B1ADE2EC500B7B7A6 /* VideoPlayerViewController.h */,
 				BB62FD6C1ADE2EC500B7B7A6 /* VideoPlayerViewController.m */,
+				717CBFAE1AED3B8100E4AB09 /* shareView.xib */,
 			);
 			name = Vedio;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				71361EE01AD825C000051EF9 /* Main.storyboard in Resources */,
 				7168B2BF1AE014C900FE3000 /* MyCourseSection.xib in Resources */,
 				BBE16EF91AD7ADDF000B150D /* readme in Resources */,
+				717CBFAF1AED3B8100E4AB09 /* shareView.xib in Resources */,
 				BBD647061AE0D19400253851 /* CommentTableViewCell.xib in Resources */,
 				BBE16EDF1AD7AC8B000B150D /* Images.xcassets in Resources */,
 				BB62FD731ADE346000B7B7A6 /* loginView.xib in Resources */,

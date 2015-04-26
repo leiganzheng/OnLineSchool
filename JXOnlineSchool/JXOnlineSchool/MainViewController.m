@@ -13,13 +13,11 @@
 #import "CourseDetailViewController.h"
 #import "SliderViewController.h"
 #import "UIResponder+StoryBoard.h"
-#import "STAlertView.h"
 #import "CourseTableViewCell.h"
 #import "SearchController.h"
 
 @interface MainViewController ()
 @property (nonatomic, strong) NSArray *dataArray;
-@property (nonatomic, strong) STAlertView *stAlertView;
 @property (nonatomic,strong)   SearchController *searchController;
 @end
 
@@ -88,18 +86,6 @@
 }
 
 - (void)searchButtonAction{
-//        self.stAlertView = [[STAlertView alloc] initWithTitle:@"Alert view with a textfield"
-//                                                      message:@"I'm a native UIAlertView with a textfiled."
-//                                                textFieldHint:@"What do you think about me?"
-//                                               textFieldValue:nil
-//                                            cancelButtonTitle:@"Cancel"
-//                                            otherButtonTitles:@"Store"
-//                            
-//                                            cancelButtonBlock:^{
-//                                                NSLog(@"Please, give me some feedback!");
-//                                            } otherButtonBlock:^(NSString * result){
-//                                                NSLog(@" You have said %@, but I can't store it :( . If you want, you can send it to me at hello@nestor.cat or via twitter @NestorMalet!", result);
-//                                            }];
     _searchController = [[SearchController alloc] initWithContentsController:self searchBarFrame:CGRectMake(0, 20, self.view.bounds.size.width, 44) selected:^(id data) {
         
     } cancel:nil];
@@ -138,7 +124,7 @@
     [v addSubview:userName];
     
     UIButton *userLogo = [UIButton buttonWithType:UIButtonTypeCustom];
-    userLogo.frame = CGRectMake(0, heigt, 40, 40);
+    userLogo.frame = CGRectMake(4, heigt, 40, 40);
     userLogo.backgroundColor = [UIColor clearColor];
     userLogo.layer.cornerRadius = userLogo.frame.size.width/2;
     userLogo.layer.masksToBounds = YES;

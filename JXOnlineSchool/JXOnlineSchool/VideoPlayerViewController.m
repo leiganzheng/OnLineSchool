@@ -9,6 +9,7 @@
 #import "VideoPlayerViewController.h"
 #import "CommentTableViewCell.h"
 #import "CourseTableViewCell.h"
+#import "Define.h"
 
 typedef enum {
     comment = 0,
@@ -19,13 +20,42 @@ typedef enum {
 
 @interface VideoPlayerViewController ()
 @property (nonatomic,assign) kVCtype type;
+@property (weak, nonatomic) IBOutlet UIButton *weixin;
+@property (weak, nonatomic) IBOutlet UIButton *weixinzone;
+@property (weak, nonatomic) IBOutlet UIButton *qq;
+@property (weak, nonatomic) IBOutlet UIButton *message;
+@property (weak, nonatomic) IBOutlet UIButton *sina;
+@property (weak, nonatomic) IBOutlet UIButton *qzone;
+@property (weak, nonatomic) IBOutlet UIButton *email;
+@property (weak, nonatomic) IBOutlet UIButton *link;
 @property (weak, nonatomic) IBOutlet UITableView *customTableView;
+@property (strong, nonatomic) IBOutlet UIView *shareView;
+@property (weak, nonatomic) IBOutlet UILabel *lineLB;
+@property (weak, nonatomic) IBOutlet UIButton *dicBtn;
+@property (weak, nonatomic) IBOutlet UIButton *commentBtn;
+@property (weak, nonatomic) IBOutlet UIButton *relBtn;
 @end
 @implementation VideoPlayerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.type = directory;
+    
+    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"shareView" owner:self options:nil];
+    self.shareView = views[0];
+    self.shareView.frame = CGRectMake(0,  kScreenHeight + self.shareView.frame.size.width, self.shareView.frame.size.width, self.shareView.frame.size.height);
+    [self.view addSubview:self.shareView];
+
+    
+    [self.weixin setTitleEdgeInsets: UIEdgeInsetsMake(0, -60, -80, 0)];
+    [self.weixinzone setTitleEdgeInsets: UIEdgeInsetsMake(0, -60, -80, -10)];
+    [self.qq setTitleEdgeInsets: UIEdgeInsetsMake(0, -60, -80, 0)];
+    [self.message setTitleEdgeInsets: UIEdgeInsetsMake(0, -60, -80, 0)];
+    [self.sina setTitleEdgeInsets: UIEdgeInsetsMake(0, -60, -80, 0)];
+    [self.qzone setTitleEdgeInsets: UIEdgeInsetsMake(0, -60, -80, 0)];
+    [self.email setTitleEdgeInsets: UIEdgeInsetsMake(0, -60, -80, 0)];
+    [self.link setTitleEdgeInsets: UIEdgeInsetsMake(0, -60, -80, 0)];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -126,22 +156,41 @@ typedef enum {
 - (IBAction)offlineAction:(id)sender {
 }
 - (IBAction)shareAction:(id)sender {
+    [UIView animateWithDuration:0.5 animations:^{
+        self.shareView.frame = CGRectMake(0,  kScreenHeight - self.shareView.frame.size.height , self.shareView.frame.size.width, self.shareView.frame.size.height);
+    } completion:^(BOOL finished) {
+        
+    }];
+
 }
 - (IBAction)dictoryButtonAction:(id)sender {
     self.type = directory;
+    [self lineMove:sender];
+    self.relBtn.titleLabel.textColor = self.commentBtn.titleLabel.textColor = [UIColor blackColor];
     [self.customTableView reloadData];
 }
 - (IBAction)commentButtonAction:(id)sender {
+    [self lineMove:sender];
+    self.dicBtn.titleLabel.textColor = self.relBtn.titleLabel.textColor = [UIColor blackColor];
     self.type = comment;
     [self.customTableView reloadData];
 }
 - (IBAction)relatedButtonAction:(id)sender {
+   self.dicBtn.titleLabel.textColor = self.commentBtn.titleLabel.textColor = [UIColor blackColor];
+    [self lineMove:sender];
     self.type = releted;
     [self.customTableView reloadData];
 }
 
 //MARK:- Private Method
+- (void)lineMove:(id)sender{
+    UIButton *button = (UIButton *)sender;
+    button.titleLabel.textColor = kCyColorFromRGB(128, 205, 234);
+    [UIView animateWithDuration:0.6 animations:^{
+        self.lineLB.center = CGPointMake(button.center.x, self.lineLB.center.y);
+    }];
 
+}
 
 
 @end

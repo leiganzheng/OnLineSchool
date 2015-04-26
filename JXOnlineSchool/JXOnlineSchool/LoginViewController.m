@@ -72,9 +72,7 @@
    }];
 }
 - (IBAction)loginButtonAction:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    self.finish();
 }
 - (IBAction)forgetPassWord:(id)sender {
 }

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "JXBaseViewController.h"
 
-@interface LoginViewController : JXBaseViewController
+typedef  void(^Finish)();
 
+@interface LoginViewController : JXBaseViewController
+@property (nonatomic,strong) Finish finish;
 @end

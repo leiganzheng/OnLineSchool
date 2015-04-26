@@ -12,11 +12,14 @@
 #import "ChangPasswordViewController.h"
 #import "UIResponder+StoryBoard.h"
 #import "AboutViewController.h"
+#import "STAlertView.h"
+
 
 #define kCellHeight 44
 
 @interface SettingViewController ()
 @property (nonatomic, strong) NSArray *settingWords;
+@property (nonatomic, strong) STAlertView *stAlertView;
 @end
 
 @implementation SettingViewController
@@ -122,7 +125,23 @@
 
     }
     else if (indexPath.section == 0 && indexPath.row == 2) {
-        VC = (ChangPasswordViewController *)[ChangPasswordViewController CreateFromMainStoryboard];
+        self.stAlertView = [[STAlertView alloc] initWithTitle:@"验证原始密码"
+                                                      message:@"为保证你的数据安全，修改前请输入原始密码。"
+                                                textFieldHint:nil
+                                               textFieldValue:nil
+                                            cancelButtonTitle:@"取消"
+                                            otherButtonTitles:@"确定"
+                            
+                                            cancelButtonBlock:^{
+                                                NSLog(@"Please, give me some feedback!");
+                                            } otherButtonBlock:^(NSString * result){
+                                                JXBaseViewController *VC = (ChangPasswordViewController *)[ChangPasswordViewController CreateFromMainStoryboard];
+//                                                UINavigationController *nav = (UINavigationController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
+//                                                [self.navigationController pushViewController:VC animated:YES];
+
+                                            }];
+        return;
+
     }else if (indexPath.section == 0 && indexPath.row == 0){
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:nil];

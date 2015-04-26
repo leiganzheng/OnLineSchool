@@ -14,6 +14,8 @@
 #import "Define.h"
 #import "StartViewController.h"
 #import "UIResponder+StoryBoard.h"
+#import "LoginViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -31,7 +33,12 @@
         StartViewController *VC = [[StartViewController alloc] init];
         self.window.rootViewController = VC;
         VC.finish = ^(){
-            [self mainView];
+            LoginViewController *login = [LoginViewController CreateFromMainStoryboard];
+            self.window.rootViewController = login;
+            login.finish = ^(){
+                [self mainView];
+            };
+
         };
     }while (NO);
     
