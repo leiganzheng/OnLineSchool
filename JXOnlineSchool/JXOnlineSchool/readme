@@ -28,11 +28,11 @@
  ·· Images.scassets 主要的图片资源
  
 - 主UI框架类介绍:
-    MainViewController目录放置主页  （HomeViewController 主页）
-    Infomation目录 考试资讯
-    DownLoad目录 离线下载
+    Main目录放置主页
+    Left目录 左边UI
+    Vedio目录 离线下载
     Setting目录 设置
-    Course目录 我的课程
+    Search目录 我的课程
     Login目录 登录
 
  

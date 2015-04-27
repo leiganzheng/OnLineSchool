@@ -17,8 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.settingWords = @[@[@"商品名称"],@[@"银联手机支付",@"财付通支付",@"支付宝支付",@"微信支付"]];
-    self.icons = @[@[@"商品名称"],@[@"icons_pay_unionpay",@"icons_pay_tenpay",@"icons_pay_alipay",@"icons_pay_weixin"]];
+    self.settingWords = @[@"银联手机支付",@"财付通支付",@"支付宝支付",@"微信支付"];
+    self.icons = @[@"icons_pay_unionpay",@"icons_pay_tenpay",@"icons_pay_alipay",@"icons_pay_weixin"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,12 +37,23 @@
 }
 
 #pragma mark - UITableViewDataSource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return _settingWords.count;
-}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_settingWords[section] count];
+    return [_settingWords count];
 }
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 95;
+}
+- (UIView *)tableView:(UITableView *)tableView
+
+viewForHeaderInSection:(NSInteger)section
+
+{
+    UIView *headerView = [[[NSBundle mainBundle] loadNibNamed:@"payView" owner:self options:nil] objectAtIndex:0];
+    return headerView;
+    
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *MyIdentifier = @"identifier";
@@ -53,8 +64,8 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     // Set up the cell.
-    cell.textLabel.text = _settingWords[indexPath.section][indexPath.row];
-    cell.imageView.image = [UIImage imageNamed:_icons[indexPath.section][indexPath.row]];
+    cell.textLabel.text = _settingWords[indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:_icons[indexPath.row]];
     return cell;
 }
 

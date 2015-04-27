@@ -48,6 +48,8 @@
 		BBE16EF91AD7ADDF000B150D /* readme in Resources */ = {isa = PBXBuildFile; fileRef = BBE16EF81AD7ADDF000B150D /* readme */; };
 		BBE16F021AD7AF75000B150D /* UIViewController+Appearence.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE16F011AD7AF75000B150D /* UIViewController+Appearence.m */; };
 		BBE16F061AD7AFA9000B150D /* JXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE16F051AD7AFA9000B150D /* JXBaseViewController.m */; };
+		BBE468CA1AEDF4460032FA9A /* CustomShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE468C91AEDF4460032FA9A /* CustomShareViewController.m */; };
+		BBE468CC1AEDFFD50032FA9A /* payView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBE468CB1AEDFFD50032FA9A /* payView.xib */; };
 		BBE7F4431AE6153A008A3ED6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE7F4421AE6153A008A3ED6 /* RegisterViewController.m */; };
 		BBE7F4461AE61557008A3ED6 /* PayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE7F4451AE61557008A3ED6 /* PayViewController.m */; };
 		BBFB97F31AE6596B00E93D23 /* SearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFB97F21AE6596B00E93D23 /* SearchController.m */; };
@@ -141,6 +143,9 @@
 		BBE16F011AD7AF75000B150D /* UIViewController+Appearence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Appearence.m"; sourceTree = "<group>"; };
 		BBE16F041AD7AFA9000B150D /* JXBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXBaseViewController.h; sourceTree = "<group>"; };
 		BBE16F051AD7AFA9000B150D /* JXBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXBaseViewController.m; sourceTree = "<group>"; };
+		BBE468C81AEDF4460032FA9A /* CustomShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomShareViewController.h; sourceTree = "<group>"; };
+		BBE468C91AEDF4460032FA9A /* CustomShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomShareViewController.m; sourceTree = "<group>"; };
+		BBE468CB1AEDFFD50032FA9A /* payView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = payView.xib; sourceTree = "<group>"; };
 		BBE7F4411AE6153A008A3ED6 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		BBE7F4421AE6153A008A3ED6 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		BBE7F4441AE61557008A3ED6 /* PayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayViewController.h; sourceTree = "<group>"; };
@@ -196,6 +201,7 @@
 				BBE7F4451AE61557008A3ED6 /* PayViewController.m */,
 				71C334F81AE695E6007C29D6 /* MainBaseViewController.h */,
 				71C334F91AE695E6007C29D6 /* MainBaseViewController.m */,
+				BBE468CB1AEDFFD50032FA9A /* payView.xib */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -265,6 +271,8 @@
 		BB62FD6A1ADE2E9000B7B7A6 /* Vedio */ = {
 			isa = PBXGroup;
 			children = (
+				BBE468C81AEDF4460032FA9A /* CustomShareViewController.h */,
+				BBE468C91AEDF4460032FA9A /* CustomShareViewController.m */,
 				BB62FD6B1ADE2EC500B7B7A6 /* VideoPlayerViewController.h */,
 				BB62FD6C1ADE2EC500B7B7A6 /* VideoPlayerViewController.m */,
 				717CBFAE1AED3B8100E4AB09 /* shareView.xib */,
@@ -505,6 +513,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71C8FBC31AD934EF00F45CF1 /* CourseTableViewCell.xib in Resources */,
+				BBE468CC1AEDFFD50032FA9A /* payView.xib in Resources */,
 				71361EE01AD825C000051EF9 /* Main.storyboard in Resources */,
 				7168B2BF1AE014C900FE3000 /* MyCourseSection.xib in Resources */,
 				BBE16EF91AD7ADDF000B150D /* readme in Resources */,
@@ -564,6 +573,7 @@
 				71C04FB81ADA79A400CAA2FD /* DownLoadViewController.m in Sources */,
 				718D30B91ADC01AB008C1D42 /* AboutViewController.m in Sources */,
 				BBE16F061AD7AFA9000B150D /* JXBaseViewController.m in Sources */,
+				BBE468CA1AEDF4460032FA9A /* CustomShareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

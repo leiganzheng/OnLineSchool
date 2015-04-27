@@ -31,7 +31,7 @@
     [super viewDidLoad];
     NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"loginView" owner:self options:nil];
     self.logiView = views[0];
-    self.logiView.frame = CGRectMake(0,  kScreenHeight + self.logiView.frame.size.width, self.logiView.frame.size.width, self.logiView.frame.size.height);
+    self.logiView.frame = CGRectMake(0,  kScreenHeight + self.logiView.frame.size.width, kScreenWidth, self.logiView.frame.size.height);
     [self.view addSubview:self.logiView];
     
     self.loginButton.layer.borderColor = [UIColor whiteColor].CGColor;
@@ -42,13 +42,13 @@
     
 
     [self.qqBtn setImageEdgeInsets: UIEdgeInsetsMake(-8, 20, 0, 0)];
-    [self.qqBtn setTitleEdgeInsets: UIEdgeInsetsMake(0, -60, -70, 0)];
+    [self.qqBtn setTitleEdgeInsets: UIEdgeInsetsMake(0, -60, -80, 0)];
     [self.weixinBtn setImageEdgeInsets: UIEdgeInsetsMake(-8, 20, 0, 0)];
-    [self.weixinBtn setTitleEdgeInsets: UIEdgeInsetsMake(0, -60, -70, 0)];
+    [self.weixinBtn setTitleEdgeInsets: UIEdgeInsetsMake(0, -60, -80, 0)];
     [self.sinaBtn setImageEdgeInsets: UIEdgeInsetsMake(-8, 20, 0, 0)];
-    [self.sinaBtn setTitleEdgeInsets: UIEdgeInsetsMake(0, -60, -70, 0)];
+    [self.sinaBtn setTitleEdgeInsets: UIEdgeInsetsMake(0, -50, -80, 0)];
     [self.tengxunBtn setImageEdgeInsets: UIEdgeInsetsMake(-8, 20, 0, 0)];
-    [self.tengxunBtn setTitleEdgeInsets: UIEdgeInsetsMake(0, -60, -70, 0)];
+    [self.tengxunBtn setTitleEdgeInsets: UIEdgeInsetsMake(0, -50, -80, 0)];
     
 }
 

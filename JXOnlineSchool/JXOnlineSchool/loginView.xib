@@ -20,37 +20,31 @@
             <rect key="frame" x="0.0" y="2" width="320" height="248"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_social_bg" translatesAutoresizingMaskIntoConstraints="NO" id="5HR-Lm-SLF">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_social_bg" translatesAutoresizingMaskIntoConstraints="NO" id="5HR-Lm-SLF">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="248"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKh-qX-KOc">
-                    <rect key="frame" x="24" y="41" width="110" height="55"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <state key="normal" title="QQ" image="icons_login_qq">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49U-J3-Lai">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49U-J3-Lai">
                     <rect key="frame" x="194" y="41" width="110" height="55"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <state key="normal" title="微信" image="icons_login_weixin">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ac-Xg-esE">
-                    <rect key="frame" x="31" y="150" width="110" height="55"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ac-Xg-esE">
+                    <rect key="frame" x="24" y="150" width="110" height="55"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <state key="normal" title="新浪微博" image="icons_login_weibo">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLl-ZV-a7k">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLl-ZV-a7k">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="27"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="27" id="Lve-Ph-1Nb"/>
+                    </constraints>
                     <state key="normal" image="icons_login_arrow_down" backgroundImage="login_social_arrow_bg">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -58,18 +52,50 @@
                         <action selector="closeOnekeyLoginButtonAction:" destination="-1" eventType="touchUpInside" id="zEx-iK-Ir8"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0v6-s0-aTk">
-                    <rect key="frame" x="202" y="150" width="110" height="55"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0v6-s0-aTk">
+                    <rect key="frame" x="194" y="150" width="110" height="55"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <state key="normal" title="腾讯微博" image="icons_login_tenweibo">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKh-qX-KOc">
+                    <rect key="frame" x="25" y="41" width="110" height="55"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="QQ" image="icons_login_qq">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="49U-J3-Lai" firstAttribute="leading" secondItem="MKh-qX-KOc" secondAttribute="trailing" constant="60" id="0xd-rO-Elw"/>
+                <constraint firstItem="ZLl-ZV-a7k" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2pB-8l-3PE"/>
+                <constraint firstItem="5HR-Lm-SLF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="4dh-rq-krP"/>
+                <constraint firstItem="49U-J3-Lai" firstAttribute="top" secondItem="ZLl-ZV-a7k" secondAttribute="bottom" constant="14" id="6Lb-pQ-lwP"/>
+                <constraint firstItem="0v6-s0-aTk" firstAttribute="height" secondItem="6ac-Xg-esE" secondAttribute="height" id="BhE-FX-TjV"/>
+                <constraint firstItem="0v6-s0-aTk" firstAttribute="width" secondItem="6ac-Xg-esE" secondAttribute="width" id="FVC-El-fxY"/>
+                <constraint firstItem="MKh-qX-KOc" firstAttribute="height" secondItem="49U-J3-Lai" secondAttribute="height" id="HxK-b1-9FB"/>
+                <constraint firstItem="5HR-Lm-SLF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="IRc-U1-5uR"/>
+                <constraint firstItem="MKh-qX-KOc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="LeY-bZ-48U"/>
+                <constraint firstItem="MKh-qX-KOc" firstAttribute="width" secondItem="49U-J3-Lai" secondAttribute="width" id="PC4-E2-9bV"/>
+                <constraint firstAttribute="trailing" secondItem="ZLl-ZV-a7k" secondAttribute="trailing" id="TJj-zL-Alc"/>
+                <constraint firstItem="MKh-qX-KOc" firstAttribute="top" secondItem="ZLl-ZV-a7k" secondAttribute="bottom" constant="14" id="TWx-Me-Vlw"/>
+                <constraint firstAttribute="trailing" secondItem="49U-J3-Lai" secondAttribute="trailing" constant="16" id="UPN-9L-i1d"/>
+                <constraint firstItem="ZLl-ZV-a7k" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Zad-1F-4Zg"/>
+                <constraint firstItem="0v6-s0-aTk" firstAttribute="leading" secondItem="6ac-Xg-esE" secondAttribute="trailing" constant="60" id="ZhF-So-1HZ"/>
+                <constraint firstAttribute="trailing" secondItem="0v6-s0-aTk" secondAttribute="trailing" constant="16" id="bFa-IW-vOh"/>
+                <constraint firstAttribute="bottom" secondItem="5HR-Lm-SLF" secondAttribute="bottom" id="kpB-E2-ba8"/>
+                <constraint firstItem="6ac-Xg-esE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="lBO-cG-hvF"/>
+                <constraint firstItem="0v6-s0-aTk" firstAttribute="top" secondItem="49U-J3-Lai" secondAttribute="bottom" constant="54" id="lPi-fj-Gof"/>
+                <constraint firstItem="6ac-Xg-esE" firstAttribute="top" secondItem="MKh-qX-KOc" secondAttribute="bottom" constant="54" id="t0H-Mj-iMx"/>
+                <constraint firstAttribute="trailing" secondItem="5HR-Lm-SLF" secondAttribute="trailing" id="ts7-Rz-XOE"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="49" y="226"/>
+            <point key="canvasLocation" x="279" y="330"/>
         </view>
     </objects>
     <resources>

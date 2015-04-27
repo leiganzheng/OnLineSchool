@@ -305,6 +305,7 @@
                             <constraint firstItem="5hP-aK-6v2" firstAttribute="leading" secondItem="rGI-5w-wMK" secondAttribute="leadingMargin" constant="-16" id="8yL-Ey-hzI"/>
                             <constraint firstItem="ip2-fM-Jio" firstAttribute="top" secondItem="rGI-5w-wMK" secondAttribute="top" id="HPc-KA-T3M"/>
                             <constraint firstItem="70H-St-niD" firstAttribute="leading" secondItem="rGI-5w-wMK" secondAttribute="leadingMargin" constant="-16" id="Ikj-t8-h59"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ip2-fM-Jio" secondAttribute="trailing" constant="-16" id="PN4-n7-BU8"/>
                             <constraint firstItem="CMt-jD-vLb" firstAttribute="leading" secondItem="rGI-5w-wMK" secondAttribute="leadingMargin" id="TJa-FV-evv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="70H-St-niD" secondAttribute="trailing" constant="-16" id="TZt-dx-0OO"/>
                             <constraint firstItem="0QC-42-qlB" firstAttribute="trailing" secondItem="ip2-fM-Jio" secondAttribute="trailing" id="cgT-E1-dGX"/>
@@ -753,34 +754,43 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gAc-tu-MXZ">
                                 <rect key="frame" x="0.0" y="523" width="320" height="45"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sb5-4H-gY6">
-                                        <rect key="frame" x="33" y="8" width="279" height="30"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bg_comment_input" translatesAutoresizingMaskIntoConstraints="NO" id="Fcl-Qa-rvo">
+                                        <rect key="frame" x="21" y="11" width="291" height="23"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="vZT-95-nCh"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入你的意见" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sb5-4H-gY6">
+                                        <rect key="frame" x="41" y="8" width="271" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="ZB1-Z5-3tW"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Rc-xD-FxW">
-                                        <rect key="frame" x="4" y="11" width="25" height="25"/>
-                                        <color key="backgroundColor" red="0.1917827289" green="0.71337670679999998" blue="0.86802917820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Rc-xD-FxW">
+                                        <rect key="frame" x="4" y="11" width="9" height="22"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="DZt-rx-MJK"/>
                                             <constraint firstAttribute="height" constant="25" id="eZy-XR-Vdy"/>
                                         </constraints>
-                                        <state key="normal">
+                                        <state key="normal" image="icons_comment_point">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.89411764705882346" green="0.90980392156862744" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="Fcl-Qa-rvo" firstAttribute="leading" secondItem="2Rc-xD-FxW" secondAttribute="trailing" constant="8" id="A7s-VT-KWy"/>
                                     <constraint firstItem="2Rc-xD-FxW" firstAttribute="top" secondItem="gAc-tu-MXZ" secondAttribute="top" constant="11" id="C0a-ZD-XTc"/>
+                                    <constraint firstItem="Fcl-Qa-rvo" firstAttribute="top" secondItem="gAc-tu-MXZ" secondAttribute="top" constant="11" id="JP8-KN-ubo"/>
                                     <constraint firstAttribute="trailing" secondItem="sb5-4H-gY6" secondAttribute="trailing" constant="8" id="NMB-LZ-vpf"/>
                                     <constraint firstItem="2Rc-xD-FxW" firstAttribute="leading" secondItem="gAc-tu-MXZ" secondAttribute="leading" constant="4" id="e6s-wN-QuU"/>
                                     <constraint firstAttribute="height" constant="45" id="hI4-k7-Ybe"/>
                                     <constraint firstItem="sb5-4H-gY6" firstAttribute="top" secondItem="gAc-tu-MXZ" secondAttribute="top" constant="8" id="mRp-wu-5cF"/>
-                                    <constraint firstItem="sb5-4H-gY6" firstAttribute="leading" secondItem="2Rc-xD-FxW" secondAttribute="trailing" constant="4" id="o0c-m9-n6E"/>
+                                    <constraint firstItem="sb5-4H-gY6" firstAttribute="leading" secondItem="2Rc-xD-FxW" secondAttribute="trailing" constant="12" id="o0c-m9-n6E"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fcl-Qa-rvo" secondAttribute="trailing" constant="8" id="tLB-EX-eCR"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="4DY-gR-l7O">
@@ -971,8 +981,8 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0h-Nc-ziC">
-                                <rect key="frame" x="0.0" y="223" width="104" height="1"/>
-                                <color key="backgroundColor" red="0.12549019610000001" green="0.63921568630000003" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="222" width="104" height="2"/>
+                                <color key="backgroundColor" red="0.19215686274509802" green="0.71372549019607845" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -1741,7 +1751,7 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nz0-hs-dEw">
                                         <rect key="frame" x="36" y="41" width="90" height="2"/>
-                                        <color key="backgroundColor" red="0.96862745100000003" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.19215686274509802" green="0.71372549019607845" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1890,9 +1900,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bg_comment_input" width="281" height="31"/>
         <image name="course_details" width="100" height="73"/>
         <image name="icons_cancel" width="22" height="22"/>
         <image name="icons_comment" width="16" height="20"/>
+        <image name="icons_comment_point" width="9" height="18"/>
         <image name="icons_down" width="22" height="22"/>
         <image name="icons_fave" width="17" height="16"/>
         <image name="icons_list" width="20" height="17"/>
