@@ -8,6 +8,7 @@
 
 #import "InformationViewController.h"
 #import "InformationTableViewCell.h"
+#import "ExaminationViewController.h"
 
 @interface InformationViewController ()
 @property (nonatomic, strong) NSArray *dataArray;
@@ -53,6 +54,7 @@
     }
     // Set up the cell.
     [cell updateCellWithString:_dataArray[indexPath.row] flag:self.flag];
+    [cell.button addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
 
@@ -67,8 +69,12 @@
 //    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
-
 #pragma mark - private method
+- (void)buttonAction{
+    UIViewController *vc = [[ExaminationViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 - (UIView *)buildHeader:(NSArray*)titles andHeight:(int)height withY:(float)y{
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, y, self.view.bounds.size.width, height)];
     header.backgroundColor = [UIColor whiteColor];
