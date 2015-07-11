@@ -11,10 +11,7 @@
 @implementation ResultTableViewCell
 
 - (void)awakeFromNib {
-    self.customView.layer.borderWidth = 0.5;
-    self.customView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-    self.customView.layer.masksToBounds = YES;
-    self.customView.layer.cornerRadius = 5;
+    [Tools configureView:self.customView isCorner:YES];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

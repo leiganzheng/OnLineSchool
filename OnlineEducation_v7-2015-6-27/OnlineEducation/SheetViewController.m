@@ -46,8 +46,8 @@
         button.titleLabel.font = [UIFont systemFontOfSize:15.0f];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         button.backgroundColor = [UIColor clearColor];
-        button.layer.borderWidth = 0.5;
-        button.layer.borderColor = [kCyColorFromRGB(211, 211, 211) CGColor];
+        [Tools configureView:button isCorner:NO];
+        [button addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
     }
    
@@ -56,6 +56,7 @@
     int height = 36;
     UIView *bgV = [[UIView alloc] initWithFrame:CGRectMake(7, self.view.bounds.size.height-height-18-36, self.view.bounds.size.width-14, height)];
     bgV.backgroundColor = kCyColorFromRGB(228, 224, 225);
+    [Tools configureView:bgV isCorner:YES];
     for (int i = 0; i< titles.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(i*((self.view.bounds.size.width-14)/titles.count),0 , (self.view.bounds.size.width-14)/titles.count, height);
@@ -69,6 +70,9 @@
     }
     [self.view addSubview:bgV];
 
+}
+- (void)buttonAction{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

@@ -8,7 +8,7 @@
 
 #import "MistakeViewController.h"
 #import "MistakeTableViewCell.h"
-
+#import "ExaminationViewController.h"
 @interface MistakeViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *myTableview;
 @property (nonatomic, strong) NSArray *dataArray;
@@ -51,9 +51,8 @@
         }
         // Set up the cell.
         [cell updateCellWithString:_dataArray[indexPath.row]];
-        if (indexPath.row == _dataArray.count - 1) {
-            
-        }
+    [cell.button1 addTarget:self action:@selector(button1Action) forControlEvents:UIControlEventTouchUpInside];
+    [cell.button2 addTarget:self action:@selector(button2Action) forControlEvents:UIControlEventTouchUpInside];
         return cell;
 }
     
@@ -70,6 +69,16 @@
 }
 
 #pragma mark - private method
+- (void)button1Action{
+    UIViewController *vc = [[ExaminationViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+- (void)button2Action{
+    UIViewController *vc = [[ExaminationViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 - (UIView *)buildHeader:(NSArray*)titles andHeight:(int)height withY:(float)y{
         UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, y, self.view.bounds.size.width, height)];
         header.backgroundColor = [UIColor whiteColor];
@@ -80,8 +89,7 @@
             button.titleLabel.font = [UIFont systemFontOfSize:15.0f];
             [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             button.backgroundColor = [UIColor whiteColor];
-            button.layer.borderWidth = 0.5;
-            button.layer.borderColor = [kCyColorFromRGB(211, 211, 211) CGColor];
+            [Tools configureView:button isCorner:NO];
             [header addSubview:button];
         }
         return header;

@@ -28,8 +28,7 @@
     int height = 44;
     self.header = [[UIView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, height)];
     _header.backgroundColor = [UIColor whiteColor];
-    _header.layer.borderWidth = 0.5;
-    _header.layer.borderColor = [kCyColorFromRGB(211, 211, 211) CGColor];
+    [Tools configureView:_header isCorner:false];
 
     
     self.titleButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -69,8 +68,7 @@
         button.titleLabel.font = [UIFont systemFontOfSize:15.0f];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         button.backgroundColor = [UIColor whiteColor];
-        button.layer.borderWidth = 0.5;
-        button.layer.borderColor = [kCyColorFromRGB(211, 211, 211) CGColor];
+        [Tools configureView:button isCorner:YES];
 //        button.titleEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
         //    button.imageEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
         [_footer addSubview:button];

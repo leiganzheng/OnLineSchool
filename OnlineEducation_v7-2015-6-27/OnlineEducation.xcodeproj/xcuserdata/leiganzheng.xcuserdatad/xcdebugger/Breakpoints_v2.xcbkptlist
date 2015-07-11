@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnlineEducation/InformationTableViewCell.m"
-            timestampString = "458149926.036973"
+            timestampString = "458321384.802551"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "-updateCellWithString:flag:"
             landmarkType = "5">
          </BreakpointContent>

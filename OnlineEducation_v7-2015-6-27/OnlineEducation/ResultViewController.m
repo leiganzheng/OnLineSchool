@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.dataArray = @[@"交卷得分",@"作答时间",@"正确率"];
+    self.dataArray = @[@"交卷得分:",@"作答时间:",@"正确率:"];
     int footer = 35;
     NSArray *footers = @[@"重新做题",@"查看解析"];
     self.myTableview.tableFooterView = [self buildFooter:footers andHeight:footer withY:0];
@@ -48,26 +48,24 @@
     cell.time.text = self.dataArray[index];
     switch (index) {
         case 0:
-            cell.time.text = @"0.0分";
+            cell.resultTime.text = @"0.0分";
             cell.totalTime.text = @"总分数";
+            cell.resultTime.textColor = kCyColorFromRGB(227, 73, 61);
             break;
         case 1:
-            cell.time.text = @"／分／秒";
+            cell.resultTime.text = @"／分／秒";
             cell.totalTime.text = @"总时间";
 
             break;
         case 2:
-            cell.time.text = @"0％";
-            cell.totalTime.text = @"总分题数";
-
+            cell.resultTime.text = @"0％";
+            cell.totalTime.text = @"总题数";
+            cell.resultTime.textColor = kCyColorFromRGB(69, 163, 77);
             break;
             
         default:
             break;
     }
-    cell.time.text = self.dataArray[indexPath.row];
-    cell.time.text = self.dataArray[indexPath.row];
-    cell.time.text = self.dataArray[indexPath.row];
     return cell;
 }
 
@@ -91,19 +89,17 @@
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         if (i == 0) {
             button.backgroundColor = kCyColorFromRGB(38, 50, 66);
-            button.frame = CGRectMake(20,0 , 115, height);
+            button.frame = CGRectMake(20,20 , 115, height);
         }else {
-            button.backgroundColor = kCyColorFromRGB(227, 73, 61);
-            button.frame = CGRectMake(self.view.bounds.size.width-115-20,0 , 115, height);
+            button.backgroundColor = kRedColor;
+            button.frame = CGRectMake(self.view.bounds.size.width-115-20,20 , 115, height);
         }
         [button setTitle:titles[i] forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize:15.0f];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         
-        button.layer.borderWidth = 0.5;
-        button.layer.borderColor = [kCyColorFromRGB(211, 211, 211) CGColor];
-        button.layer.masksToBounds = YES;
-        button.layer.cornerRadius = 5;
+        [Tools configureView:button isCorner:YES];
+
         [header addSubview:button];
     }
     return header;

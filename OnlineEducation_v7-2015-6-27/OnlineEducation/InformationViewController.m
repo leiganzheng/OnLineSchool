@@ -72,11 +72,11 @@
 }
 #pragma mark - private method
 - (void)buttonAction{
-    UIStoryboard * storyboard = [ UIStoryboard storyboardWithName:@"Main" bundle:nil ];
-    ResultViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"ResultViewID" ];
-//    UIViewController *vc = [[ResultViewController alloc] init];
-    loginVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:loginVC animated:YES];
+//    UIStoryboard * storyboard = [ UIStoryboard storyboardWithName:@"Main" bundle:nil ];
+//    ResultViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"ResultViewID" ];
+    UIViewController *vc = [[ExaminationViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 - (UIView *)buildHeader:(NSArray*)titles andHeight:(int)height withY:(float)y{
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, y, self.view.bounds.size.width, height)];

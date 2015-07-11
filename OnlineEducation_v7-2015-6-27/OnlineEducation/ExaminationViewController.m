@@ -10,6 +10,7 @@
 #import "SheetViewController.h"
 @interface ExaminationViewController ()
 @property(nonatomic,strong) UITextView *textView;
+@property(nonatomic,strong) UITextView *answerTextView;
 @property(nonatomic,strong) UIButton *ABtn;
 @property(nonatomic,strong) UIButton *BBtn;
 @property(nonatomic,strong) UIButton *CBtn;
@@ -25,7 +26,8 @@
     [self.list addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.answers addTarget:self action:@selector(anButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self customUI];
-    [self shortAnswerUI ];
+    [self commonUI];
+//    [self shortAnswerUI ];
 
 }
 
@@ -50,6 +52,22 @@
             break;
     }
     [self.titleButton setTitle:temStr forState:UIControlStateNormal];
+}
+- (void)answer{
+    
+    self.bgV.frame = CGRectMake(self.bgV.frame.origin.x, self.textView.frame.origin.y+self.textView.frame.size.height+20, self.bgV.frame.size.width, self.bgV.frame.size.height);
+    
+    self.answerTextView = [[UITextView  alloc] initWithFrame:CGRectMake(10, self.bgV.frame.origin.y+self.bgV.frame.size.height+20, 300, 100)];
+    self.answerTextView.textColor = [UIColor blackColor];
+    self.answerTextView.font = [UIFont fontWithName:@"Arial" size:18.0];
+    self.answerTextView.backgroundColor = [UIColor whiteColor];
+    self.answerTextView.text = @"Now is the time for all good developers to come to serve their country.\n\nNow is the time for all good developers to come to serve their country.";
+    self.answerTextView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    self.answerTextView.editable = NO;
+    self.answerTextView.scrollEnabled = NO;
+    [Tools configureView:self.answerTextView isCorner:YES];
+    [self.view addSubview: self.answerTextView];
+
 }
 - (void)commonUI{
     self.bgV = [[UIView alloc] initWithFrame:CGRectMake(40, _textView.frame.size.height + _textView.frame.origin.y + 60, self.view.bounds.size.width-80, 105)];
@@ -105,7 +123,8 @@
 //    self.DBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
 //    self.DBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
     [_bgV addSubview:self.DBtn];
-    
+    [Tools configureView:@[self.ABtn,self.BBtn,self.CBtn,self.DBtn] isCorner:YES];
+
     [self.view addSubview:_bgV];
 }
 - (void)shortAnswerUI{
@@ -123,19 +142,16 @@
 }
 
 - (void)customUI{
-    self.textView = [[UITextView  alloc] initWithFrame:CGRectMake(10, 118, 300, 140)];
-    self.textView.textColor = [UIColor blackColor];//设置textview里面的字体颜色
-     self.textView.font = [UIFont fontWithName:@"Arial" size:18.0];//设置字体名字和字体大小
-     self.textView.backgroundColor = [UIColor whiteColor];//设置它的背景颜色
-     self.textView.text = @"Now is the time for all good developers to come to serve their country.\n\nNow is the time for all good developers to come to serve their country.";//设置它显示的内容
-     self.textView.returnKeyType = UIReturnKeyDefault;//返回键的类型
-     self.textView.keyboardType = UIKeyboardTypeDefault;//键盘类型
-     self.textView.scrollEnabled = NO;//是否可以拖动
-     self.textView.autoresizingMask = UIViewAutoresizingFlexibleHeight;//自适应高度
+    self.textView = [[UITextView  alloc] initWithFrame:CGRectMake(10, 118, 300, 120)];
+    self.textView.textColor = [UIColor blackColor];
+     self.textView.font = [UIFont fontWithName:@"Arial" size:18.0];
+     self.textView.backgroundColor = [UIColor whiteColor];
+     self.textView.text = @"Now is the time for all good developers to come to serve their country.\n\nNow is the time for all good developers to come to serve their country.";
+     self.textView.scrollEnabled = NO;
+     self.textView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     self.textView.editable = NO;
-     [self.view addSubview: self.textView];//加入到整个页面中
-    
-    }
+     [self.view addSubview: self.textView];
+}
 
 - (void)buttonAction{
     [self.navigationController pushViewController:[[SheetViewController alloc]init] animated:YES];
@@ -145,6 +161,6 @@
 //    }];
 }
 - (void)anButtonAction{
-
+    [self answer];
 }
 @end

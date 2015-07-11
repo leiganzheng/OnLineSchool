@@ -12,6 +12,7 @@
 		710E3F2A1B501C4C005FEFE9 /* SheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710E3F291B501C4C005FEFE9 /* SheetViewController.m */; };
 		710E3F371B502566005FEFE9 /* ExaminationBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710E3F361B502566005FEFE9 /* ExaminationBaseViewController.m */; };
 		710E3F3A1B502A2F005FEFE9 /* ExaminationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710E3F391B502A2F005FEFE9 /* ExaminationViewController.m */; };
+		710E3F3E1B51664C005FEFE9 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 710E3F3D1B51664C005FEFE9 /* Tools.m */; };
 		71CB6AB31B3E81500050AEA3 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CB6AB21B3E81500050AEA3 /* RegisterViewController.m */; };
 		BB4EC90E1AC4FE3C001CD643 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4EC90D1AC4FE3C001CD643 /* main.m */; };
 		BB4EC9111AC4FE3C001CD643 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4EC9101AC4FE3C001CD643 /* AppDelegate.m */; };
@@ -69,6 +70,9 @@
 		710E3F361B502566005FEFE9 /* ExaminationBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExaminationBaseViewController.m; sourceTree = "<group>"; };
 		710E3F381B502A2F005FEFE9 /* ExaminationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExaminationViewController.h; sourceTree = "<group>"; };
 		710E3F391B502A2F005FEFE9 /* ExaminationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExaminationViewController.m; sourceTree = "<group>"; };
+		710E3F3B1B5164FD005FEFE9 /* AttributeStype.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttributeStype.h; sourceTree = "<group>"; };
+		710E3F3C1B51664C005FEFE9 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
+		710E3F3D1B51664C005FEFE9 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		71CB6AB11B3E81500050AEA3 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		71CB6AB21B3E81500050AEA3 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		BB4EC9081AC4FE3C001CD643 /* OnlineEducation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineEducation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,6 +242,8 @@
 		BB4EC9351AC50A40001CD643 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				710E3F3C1B51664C005FEFE9 /* Tools.h */,
+				710E3F3D1B51664C005FEFE9 /* Tools.m */,
 				BB6426591AC55091007E88EF /* Base */,
 				BB4EC93E1AC50C21001CD643 /* MainViewController */,
 				BB4EC94F1AC53088001CD643 /* Information */,
@@ -346,6 +352,7 @@
 		BB4EC94F1AC53088001CD643 /* Information */ = {
 			isa = PBXGroup;
 			children = (
+				710E3F3B1B5164FD005FEFE9 /* AttributeStype.h */,
 				710E3F341B50251D005FEFE9 /* Examination */,
 				BB4EC9501AC530B3001CD643 /* InformationViewController.h */,
 				BB4EC9511AC530B3001CD643 /* InformationViewController.m */,
@@ -508,6 +515,7 @@
 				710E3F1D1B4EBE08005FEFE9 /* MistakeTableViewCell.m in Sources */,
 				BB9F2B8E1B50A2AA0095D06D /* REMenu.m in Sources */,
 				BB4EC90E1AC4FE3C001CD643 /* main.m in Sources */,
+				710E3F3E1B51664C005FEFE9 /* Tools.m in Sources */,
 				BB4EC9411AC52464001CD643 /* SettingViewController.m in Sources */,
 				BB64265C1AC550A2007E88EF /* OLBaseViewController.m in Sources */,
 				BB661D611ACCEE7B00B24044 /* CoureseTwoTableViewCell.m in Sources */,

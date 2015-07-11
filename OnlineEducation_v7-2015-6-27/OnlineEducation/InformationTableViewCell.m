@@ -12,10 +12,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    self.customView.layer.borderWidth = 1.0f;
-    self.customView.layer.borderColor = kCyColorFromRGB(203, 203, 203).CGColor;
-    self.button.layer.masksToBounds = YES;
-    self.button.layer.cornerRadius = 10;
+    [Tools configureView:self.button isCorner:YES];
+    [Tools configureView:self.customView isCorner:NO];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
