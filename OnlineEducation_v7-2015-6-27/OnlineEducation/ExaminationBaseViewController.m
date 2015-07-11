@@ -38,6 +38,9 @@
     _titleButton.titleLabel.font = [UIFont systemFontOfSize:15.0f];
     [_titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     _titleButton.backgroundColor = [UIColor clearColor];
+    //        _titleButton.titleEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
+    //    _titleButton.imageEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
+
     [_header addSubview:self.titleButton];
     
     self.pagesButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -46,6 +49,8 @@
     _pagesButton.titleLabel.font = [UIFont systemFontOfSize:15.0f];
     [_pagesButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     _pagesButton.backgroundColor = [UIColor clearColor];
+    //        _pagesButton.titleEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
+    //    _pagesButton.imageEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
         [_header addSubview:self.pagesButton];
     
     [self.view addSubview:_header];
@@ -66,6 +71,8 @@
         button.backgroundColor = [UIColor whiteColor];
         button.layer.borderWidth = 0.5;
         button.layer.borderColor = [kCyColorFromRGB(211, 211, 211) CGColor];
+//        button.titleEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
+        //    button.imageEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
         [_footer addSubview:button];
         if (i == 1) {//答题卡
             self.list = button;
