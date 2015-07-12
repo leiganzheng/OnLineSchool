@@ -10,10 +10,13 @@
 #import "InformationTableViewCell.h"
 #import "ExaminationViewController.h"
 #import "ResultViewController.h"
+#import "REMenuItem.h"
+
 
 @interface InformationViewController ()
 @property (nonatomic, strong) NSArray *dataArray;
 @property (nonatomic, strong) NSArray *iconArray;
+@property (nonatomic, strong) REMenu *menu;
 @property (weak, nonatomic) IBOutlet UITableView *myTableview;
 @end
 
@@ -31,7 +34,7 @@
     NSArray *footers = @[@"未完成答题",@"已完成答题"];
     self.myTableview.tableHeaderView = [self buildHeader:titles andHeight:header withY:0];
     [self.view addSubview:[self buildHeader:footers andHeight:footer withY:self.view.bounds.size.height-footer]];
-    
+    [self loadMenu];
 
 }
 
@@ -71,6 +74,86 @@
     
 }
 #pragma mark - private method
+- (void)loadMenu{
+    __typeof (self) __weak weakSelf = self;
+    REMenuItem *homeItem = [[REMenuItem alloc] initWithTitle:@"全部"
+                                                    subtitle:@""
+                                                       image:nil
+                                            highlightedImage:nil
+                                                      action:^(REMenuItem *item) {
+                                                          NSLog(@"Item: %@", item);
+                                                         
+                                                      }];
+    
+    REMenuItem *exploreItem = [[REMenuItem alloc] initWithTitle:@"模拟试题"
+                                                       subtitle:nil
+                                                          image:nil
+                                               highlightedImage:nil
+                                                         action:^(REMenuItem *item) {
+                                                             NSLog(@"Item: %@", item);
+                                                            
+                                                         }];
+    
+    REMenuItem *activityItem = [[REMenuItem alloc] initWithTitle:@"历年真题"
+                                                        subtitle:nil
+                                                           image: nil
+                                                highlightedImage:nil
+                                                          action:^(REMenuItem *item) {
+                                                              NSLog(@"Item: %@", item);
+                                                             
+                                                          }];
+    
+    
+    REMenuItem *profileItem = [[REMenuItem alloc] initWithTitle:@"章节练习"
+                                                          image:nil
+                                               highlightedImage:nil
+                                                         action:^(REMenuItem *item) {
+                                                             NSLog(@"Item: %@", item);
+                                                             
+                                                         }];
+    REMenuItem *Item = [[REMenuItem alloc] initWithTitle:@"自测题"
+                                                          image:nil
+                                               highlightedImage:nil
+                                                         action:^(REMenuItem *item) {
+                                                             NSLog(@"Item: %@", item);
+                                                             
+                                                         }];
+
+
+    self.menu = [[REMenu alloc] initWithItems:@[homeItem, exploreItem, activityItem, profileItem,Item]];
+    self.menu.backgroundColor = [UIColor whiteColor];
+//    self.menu.textAlignment = NSTextAlignmentLeft;
+    self.menu.borderColor = kLineColor;
+    self.menu.borderWidth = 0.5;
+    self.menu.separatorColor = kLineColor;
+    self.menu.separatorHeight = 1;
+    
+    self.menu.separatorOffset = CGSizeMake(15.0, 0.0);
+    self.menu.textOffset =  CGSizeMake(5, -1);
+    self.menu.waitUntilAnimationIsComplete = NO;
+    self.menu.badgeLabelConfigurationBlock = ^(UILabel *badgeLabel, REMenuItem *item) {
+        badgeLabel.backgroundColor = [UIColor colorWithRed:0 green:179/255.0 blue:134/255.0 alpha:1];
+        badgeLabel.layer.borderColor = [UIColor colorWithRed:0.000 green:0.648 blue:0.507 alpha:1.000].CGColor;
+    };
+    self.menu.delegate = self;
+    
+    
+    [self.menu setClosePreparationBlock:^{
+        NSLog(@"Menu will close");
+    }];
+    
+    [self.menu setCloseCompletionHandler:^{
+        NSLog(@"Menu did close");
+    }];
+
+}
+- (void)toggleMenu
+{
+    if (self.menu.isOpen)
+        return [self.menu close];
+    
+    [self.menu showFromRect:CGRectMake(0, 108, self.view.bounds.size.width , 300) inView:self.view];
+}
 - (void)buttonAction{
 //    UIStoryboard * storyboard = [ UIStoryboard storyboardWithName:@"Main" bundle:nil ];
 //    ResultViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"ResultViewID" ];
@@ -88,10 +171,13 @@
         button.titleLabel.font = [UIFont systemFontOfSize:15.0f];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         button.backgroundColor = [UIColor whiteColor];
-        button.layer.borderWidth = 0.5;
-        button.layer.borderColor = [kCyColorFromRGB(211, 211, 211) CGColor];
+        [Tools configureView:button isCorner:NO];
+        [button addTarget:self action:@selector(buttonAction1) forControlEvents:UIControlEventTouchUpInside];
         [header addSubview:button];
     }
     return header;
+}
+- (void)buttonAction1{
+    [self toggleMenu];
 }
 @end

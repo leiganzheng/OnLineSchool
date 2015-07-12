@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@interface InformationViewController : OLBaseViewController <UITableViewDelegate,UITableViewDataSource>
+#import "REMenu.h"
+@interface InformationViewController : OLBaseViewController <UITableViewDelegate,UITableViewDataSource,REMenuDelegate>
 @property(nonatomic,assign) BOOL flag;//yes: 试卷
 @end

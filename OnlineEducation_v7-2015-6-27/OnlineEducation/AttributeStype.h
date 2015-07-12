@@ -8,4 +8,5 @@
 
 #define kRedColor kCyColorFromRGB(227, 73, 61)
 #define kGreenColor kCyColorFromRGB(67, 163, 76)
+#define kLineColor kCyColorFromRGB(202, 202, 202)
 
