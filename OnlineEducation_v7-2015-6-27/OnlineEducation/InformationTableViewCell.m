@@ -24,10 +24,8 @@
 
 - (void)updateCellWithString:(NSString *)string flag:(BOOL)flag {
     UIFont *font = self.contentLB.font;
-    CGSize maxSize = CGSizeMake(217, MAXFLOAT);
-    CGSize size = [string sizeWithFont:font
-                   constrainedToSize:maxSize
-                       lineBreakMode:NSLineBreakByWordWrapping];
+    CGSize maxSize = CGSizeMake(300, MAXFLOAT);
+    CGSize size = [string boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:font} context:nil].size;
     CGFloat y = size.height > 35 ? 10 : self.contentLB.frame.origin.y;
     CGRect rect = CGRectMake(self.contentLB.frame.origin.x,y, 217,size.height);
     self.contentLB.frame = rect;

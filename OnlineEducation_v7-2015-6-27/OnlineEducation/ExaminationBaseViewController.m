@@ -56,7 +56,7 @@
 }
 
 - (void)footerView{
-    NSArray *titles = @[@"右滑",@"答题卡",@"答案",@"左滑"];
+    NSArray *titles = @[@"左滑",@"答题卡",@"答案",@"右滑"];
     int height = 50;
     
     self.footer = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-height, self.view.bounds.size.width, height)];
@@ -76,7 +76,13 @@
             self.list = button;
         }else if (i == 2){//答案
             self.answers = button;
+        }else if (i == 0){//答案
+            self.leftButton = button;
         }
+        else if (i == 3){//答案
+            self.rightButton = button;
+        }
+
     }
     [self.view addSubview:_footer];
 }

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@interface MistakeViewController : OLBaseViewController <UITableViewDelegate,UITableViewDataSource>
+#import "REMenu.h"
+@interface MistakeViewController : OLBaseViewController <UITableViewDelegate,UITableViewDataSource,REMenuDelegate>
 
 @end

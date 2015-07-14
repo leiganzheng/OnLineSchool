@@ -19,6 +19,8 @@ typedef NS_ENUM(NSInteger, TestType) {
 @property(nonatomic,strong) UIButton *pagesButton;
 @property(nonatomic,strong) UIButton *list;
 @property(nonatomic,strong) UIButton *answers;
+@property(nonatomic,strong) UIButton *rightButton;
+@property(nonatomic,strong) UIButton *leftButton;
 @property(nonatomic,strong) UIView *header;
 @property(nonatomic,strong) UIView *footer;
 @property(nonatomic,assign) TestType testType;

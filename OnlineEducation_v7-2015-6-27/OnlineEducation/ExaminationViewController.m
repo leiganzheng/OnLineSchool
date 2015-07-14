@@ -8,6 +8,8 @@
 
 #import "ExaminationViewController.h"
 #import "SheetViewController.h"
+#import "ResultViewController.h"
+
 @interface ExaminationViewController ()
 @property(nonatomic,strong) UITextView *textView;
 @property(nonatomic,strong) UITextView *answerTextView;
@@ -25,6 +27,8 @@
     self.title = @"试卷名称";
     [self.list addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.answers addTarget:self action:@selector(anButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.rightButton addTarget:self action:@selector(rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.leftButton addTarget:self action:@selector(leftButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self customUI];
     [self commonUI];
 //    [self shortAnswerUI ];
@@ -52,6 +56,14 @@
             break;
     }
     [self.titleButton setTitle:temStr forState:UIControlStateNormal];
+}
+-  (void)rightButtonAction{
+     UIStoryboard * storyboard = [ UIStoryboard storyboardWithName:@"Main" bundle:nil ];
+     ResultViewController *result = [storyboard instantiateViewControllerWithIdentifier:@"ResultViewID"];
+    [self.navigationController pushViewController:result animated:YES];
+}
+- (void)leftButtonAction{
+    
 }
 - (void)answer{
     

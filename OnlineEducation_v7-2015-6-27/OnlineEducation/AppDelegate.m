@@ -21,7 +21,7 @@
     [self.window makeKeyAndVisible];
     do {
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-        [UINavigationBar appearance].barTintColor = kCyColorFromRGB(38, 50, 66);
+        [UINavigationBar appearance].barTintColor = kAppThemeColor;
         [UINavigationBar appearance].tintColor = [UIColor whiteColor];
         NSDictionary *dict=[NSDictionary dictionaryWithObjects:
                             [NSArray arrayWithObjects:kCyColorFromRGB(255, 253, 254),[UIFont boldSystemFontOfSize:20],nil]

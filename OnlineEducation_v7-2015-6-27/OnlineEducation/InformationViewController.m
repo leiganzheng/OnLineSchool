@@ -9,7 +9,6 @@
 #import "InformationViewController.h"
 #import "InformationTableViewCell.h"
 #import "ExaminationViewController.h"
-#import "ResultViewController.h"
 #import "REMenuItem.h"
 
 
@@ -18,6 +17,7 @@
 @property (nonatomic, strong) NSArray *iconArray;
 @property (nonatomic, strong) REMenu *menu;
 @property (weak, nonatomic) IBOutlet UITableView *myTableview;
+@property (nonatomic, assign) BOOL finish;
 @end
 
 @implementation InformationViewController
@@ -31,11 +31,13 @@
     NSArray *titles = @[@"类型",@"项目",@"班型",@"科目"];
     int header = 45;
     int footer = 50;
-    NSArray *footers = @[@"未完成答题",@"已完成答题"];
+    NSArray *footers = @[@"未完成的答题",@"已完成的答题"];
     self.myTableview.tableHeaderView = [self buildHeader:titles andHeight:header withY:0];
-    [self.view addSubview:[self buildHeader:footers andHeight:footer withY:self.view.bounds.size.height-footer]];
+    if (!self.flag) {
+       [self.view addSubview:[self buildHeader:footers andHeight:footer withY:self.view.bounds.size.height-footer]];
+         self.finish = NO;
+    }
     [self loadMenu];
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,6 +60,11 @@
     }
     // Set up the cell.
     [cell updateCellWithString:_dataArray[indexPath.row] flag:self.flag];
+    if (self.flag) {
+    }else {
+        [cell.button setTitle: self.finish ? @"查看解析" : @"继续做题" forState:UIControlStateNormal];
+        cell.button.backgroundColor = self.finish ? kGreenColor:kAppThemeColor;
+    }
     [cell.button addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
@@ -122,19 +129,19 @@
 
     self.menu = [[REMenu alloc] initWithItems:@[homeItem, exploreItem, activityItem, profileItem,Item]];
     self.menu.backgroundColor = [UIColor whiteColor];
-//    self.menu.textAlignment = NSTextAlignmentLeft;
+    self.menu.highlightedBackgroundColor = [UIColor lightGrayColor];
+    self.menu.highlightedSeparatorColor = [UIColor lightGrayColor];
     self.menu.borderColor = kLineColor;
     self.menu.borderWidth = 0.5;
     self.menu.separatorColor = kLineColor;
     self.menu.separatorHeight = 1;
+    self.menu.itemHeight = 34;
     
     self.menu.separatorOffset = CGSizeMake(15.0, 0.0);
-    self.menu.textOffset =  CGSizeMake(5, -1);
+    self.menu.textOffset =  CGSizeMake(-90, 0);
     self.menu.waitUntilAnimationIsComplete = NO;
-    self.menu.badgeLabelConfigurationBlock = ^(UILabel *badgeLabel, REMenuItem *item) {
-        badgeLabel.backgroundColor = [UIColor colorWithRed:0 green:179/255.0 blue:134/255.0 alpha:1];
-        badgeLabel.layer.borderColor = [UIColor colorWithRed:0.000 green:0.648 blue:0.507 alpha:1.000].CGColor;
-    };
+    self.menu.font = [UIFont systemFontOfSize:16.0];
+    self.menu.textColor = [UIColor blackColor];
     self.menu.delegate = self;
     
     
@@ -149,19 +156,21 @@
 }
 - (void)toggleMenu
 {
-    if (self.menu.isOpen)
+    if (self.menu.isOpen){
         return [self.menu close];
-    
-    [self.menu showFromRect:CGRectMake(0, 108, self.view.bounds.size.width , 300) inView:self.view];
+    }
+    [self.menu showFromRect:CGRectMake(0, 110, self.view.bounds.size.width , 300) inView:self.view];
 }
 - (void)buttonAction{
-//    UIStoryboard * storyboard = [ UIStoryboard storyboardWithName:@"Main" bundle:nil ];
-//    ResultViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"ResultViewID" ];
     UIViewController *vc = [[ExaminationViewController alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 - (UIView *)buildHeader:(NSArray*)titles andHeight:(int)height withY:(float)y{
+    
+    int buttonFooterDefaultTag = 100;
+    int buttonHeaderDefaultTag = 200;
+    
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, y, self.view.bounds.size.width, height)];
     header.backgroundColor = [UIColor whiteColor];
     for (int i = 0; i< titles.count; i++) {
@@ -172,12 +181,41 @@
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         button.backgroundColor = [UIColor whiteColor];
         [Tools configureView:button isCorner:NO];
-        [button addTarget:self action:@selector(buttonAction1) forControlEvents:UIControlEventTouchUpInside];
+        if (y>0) {
+            if (i==0) {
+                button.backgroundColor = kRedColor;
+                [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            }
+            button.tag = buttonFooterDefaultTag+i;
+        }else {
+             button.tag = buttonHeaderDefaultTag+i;
+        }
+        [button addTarget:self action:@selector(buttonAction1:) forControlEvents:UIControlEventTouchUpInside];
         [header addSubview:button];
     }
     return header;
 }
-- (void)buttonAction1{
-    [self toggleMenu];
+- (void)buttonAction1:(UIButton *)sender{
+    NSInteger tag = sender.tag;
+    if (tag > 101) {//类型、项目等选择
+        [self toggleMenu];
+    }else if(tag==100){//未完成答题
+        [self layoutButtonWith:101 andButton:sender];
+        self.finish = NO;
+        [self.myTableview reloadData];
+
+    }else if(tag==101){//已完成答题
+        [self layoutButtonWith:100 andButton:sender];
+        self.finish = YES;
+        [self.myTableview reloadData];
+    }
+    
+}
+- (void)layoutButtonWith:(NSInteger)tag andButton:(UIButton *)sender{
+    sender.backgroundColor = kRedColor;
+    [sender setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    UIButton *temp = (UIButton *)[sender.superview viewWithTag:tag];
+    temp.backgroundColor = [UIColor whiteColor];
+    [temp setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 }
 @end
