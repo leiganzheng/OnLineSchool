@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ExaminationViewController : ExaminationBaseViewController
-
+@property (nonatomic,strong) NSString *customTitle;
 @end

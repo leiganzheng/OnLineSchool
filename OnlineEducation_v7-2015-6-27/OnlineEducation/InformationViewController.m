@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = self.flag ? @"我的试卷" : @"做题记录" ;
-    self.dataArray = @[@"2015年山东二级建造师报名入口",@"2015年甘肃二级建造师报名入口",@"2015年云南二级建造师考试资格审查报名入口",@"2015年北京二级建造师报名入口"];
+    self.dataArray = @[@"2015年二级建造师",@"2015年甘肃二级建造师",@"2015年云南",@"2015年北京"];
     self.iconArray = @[@"course_live_icon_01",@"course_live_icon_02",@"course_live_icon_03",@"course_live_icon_04"];
    //
     NSArray *titles = @[@"类型",@"项目",@"班型",@"科目"];
@@ -65,7 +65,7 @@
         [cell.button setTitle: self.finish ? @"查看解析" : @"继续做题" forState:UIControlStateNormal];
         cell.button.backgroundColor = self.finish ? kGreenColor:kAppThemeColor;
     }
-    [cell.button addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
+    [cell.button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
 
@@ -161,8 +161,10 @@
     }
     [self.menu showFromRect:CGRectMake(0, 110, self.view.bounds.size.width , 300) inView:self.view];
 }
-- (void)buttonAction{
-    UIViewController *vc = [[ExaminationViewController alloc] init];
+- (void)buttonAction:(UIButton *)sender{
+    NSInteger index = [self.myTableview indexPathForCell:(UITableViewCell *)([[sender superview] superview])];
+    ExaminationViewController *vc = [[ExaminationViewController alloc] init];
+    vc.customTitle = self.dataArray[index];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }

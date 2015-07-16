@@ -14,6 +14,7 @@
 		710E3F3A1B502A2F005FEFE9 /* ExaminationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710E3F391B502A2F005FEFE9 /* ExaminationViewController.m */; };
 		710E3F3E1B51664C005FEFE9 /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 710E3F3D1B51664C005FEFE9 /* Tools.m */; };
 		71CB6AB31B3E81500050AEA3 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CB6AB21B3E81500050AEA3 /* RegisterViewController.m */; };
+		71EB04031B57F95F00C4C397 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 71EB04021B57F95F00C4C397 /* Stack.m */; };
 		BB4EC90E1AC4FE3C001CD643 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4EC90D1AC4FE3C001CD643 /* main.m */; };
 		BB4EC9111AC4FE3C001CD643 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4EC9101AC4FE3C001CD643 /* AppDelegate.m */; };
 		BB4EC9171AC4FE3C001CD643 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4EC9151AC4FE3C001CD643 /* Main.storyboard */; };
@@ -75,6 +76,8 @@
 		710E3F3D1B51664C005FEFE9 /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		71CB6AB11B3E81500050AEA3 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		71CB6AB21B3E81500050AEA3 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		71EB04011B57F95F00C4C397 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		71EB04021B57F95F00C4C397 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 		BB4EC9081AC4FE3C001CD643 /* OnlineEducation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineEducation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB4EC90C1AC4FE3C001CD643 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB4EC90D1AC4FE3C001CD643 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 				BB9F2B931B50F18F0095D06D /* ResultViewController.m */,
 				BB9F2B951B50F1A10095D06D /* ResultTableViewCell.h */,
 				BB9F2B961B50F1A10095D06D /* ResultTableViewCell.m */,
+				71EB04011B57F95F00C4C397 /* Stack.h */,
+				71EB04021B57F95F00C4C397 /* Stack.m */,
 			);
 			name = Examination;
 			sourceTree = "<group>";
@@ -512,6 +517,7 @@
 				BB661D5E1ACCEA2300B24044 /* UIViewController+Appearence.m in Sources */,
 				71CB6AB31B3E81500050AEA3 /* RegisterViewController.m in Sources */,
 				BB4EC9551AC539E4001CD643 /* CourseDetailViewController.m in Sources */,
+				71EB04031B57F95F00C4C397 /* Stack.m in Sources */,
 				710E3F1D1B4EBE08005FEFE9 /* MistakeTableViewCell.m in Sources */,
 				BB9F2B8E1B50A2AA0095D06D /* REMenu.m in Sources */,
 				BB4EC90E1AC4FE3C001CD643 /* main.m in Sources */,

@@ -18,17 +18,25 @@
 @property(nonatomic,strong) UIButton *CBtn;
 @property(nonatomic,strong) UIButton *DBtn;
 @property(nonatomic,strong) UIView *bgV;
+@property (nonatomic,strong) NSArray *dataArray;
+@property (nonatomic,assign) NSInteger index;
+@property (nonatomic,strong) Stack *tempStack;
 @end
 
 @implementation ExaminationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"试卷名称";
+    self.title = self.customTitle;
     [self.list addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.answers addTarget:self action:@selector(anButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.rightButton addTarget:self action:@selector(rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.leftButton addTarget:self action:@selector(leftButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    //
+    self.dataArray = @[@"0",@"1",@"2",@"0",@"1",@"2",@"0",@"1",@"2",@"0"];
+    self.index = 0;
+    self.tempStack = [[Stack alloc] init];
+    //
     [self customUI];
     [self commonUI];
 //    [self shortAnswerUI ];
@@ -40,30 +48,43 @@
     // Dispose of any resources that can be recreated.
 }
 #pragma mark:- private method
-- (void)loadTitle{
+- (void)loadTitleWith:(NSInteger)index{
     NSString *temStr;
-    switch (self.testType) {
-        case kSigleType:
+    switch (index) {
+        case 0:
             temStr = @"单选题";
             break;
-        case KDoubleType:
+        case 1:
             temStr = @"多选题";
             break;
-        case kShortAnswer:
+        case 2:
             temStr = @"简答题";
             break;
         default:
             break;
     }
     [self.titleButton setTitle:temStr forState:UIControlStateNormal];
+    [self.pagesButton setTitle:[NSString stringWithFormat:@"%li/10",(long)self.index] forState:UIControlStateNormal];
 }
 -  (void)rightButtonAction{
-     UIStoryboard * storyboard = [ UIStoryboard storyboardWithName:@"Main" bundle:nil ];
-     ResultViewController *result = [storyboard instantiateViewControllerWithIdentifier:@"ResultViewID"];
-    [self.navigationController pushViewController:result animated:YES];
+    if (self.index == 0) {return;}
+      self.index --;
+    if (self.index >=0) {
+        [self loadTitleWith:[[self.dataArray objectAtIndex:self.index] integerValue]];
+    }
+    if (self.index == self.dataArray.count-1) {
+        UIStoryboard * storyboard = [ UIStoryboard storyboardWithName:@"Main" bundle:nil ];
+        ResultViewController *result = [storyboard instantiateViewControllerWithIdentifier:@"ResultViewID"];
+        [self.navigationController pushViewController:result animated:YES];
+    }
 }
 - (void)leftButtonAction{
-    
+    if (self.index == self.dataArray.count) {return;}
+    self.index ++ ;
+    if (self.index < self.dataArray.count) {
+        [self loadTitleWith:[[self.dataArray objectAtIndex:self.index] integerValue]];
+    }
+
 }
 - (void)answer{
     
