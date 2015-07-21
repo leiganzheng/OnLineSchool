@@ -34,7 +34,7 @@
     [self.leftButton addTarget:self action:@selector(leftButtonAction) forControlEvents:UIControlEventTouchUpInside];
     //
     self.dataArray = @[@"0",@"1",@"2",@"0",@"1",@"2",@"0",@"1",@"2",@"0"];
-    self.index = 0;
+    self.index = 1;
     self.tempStack = [[Stack alloc] init];
     //
     [self customUI];
@@ -67,10 +67,11 @@
     [self.pagesButton setTitle:[NSString stringWithFormat:@"%li/10",(long)self.index] forState:UIControlStateNormal];
 }
 -  (void)rightButtonAction{
-    if (self.index == 0) {return;}
+    NSInteger index = self.index - 1;
+    if (index == 0) {return;}
       self.index --;
-    if (self.index >=0) {
-        [self loadTitleWith:[[self.dataArray objectAtIndex:self.index] integerValue]];
+    if (index >=0) {
+        [self loadTitleWith:[[self.dataArray objectAtIndex:index] integerValue]];
     }
     if (self.index == self.dataArray.count-1) {
         UIStoryboard * storyboard = [ UIStoryboard storyboardWithName:@"Main" bundle:nil ];
@@ -79,10 +80,11 @@
     }
 }
 - (void)leftButtonAction{
-    if (self.index == self.dataArray.count) {return;}
+    NSInteger index = self.index - 1;
+    if (index == self.dataArray.count) {return;}
     self.index ++ ;
-    if (self.index < self.dataArray.count) {
-        [self loadTitleWith:[[self.dataArray objectAtIndex:self.index] integerValue]];
+    if (self.index <= self.dataArray.count) {
+        [self loadTitleWith:[[self.dataArray objectAtIndex:index] integerValue]];
     }
 
 }
