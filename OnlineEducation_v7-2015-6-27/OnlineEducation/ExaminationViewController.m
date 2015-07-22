@@ -9,6 +9,7 @@
 #import "ExaminationViewController.h"
 #import "SheetViewController.h"
 #import "ResultViewController.h"
+#import "CustomView.h"
 
 @interface ExaminationViewController ()
 @property(nonatomic,strong) UITextView *textView;
@@ -17,10 +18,12 @@
 @property(nonatomic,strong) UIButton *BBtn;
 @property(nonatomic,strong) UIButton *CBtn;
 @property(nonatomic,strong) UIButton *DBtn;
+@property (nonatomic,strong) UIButton *shortAnswerBtn;
 @property(nonatomic,strong) UIView *bgV;
 @property (nonatomic,strong) NSArray *dataArray;
 @property (nonatomic,assign) NSInteger index;
 @property (nonatomic,strong) Stack *tempStack;
+@property (nonatomic,strong) CustomView *answerView;
 @end
 
 @implementation ExaminationViewController
@@ -53,12 +56,15 @@
     switch (index) {
         case 0:
             temStr = @"单选题";
+            [self showCommonUI];
             break;
         case 1:
             temStr = @"多选题";
+            [self showCommonUI];
             break;
         case 2:
             temStr = @"简答题";
+             [self shortAnswerUI ];
             break;
         default:
             break;
@@ -164,18 +170,47 @@
 }
 - (void)shortAnswerUI{
     self.bgV.hidden = YES;
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(10,_textView.frame.size.height + _textView.frame.origin.y + 60, 300, 40);
-    [button setTitle:@"开始作答" forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont systemFontOfSize:15.0f];
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    button.backgroundColor = [UIColor whiteColor];
-    button.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-    button.layer.borderWidth = 0.5;
-    button.titleEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
-    [self.view addSubview:button];
+     self.shortAnswerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.shortAnswerBtn.frame = CGRectMake(10,_textView.frame.size.height + _textView.frame.origin.y + 60, 300, 40);
+    [self.shortAnswerBtn setTitle:@"开始作答" forState:UIControlStateNormal];
+    self.shortAnswerBtn.titleLabel.font = [UIFont systemFontOfSize:15.0f];
+    [self.shortAnswerBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    self.shortAnswerBtn.backgroundColor = [UIColor whiteColor];
+    self.shortAnswerBtn.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    self.shortAnswerBtn.layer.borderWidth = 0.5;
+    self.shortAnswerBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
+    [self.shortAnswerBtn addTarget:self action:@selector(answerQuestion) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.shortAnswerBtn];
 }
-
+- (void)showCommonUI{
+    self.bgV.hidden = NO;
+    self.shortAnswerBtn.hidden = YES;
+}
+- (void)answerQuestion{
+    if (!self.answerView) {
+        self.answerView = [[CustomView alloc] initWithFrame:self.view.bounds block:^(BOOL isCancel, id obj) {
+            if (isCancel) {
+                [UIView animateWithDuration:0.3 animations:^{
+                    self.answerView.center = CGPointMake(self.view.center.x, kScreenHeight*2);
+                }];
+            }else{
+                [UIView animateWithDuration:0.3 animations:^{
+                    self.answerView.center = CGPointMake(self.view.center.x, kScreenHeight*2);
+                }];
+            }
+        }];
+        self.answerView.center = CGPointMake(self.view.center.x, kScreenHeight);
+        [self.view addSubview:self.answerView];
+        [UIView animateWithDuration:0.2 animations:^{
+            self.answerView.center = self.view.center;
+        }];
+    }else{
+        [self.answerView.contentV becomeFirstResponder];
+        [UIView animateWithDuration:0.2 animations:^{
+            self.answerView.center = self.view.center;
+        }];
+    }
+}
 - (void)customUI{
     self.textView = [[UITextView  alloc] initWithFrame:CGRectMake(10, 118, 300, 120)];
     self.textView.textColor = [UIColor blackColor];
