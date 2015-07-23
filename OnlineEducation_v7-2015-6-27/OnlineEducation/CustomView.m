@@ -28,6 +28,7 @@
     self.contentV.textColor = [UIColor lightGrayColor];
     self.contentV.font = [UIFont fontWithName:@"Arial" size:16.0];
     self.contentV.backgroundColor = [UIColor whiteColor];
+    self.contentV.text = @"作答内容";
 //    self.contentV.text = @"Now is the time for all good developers to come to serve their country.\n\nNow is the time for all good developers to come to serve their country.";
     self.contentV.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     [Tools configureView:self.contentV isCorner:YES];
