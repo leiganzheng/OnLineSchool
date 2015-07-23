@@ -176,7 +176,17 @@
 //定义每个UICollectionView 的 margin
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(10, 10, 5, 10);
+    if (kScreenHeight == 568) {
+        return UIEdgeInsetsMake(10, 10, 5, 10);
+    }else if (kScreenHeight == 667){
+        return UIEdgeInsetsMake(20, 20, 5, 0);
+    }
+    else if (kScreenHeight == 736){
+        return UIEdgeInsetsMake(30, 20, 5, -20);
+    }else{
+        return UIEdgeInsetsMake(10, 10, 5, 10);
+    }
+    
 }
 #pragma mark --UICollectionViewDelegate
 //UICollectionView被选中时调用的方法

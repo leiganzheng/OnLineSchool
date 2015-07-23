@@ -98,7 +98,7 @@
     
     self.bgV.frame = CGRectMake(self.bgV.frame.origin.x, self.textView.frame.origin.y+self.textView.frame.size.height+20, self.bgV.frame.size.width, self.bgV.frame.size.height);
     
-    self.answerTextView = [[UITextView  alloc] initWithFrame:CGRectMake(10, self.bgV.frame.origin.y+self.bgV.frame.size.height+20, 300, 100)];
+    self.answerTextView = [[UITextView  alloc] initWithFrame:CGRectMake(10, self.bgV.frame.origin.y+self.bgV.frame.size.height+20, self.view.bounds.size.width-20, 100)];
     self.answerTextView.textColor = [UIColor blackColor];
     self.answerTextView.font = [UIFont fontWithName:@"Arial" size:18.0];
     self.answerTextView.backgroundColor = [UIColor whiteColor];
@@ -171,7 +171,7 @@
 - (void)shortAnswerUI{
     self.bgV.hidden = YES;
      self.shortAnswerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.shortAnswerBtn.frame = CGRectMake(10,_textView.frame.size.height + _textView.frame.origin.y + 60, 300, 40);
+    self.shortAnswerBtn.frame = CGRectMake(10,_textView.frame.size.height + _textView.frame.origin.y + 60,self.view.bounds.size.width-20, 40);
     [self.shortAnswerBtn setTitle:@"开始作答" forState:UIControlStateNormal];
     self.shortAnswerBtn.titleLabel.font = [UIFont systemFontOfSize:15.0f];
     [self.shortAnswerBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -212,7 +212,7 @@
     }
 }
 - (void)customUI{
-    self.textView = [[UITextView  alloc] initWithFrame:CGRectMake(10, 118, 300, 120)];
+    self.textView = [[UITextView  alloc] initWithFrame:CGRectMake(10, 118, self.view.bounds.size.width-20, 120)];
     self.textView.textColor = [UIColor blackColor];
      self.textView.font = [UIFont fontWithName:@"Arial" size:18.0];
      self.textView.backgroundColor = [UIColor whiteColor];

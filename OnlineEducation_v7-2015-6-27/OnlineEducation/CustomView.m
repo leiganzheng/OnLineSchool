@@ -56,7 +56,14 @@
 
     [Tools configureView:self.save isCorner:YES];
     [self.headerView addSubview:self.save];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
+    [self addGestureRecognizer:tap];
    
+}
+- (void)tapAction{
+    [self.contentV resignFirstResponder];
+    self.block(YES,nil);
 }
 - (void)cancelAction{
     [self.contentV resignFirstResponder];
