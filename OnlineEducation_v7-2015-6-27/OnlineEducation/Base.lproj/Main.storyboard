@@ -842,15 +842,15 @@
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hM-5w-2fc">
-                                                            <rect key="frame" x="262" y="11" width="46" height="15"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hM-5w-2fc">
+                                                            <rect key="frame" x="277" y="11" width="31" height="14"/>
                                                             <color key="backgroundColor" red="0.8901960784313725" green="0.28627450980392155" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="46" id="B5u-ub-lda"/>
                                                                 <constraint firstAttribute="height" constant="15" id="eIk-S2-djm"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                            <state key="normal" title="做题">
+                                                            <state key="normal" title="做题" image="pencil">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                         </button>
@@ -863,8 +863,8 @@
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qz3-cn-YSc">
-                                                            <rect key="frame" x="262" y="46" width="46" height="15"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qz3-cn-YSc">
+                                                            <rect key="frame" x="262" y="45" width="46" height="15"/>
                                                             <color key="backgroundColor" red="0.2627450980392157" green="0.63921568627450975" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="46" id="V8E-0g-jhA"/>
@@ -1565,6 +1565,7 @@
         <image name="login_uncheck" width="12" height="12"/>
         <image name="login_user" width="14" height="21"/>
         <image name="logo" width="225" height="65"/>
+        <image name="pencil" width="9" height="9"/>
         <image name="play" width="25" height="25"/>
         <image name="tab_bar_down" width="20" height="20"/>
         <image name="tab_bar_info" width="17" height="20"/>

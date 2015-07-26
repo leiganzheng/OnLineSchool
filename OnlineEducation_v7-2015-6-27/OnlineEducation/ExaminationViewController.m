@@ -69,7 +69,10 @@
         default:
             break;
     }
+    //    self.ABtn.titleEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
+    //    self.ABtn.imageEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
     [self.titleButton setTitle:temStr forState:UIControlStateNormal];
+    [self.titleButton setImage:[UIImage imageNamed:@"list"] forState:UIControlStateNormal];
     [self.pagesButton setTitle:[NSString stringWithFormat:@"%li/10",(long)self.index] forState:UIControlStateNormal];
 }
 -  (void)rightButtonAction{

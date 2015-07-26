@@ -56,7 +56,7 @@
 }
 
 - (void)footerView{
-    NSArray *titles = @[@"左滑",@"答题卡",@"答案",@"右滑"];
+    NSArray *titles = @[@"",@"答题卡",@"答案",@""];
     int height = 50;
     
     self.footer = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-height, self.view.bounds.size.width, height)];
@@ -67,19 +67,24 @@
         [button setTitle:titles[i] forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize:15.0f];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        
         button.backgroundColor = [UIColor whiteColor];
         [Tools configureView:button isCorner:YES];
-//        button.titleEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
-        //    button.imageEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
         [_footer addSubview:button];
         if (i == 1) {//答题卡
+            button.titleEdgeInsets = UIEdgeInsetsMake(0, 40, -20, 0);
+            button.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+            [button setImage:[UIImage imageNamed:@"topic-card"] forState:UIControlStateNormal];
             self.list = button;
         }else if (i == 2){//答案
+            [button setImage:[UIImage imageNamed:@"answer-black"] forState:UIControlStateNormal];
             self.answers = button;
-        }else if (i == 0){//答案
+        }else if (i == 0){//左
+            [button setImage:[UIImage imageNamed:@"arrow-left-gray"] forState:UIControlStateNormal];
             self.leftButton = button;
         }
-        else if (i == 3){//答案
+        else if (i == 3){//右
+            [button setImage:[UIImage imageNamed:@"arrow-right-gray"] forState:UIControlStateNormal];
             self.rightButton = button;
         }
 
