@@ -18,6 +18,7 @@
 @property (nonatomic, strong) REMenu *menu;
 @property (weak, nonatomic) IBOutlet UITableView *myTableview;
 @property (nonatomic, assign) BOOL finish;
+@property (nonatomic,strong) UIView *header;
 @end
 
 @implementation InformationViewController
@@ -25,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = self.flag ? @"我的试卷" : @"做题记录" ;
-    self.dataArray = @[@"2015年二级建造师",@"2015年甘肃二级建造师",@"2015年云南",@"2015年北京"];
+    self.dataArray = @[@"2015年二级建造师学习导入课为什么学习二级建造师",@"2015年二级建造师学习导入课为什么学习二级建造师",@"2015年二级建造师学习导入课为什么学习二级建造师",@"2015年二级建造师学习导入课为什么学习二级建造师"];
     self.iconArray = @[@"course_live_icon_01",@"course_live_icon_02",@"course_live_icon_03",@"course_live_icon_04"];
    //
     NSArray *titles = @[@"类型",@"项目",@"班型",@"科目"];
@@ -64,6 +65,9 @@
     }else {
         [cell.button setTitle: self.finish ? @"查看解析" : @"继续做题" forState:UIControlStateNormal];
         cell.button.backgroundColor = self.finish ? kGreenColor:kAppThemeColor;
+        if (self.finish) {
+            cell.button.imageView.image = [UIImage imageNamed:@""];
+        }
     }
     [cell.button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
@@ -89,7 +93,7 @@
                                             highlightedImage:nil
                                                       action:^(REMenuItem *item) {
                                                           NSLog(@"Item: %@", item);
-                                                         
+                                                          item.textColor = kRedColor;
                                                       }];
     
     REMenuItem *exploreItem = [[REMenuItem alloc] initWithTitle:@"模拟试题"
@@ -150,6 +154,10 @@
     }];
     
     [self.menu setCloseCompletionHandler:^{
+            for (UIButton *btn in weakSelf.header.subviews) {
+                [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                [btn setImage:[UIImage imageNamed:@"arrow-down"] forState:UIControlStateNormal];
+            }
         NSLog(@"Menu did close");
     }];
 
@@ -162,9 +170,9 @@
     [self.menu showFromRect:CGRectMake(0, 110, self.view.bounds.size.width , 300) inView:self.view];
 }
 - (void)buttonAction:(UIButton *)sender{
-    NSInteger index = [self.myTableview indexPathForCell:(UITableViewCell *)([[sender superview] superview])];
+    NSIndexPath *indexpath = [self.myTableview indexPathForCell:(UITableViewCell *)([[sender superview] superview])];
     ExaminationViewController *vc = [[ExaminationViewController alloc] init];
-    vc.customTitle = self.dataArray[index];
+    vc.customTitle = self.dataArray[indexpath.row];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -190,14 +198,22 @@
             }
             button.tag = buttonFooterDefaultTag+i;
         }else {
+            button.titleEdgeInsets = UIEdgeInsetsMake(0, -30, 0, 0);
+            button.imageEdgeInsets = UIEdgeInsetsMake(0, 50, 0, 0);
+            [button setImage:[UIImage imageNamed:@"arrow-down"] forState:UIControlStateNormal];
              button.tag = buttonHeaderDefaultTag+i;
         }
         [button addTarget:self action:@selector(buttonAction1:) forControlEvents:UIControlEventTouchUpInside];
         [header addSubview:button];
     }
+    if (y<=0) {
+        self.header = header;
+    }
     return header;
 }
 - (void)buttonAction1:(UIButton *)sender{
+    [sender setTitleColor:kRedColor forState:UIControlStateNormal];
+    [sender setImage:[UIImage imageNamed:@"arrow-up"] forState:UIControlStateNormal];
     NSInteger tag = sender.tag;
     if (tag > 101) {//类型、项目等选择
         [self toggleMenu];

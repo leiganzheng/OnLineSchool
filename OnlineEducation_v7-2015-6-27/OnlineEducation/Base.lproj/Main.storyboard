@@ -559,29 +559,29 @@
                                                             <color key="textColor" red="0.47450980392156861" green="0.47450980392156861" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1077人做过" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gne-tU-TfP">
-                                                            <rect key="frame" x="186" y="44" width="62" height="15"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1077人做过" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gne-tU-TfP">
+                                                            <rect key="frame" x="201" y="44" width="62" height="15"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="15" id="Yy1-eP-CqG"/>
                                                                 <constraint firstAttribute="width" constant="62" id="dNs-5E-5p0"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tix-8H-85Z">
-                                                            <rect key="frame" x="266" y="44" width="46" height="15"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tix-8H-85Z">
+                                                            <rect key="frame" x="281" y="44" width="31" height="14"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="46" id="rn5-nf-FEx"/>
+                                                                <constraint firstAttribute="width" constant="54" id="rn5-nf-FEx"/>
                                                                 <constraint firstAttribute="height" constant="15" id="whp-UX-kC3"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                            <state key="normal" title="做题">
+                                                            <state key="normal" title="做题" image="pencil">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3分钟前 共有:10道题 做对:3道题" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwI-sU-pN4">
-                                                            <rect key="frame" x="16" y="42" width="240" height="15"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3分钟前 共有:10道题 做对:3道题" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZwI-sU-pN4">
+                                                            <rect key="frame" x="16" y="42" width="255" height="15"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="15" id="u2L-Or-7Gg"/>
                                                             </constraints>

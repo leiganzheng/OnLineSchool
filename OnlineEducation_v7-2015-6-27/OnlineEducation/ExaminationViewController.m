@@ -24,6 +24,8 @@
 @property (nonatomic,assign) NSInteger index;
 @property (nonatomic,strong) Stack *tempStack;
 @property (nonatomic,strong) CustomView *answerView;
+@property (nonatomic,assign) BOOL isMulSelected;
+@property (nonatomic,strong) UIView *answerV;
 @end
 
 @implementation ExaminationViewController
@@ -41,6 +43,7 @@
     self.tempStack = [[Stack alloc] init];
     //
     [self customUI];
+    self.isMulSelected = NO;
     [self commonUI];
 //    [self shortAnswerUI ];
 
@@ -56,11 +59,11 @@
     switch (index) {
         case 0:
             temStr = @"单选题";
-            [self showCommonUI];
+            [self showCommonUI:NO];
             break;
         case 1:
             temStr = @"多选题";
-            [self showCommonUI];
+            [self showCommonUI:YES];
             break;
         case 2:
             temStr = @"简答题";
@@ -73,12 +76,20 @@
     //    self.ABtn.imageEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
     [self.titleButton setTitle:temStr forState:UIControlStateNormal];
     [self.titleButton setImage:[UIImage imageNamed:@"list"] forState:UIControlStateNormal];
-    [self.pagesButton setTitle:[NSString stringWithFormat:@"%li/10",(long)self.index] forState:UIControlStateNormal];
+    [self.pagesButton setTitle:[NSString stringWithFormat:@"%li",(long)self.index] forState:UIControlStateNormal];
 }
 -  (void)rightButtonAction{
     NSInteger index = self.index - 1;
+    if (index == self.dataArray.count) {return;}
+    self.index ++ ;
+    if (self.index <= self.dataArray.count) {
+        [self loadTitleWith:[[self.dataArray objectAtIndex:index] integerValue]];
+    }
+}
+- (void)leftButtonAction{
+    NSInteger index = self.index - 1;
     if (index == 0) {return;}
-      self.index --;
+    self.index --;
     if (index >=0) {
         [self loadTitleWith:[[self.dataArray objectAtIndex:index] integerValue]];
     }
@@ -87,60 +98,79 @@
         ResultViewController *result = [storyboard instantiateViewControllerWithIdentifier:@"ResultViewID"];
         [self.navigationController pushViewController:result animated:YES];
     }
-}
-- (void)leftButtonAction{
-    NSInteger index = self.index - 1;
-    if (index == self.dataArray.count) {return;}
-    self.index ++ ;
-    if (self.index <= self.dataArray.count) {
-        [self loadTitleWith:[[self.dataArray objectAtIndex:index] integerValue]];
-    }
 
 }
 - (void)answer{
     
     self.bgV.frame = CGRectMake(self.bgV.frame.origin.x, self.textView.frame.origin.y+self.textView.frame.size.height+20, self.bgV.frame.size.width, self.bgV.frame.size.height);
     
-    self.answerTextView = [[UITextView  alloc] initWithFrame:CGRectMake(10, self.bgV.frame.origin.y+self.bgV.frame.size.height+20, self.view.bounds.size.width-20, 100)];
+    self.answerV = [[UIView alloc] initWithFrame:CGRectMake(10, self.bgV.frame.origin.y+self.bgV.frame.size.height+20, self.view.bounds.size.width-20, 130)];
+    _answerV.backgroundColor = [UIColor whiteColor];
+    [Tools configureView:_answerV isCorner:YES];
+    [self.view addSubview:_answerV];
+    
+    UIButton *icon = [UIButton buttonWithType:UIButtonTypeCustom];
+    icon.frame = CGRectMake(8, _answerV.frame.origin.y+6, 42, 17);
+    icon.backgroundColor = [UIColor clearColor];
+    icon.titleLabel.font = [UIFont systemFontOfSize:12.0];
+    [icon setTitle:@"解析" forState:UIControlStateNormal];
+    [icon setBackgroundImage:[UIImage imageNamed:@"flag"] forState:UIControlStateNormal];
+    [self.view addSubview:icon];
+    
+    
+    self.answerTextView = [[UITextView  alloc] initWithFrame:CGRectMake(0, 26, self.view.bounds.size.width-20, 100)];
     self.answerTextView.textColor = [UIColor blackColor];
-    self.answerTextView.font = [UIFont fontWithName:@"Arial" size:18.0];
-    self.answerTextView.backgroundColor = [UIColor whiteColor];
-    self.answerTextView.text = @"Now is the time for all good developers to come to serve their country.\n\nNow is the time for all good developers to come to serve their country.";
+    self.answerTextView.font = [UIFont fontWithName:@"Arial" size:13.0];
+    self.answerTextView.backgroundColor = [UIColor clearColor];
+    self.answerTextView.text = @"取得建造师资格证并经()后，方有资格以建造师名义担任建设工程项目施工的想买经理。\n    A.登记B.注册C.备案D.所在单位考核合格";
     self.answerTextView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     self.answerTextView.editable = NO;
     self.answerTextView.scrollEnabled = NO;
-    [Tools configureView:self.answerTextView isCorner:YES];
-    [self.view addSubview: self.answerTextView];
+    
+    [_answerV addSubview: self.answerTextView];
 
+}
+- (void)mulSelectedUI{
+    
+    
+}
+- (void)sigleSelecteUI{
+    for(UIButton * btn in self.bgV.subviews){
+        btn.backgroundColor = kCyColorFromRGB(243, 242, 241);
+        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [btn setImage:[UIImage imageNamed:@"radio"] forState:UIControlStateNormal];
+    }
+ 
 }
 - (void)commonUI{
     self.bgV = [[UIView alloc] initWithFrame:CGRectMake(40, _textView.frame.size.height + _textView.frame.origin.y + 60, self.view.bounds.size.width-80, 105)];
-    _bgV.backgroundColor = [UIColor whiteColor];
-    _bgV.layer.borderWidth = 0.5;
-    _bgV.layer.borderColor = [kCyColorFromRGB(211, 211, 211) CGColor];
+    _bgV.backgroundColor = [UIColor clearColor];
     
     CGFloat height = 40;
     CGFloat width = 85;
     self.ABtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.ABtn.frame = CGRectMake(0,0, width, height);
     [self.ABtn setTitle:@"A" forState:UIControlStateNormal];
-    self.ABtn.titleLabel.font = [UIFont systemFontOfSize:15.0f];
+    self.ABtn.titleLabel.font = [UIFont systemFontOfSize:19.0f];
     [self.ABtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    self.ABtn.backgroundColor = [UIColor lightGrayColor];
-    //    self.ABtn.titleEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
-    //    self.ABtn.imageEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
-
+    [self.ABtn setImage:[UIImage imageNamed:@"radio"] forState:UIControlStateNormal];
+    self.ABtn.backgroundColor = kCyColorFromRGB(243, 242, 241);
+    self.ABtn.titleEdgeInsets = UIEdgeInsetsMake(0, self.ABtn.titleLabel.frame.size.width+5, 0, 0);
+        self.ABtn.imageEdgeInsets = UIEdgeInsetsMake(0, -self.ABtn.imageView.frame.size.width-10, 0, 0);
+    [self.ABtn addTarget:self action:@selector(AButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [_bgV addSubview:self.ABtn];
     
     CGFloat x = _bgV.bounds.size.width-width;
     self.BBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.BBtn.frame = CGRectMake(x,0 , width, height);
     [self.BBtn setTitle:@"B" forState:UIControlStateNormal];
-    self.BBtn.titleLabel.font = [UIFont systemFontOfSize:15.0f];
+    self.BBtn.titleLabel.font = [UIFont systemFontOfSize:19.0f];
     [self.BBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    self.BBtn.backgroundColor = [UIColor lightGrayColor];
-    //    self.BBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
-    //    self.BBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
+    [self.BBtn setImage:[UIImage imageNamed:@"radio"] forState:UIControlStateNormal];
+    [self.BBtn addTarget:self action:@selector(BButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    self.BBtn.backgroundColor = kCyColorFromRGB(243, 242, 241);
+        self.BBtn.titleEdgeInsets = UIEdgeInsetsMake(0, self.BBtn.titleLabel.frame.size.width+5, 0, 0);
+        self.BBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -self.BBtn.imageView.frame.size.width-10, 0, 0);
 
     [_bgV addSubview:self.BBtn];
     
@@ -149,11 +179,13 @@
     self.CBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.CBtn.frame = CGRectMake(0,y, width, height);
     [self.CBtn setTitle:@"C" forState:UIControlStateNormal];
-    self.CBtn.titleLabel.font = [UIFont systemFontOfSize:15.0f];
+    self.CBtn.titleLabel.font = [UIFont systemFontOfSize:19.0f];
     [self.CBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    self.CBtn.backgroundColor = [UIColor lightGrayColor];
-    //    self.CBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
-    //    self.CBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
+    [self.CBtn setImage:[UIImage imageNamed:@"radio"] forState:UIControlStateNormal];
+    [self.CBtn addTarget:self action:@selector(CButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    self.CBtn.backgroundColor = kCyColorFromRGB(243, 242, 241);
+        self.CBtn.titleEdgeInsets = UIEdgeInsetsMake(0, self.CBtn.titleLabel.frame.size.width+5, 0, 0);
+        self.CBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -self.DBtn.imageView.frame.size.width-10, 0, 0);
 
     [_bgV addSubview:self.CBtn];
     
@@ -161,11 +193,13 @@
     self.DBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.DBtn.frame = CGRectMake(x,y, width, height);
     [self.DBtn setTitle:@"D" forState:UIControlStateNormal];
-    self.DBtn.titleLabel.font = [UIFont systemFontOfSize:15.0f];
+    self.DBtn.titleLabel.font = [UIFont systemFontOfSize:19.0f];
     [self.DBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    self.DBtn.backgroundColor = [UIColor lightGrayColor];
-//    self.DBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
-//    self.DBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
+    [self.DBtn setImage:[UIImage imageNamed:@"radio"] forState:UIControlStateNormal];
+    [self.DBtn addTarget:self action:@selector(DButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    self.DBtn.backgroundColor = kCyColorFromRGB(243, 242, 241);
+    self.DBtn.titleEdgeInsets = UIEdgeInsetsMake(0, self.DBtn.titleLabel.frame.size.width+5, 0, 0);
+    self.DBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -self.DBtn.imageView.frame.size.width-10, 0, 0);
     [_bgV addSubview:self.DBtn];
     [Tools configureView:@[self.ABtn,self.BBtn,self.CBtn,self.DBtn] isCorner:YES];
 
@@ -185,7 +219,20 @@
     [self.shortAnswerBtn addTarget:self action:@selector(answerQuestion) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.shortAnswerBtn];
 }
-- (void)showCommonUI{
+- (void)showCommonUI:(BOOL)isMulSelected{
+    NSString *imageName;
+    if (isMulSelected) {
+        self.isMulSelected = YES;
+        imageName = @"checkbox";
+    }else {
+        self.isMulSelected = NO;
+        imageName = @"radio";
+    }
+    for(UIButton * btn in self.bgV.subviews){
+        btn.backgroundColor = kCyColorFromRGB(243, 242, 241);
+        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [btn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    }
     self.bgV.hidden = NO;
     self.shortAnswerBtn.hidden = YES;
 }
@@ -216,16 +263,69 @@
 }
 - (void)customUI{
     self.textView = [[UITextView  alloc] initWithFrame:CGRectMake(10, 118, self.view.bounds.size.width-20, 120)];
-    self.textView.textColor = [UIColor blackColor];
+    self.textView.textColor = [UIColor darkGrayColor];
      self.textView.font = [UIFont fontWithName:@"Arial" size:18.0];
-     self.textView.backgroundColor = [UIColor whiteColor];
-     self.textView.text = @"Now is the time for all good developers to come to serve their country.\n\nNow is the time for all good developers to come to serve their country.";
+     self.textView.backgroundColor = [UIColor clearColor];
+     self.textView.text = @"取得建造师资格证并经()后，方有资格以建造师名义担任建设工程项目施工的想买经理。\n    A.登记B.注册C.备案D.所在单位考核合格";
      self.textView.scrollEnabled = NO;
      self.textView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     self.textView.editable = NO;
      [self.view addSubview: self.textView];
 }
+- (void)AButtonAction:(UIButton *)sender{
+    if (self.isMulSelected) {
+        sender.backgroundColor = kRedColor;
+        [sender setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [sender setImage:[UIImage imageNamed:@"checkbox-checked"] forState:UIControlStateNormal];
+    }else {
+        [self layoutButton:sender];
+    }
 
+}
+- (void)BButtonAction:(UIButton *)sender{
+    if (self.isMulSelected) {
+        sender.backgroundColor = kRedColor;
+        [sender setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [sender setImage:[UIImage imageNamed:@"checkbox-checked"] forState:UIControlStateNormal];
+    }else {
+        [self layoutButton:sender];
+    }
+
+}
+- (void)CButtonAction:(UIButton *)sender{
+    if (self.isMulSelected) {
+        sender.backgroundColor = kRedColor;
+        [sender setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [sender setImage:[UIImage imageNamed:@"checkbox-checked"] forState:UIControlStateNormal];
+    }else {
+        [self layoutButton:sender];
+    }
+
+}
+- (void)DButtonAction:(UIButton *)sender{
+    if (self.isMulSelected) {
+        sender.backgroundColor = kRedColor;
+        [sender setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [sender setImage:[UIImage imageNamed:@"checkbox-checked"] forState:UIControlStateNormal];
+    }else {
+        [self layoutButton:sender];
+    }
+
+}
+- (void)layoutButton:(UIButton *)sender{
+    sender.backgroundColor = kRedColor;
+    [sender setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [sender setImage:[UIImage imageNamed:@"radio-checked"] forState:UIControlStateNormal];
+    for(UIButton * btn in self.bgV.subviews){
+        if (btn!=sender) {
+            btn.backgroundColor = kCyColorFromRGB(243, 242, 241);
+            [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [btn setImage:[UIImage imageNamed:@"radio"] forState:UIControlStateNormal];
+            
+        }
+    }
+
+}
 - (void)buttonAction{
     [self.navigationController pushViewController:[[SheetViewController alloc]init] animated:YES];
 //    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[[SheetViewController alloc]init]];

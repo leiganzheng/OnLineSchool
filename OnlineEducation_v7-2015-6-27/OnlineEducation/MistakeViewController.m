@@ -22,6 +22,7 @@ typedef NS_ENUM(NSInteger, finishType) {
 @property (nonatomic, strong) NSArray *iconArray;
 @property(nonatomic,assign) finishType finish;
 @property (nonatomic, strong) REMenu *menu;
+@property (nonatomic,strong) UIView *header;
 @end
 
 @implementation MistakeViewController
@@ -97,7 +98,7 @@ typedef NS_ENUM(NSInteger, finishType) {
                                             highlightedImage:nil
                                                       action:^(REMenuItem *item) {
                                                           NSLog(@"Item: %@", item);
-                                                          
+                                                          item.textColor = kRedColor;
                                                       }];
     
     REMenuItem *exploreItem = [[REMenuItem alloc] initWithTitle:@"模拟试题"
@@ -158,6 +159,10 @@ typedef NS_ENUM(NSInteger, finishType) {
     }];
     
     [self.menu setCloseCompletionHandler:^{
+            for (UIButton *btn in weakSelf.header.subviews) {
+                [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                [btn setImage:[UIImage imageNamed:@"arrow-down"] forState:UIControlStateNormal];
+            }
         NSLog(@"Menu did close");
     }];
     
@@ -191,14 +196,22 @@ typedef NS_ENUM(NSInteger, finishType) {
                 }
                 button.tag = buttonFooterDefaultTag+i;
             }else {
+                button.titleEdgeInsets = UIEdgeInsetsMake(0, -30, 0, 0);
+                button.imageEdgeInsets = UIEdgeInsetsMake(0, 50, 0, 0);
+                [button setImage:[UIImage imageNamed:@"arrow-down"] forState:UIControlStateNormal];
                 button.tag = buttonHeaderDefaultTag+i;
             }
             [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
             [header addSubview:button];
         }
+    if (y<=0) {
+        self.header = header;
+    }
         return header;
 }
 - (void)buttonAction:(UIButton *)sender{
+    [sender setTitleColor:kRedColor forState:UIControlStateNormal];
+    [sender setImage:[UIImage imageNamed:@"arrow-up"] forState:UIControlStateNormal];
     NSInteger tag = sender.tag;
     if (tag > 102) {//类型、项目等选择
         [self toggleMenu];

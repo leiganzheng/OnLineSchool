@@ -32,25 +32,34 @@
 
     
     self.titleButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _titleButton.frame = CGRectMake(0,0 , 80, height);
+    _titleButton.frame = CGRectMake(10,0 , 80, height);
     [_titleButton setTitle:@"单选题" forState:UIControlStateNormal];
+    [_titleButton setImage:[UIImage imageNamed:@"list"] forState:UIControlStateNormal];
     _titleButton.titleLabel.font = [UIFont systemFontOfSize:15.0f];
-    [_titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_titleButton setTitleColor:kRedColor forState:UIControlStateNormal];
     _titleButton.backgroundColor = [UIColor clearColor];
-    //        _titleButton.titleEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
-    //    _titleButton.imageEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
+    _titleButton.titleEdgeInsets = UIEdgeInsetsMake(0, self.titleButton.titleLabel.frame.size.width, 0, 0);
+    _titleButton.imageEdgeInsets = UIEdgeInsetsMake(0, -self.titleButton.imageView.frame.size.width+10, 0, 0);
 
     [_header addSubview:self.titleButton];
     
     self.pagesButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _pagesButton.frame = CGRectMake(self.view.bounds.size.width-80,0 , 80, height);
-    [_pagesButton setTitle:@"1/10" forState:UIControlStateNormal];
-    _pagesButton.titleLabel.font = [UIFont systemFontOfSize:15.0f];
+    _pagesButton.frame = CGRectMake(self.view.bounds.size.width-70+8,0 , 20, height);
+    [_pagesButton setTitle:@"1" forState:UIControlStateNormal];
+    _pagesButton.titleLabel.textAlignment = NSTextAlignmentRight;
+    _pagesButton.titleLabel.font = [UIFont systemFontOfSize:18.0f];
     [_pagesButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     _pagesButton.backgroundColor = [UIColor clearColor];
-    //        _pagesButton.titleEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
-    //    _pagesButton.imageEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
-        [_header addSubview:self.pagesButton];
+    [_header addSubview:self.pagesButton];
+    
+    UIButton *totalBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    totalBtn.frame = CGRectMake(self.view.bounds.size.width-50,0 , 30, height);
+    [totalBtn setTitle:@"/10" forState:UIControlStateNormal];
+    totalBtn.titleLabel.textAlignment = NSTextAlignmentLeft;
+    totalBtn.titleLabel.font = [UIFont systemFontOfSize:15.0f];
+    [totalBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    totalBtn.backgroundColor = [UIColor clearColor];
+    [_header addSubview:totalBtn];
     
     [self.view addSubview:_header];
 }
@@ -60,31 +69,36 @@
     int height = 50;
     
     self.footer = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-height, self.view.bounds.size.width, height)];
+    [Tools configureView:self.footer isCorner:NO];
     _footer.backgroundColor = [UIColor whiteColor];
     for (int i = 0; i< titles.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(i*(self.view.bounds.size.width/titles.count),0 , self.view.bounds.size.width/titles.count, height);
         [button setTitle:titles[i] forState:UIControlStateNormal];
-        button.titleLabel.font = [UIFont systemFontOfSize:15.0f];
+        button.titleLabel.font = [UIFont systemFontOfSize:13.0f];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         
-        button.backgroundColor = [UIColor whiteColor];
-        [Tools configureView:button isCorner:YES];
+        button.backgroundColor = [UIColor clearColor];
+        
         [_footer addSubview:button];
         if (i == 1) {//答题卡
-            button.titleEdgeInsets = UIEdgeInsetsMake(0, 40, -20, 0);
-            button.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+            button.titleEdgeInsets = UIEdgeInsetsMake(30, -15, 0, 0);
+            button.imageEdgeInsets = UIEdgeInsetsMake(-14, 20, 0, 0);
             [button setImage:[UIImage imageNamed:@"topic-card"] forState:UIControlStateNormal];
             self.list = button;
         }else if (i == 2){//答案
+            button.titleEdgeInsets = UIEdgeInsetsMake(30, -26, 0, 0);
+            button.imageEdgeInsets = UIEdgeInsetsMake(-14, 24, 0, 0);
             [button setImage:[UIImage imageNamed:@"answer-black"] forState:UIControlStateNormal];
             self.answers = button;
         }else if (i == 0){//左
+            button.imageEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
             [button setImage:[UIImage imageNamed:@"arrow-left-gray"] forState:UIControlStateNormal];
             self.leftButton = button;
         }
         else if (i == 3){//右
-            [button setImage:[UIImage imageNamed:@"arrow-right-gray"] forState:UIControlStateNormal];
+            button.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -10);
+            [button setImage:[UIImage imageNamed:@"arrow-right-black"] forState:UIControlStateNormal];
             self.rightButton = button;
         }
 
