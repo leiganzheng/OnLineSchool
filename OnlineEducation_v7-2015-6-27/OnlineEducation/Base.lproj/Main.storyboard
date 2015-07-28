@@ -263,8 +263,8 @@
                                     <constraint firstAttribute="height" constant="41" id="gc4-yK-01c"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="感兴趣课程" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="r7i-Oc-kaU">
-                                <rect key="frame" x="84" y="319" width="185" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="感兴趣课程" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="r7i-Oc-kaU">
+                                <rect key="frame" x="84" y="319" width="170" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="88a-zN-dfC"/>
@@ -359,6 +359,16 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TT7-FG-Bsk">
+                                <rect key="frame" x="264" y="323" width="8" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="Cac-gh-jsm"/>
+                                    <constraint firstAttribute="width" constant="8" id="kir-av-b5C"/>
+                                </constraints>
+                                <state key="normal" image="Rectangle">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -375,6 +385,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Gqn-2i-zXx" secondAttribute="trailing" constant="31" id="Iak-mh-JYr"/>
                             <constraint firstItem="VGb-Np-gxm" firstAttribute="top" secondItem="xbW-Af-9n0" secondAttribute="bottom" constant="25" id="MaS-q5-NNd"/>
                             <constraint firstItem="qcM-wt-nRi" firstAttribute="leading" secondItem="3C7-bL-6cI" secondAttribute="leadingMargin" constant="13" id="NRW-pO-nYm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TT7-FG-Bsk" secondAttribute="trailing" constant="32" id="Ngw-nF-q3J"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uRI-Xo-Bg2" secondAttribute="trailing" constant="35" id="PNe-ot-JzN"/>
                             <constraint firstItem="Gqn-2i-zXx" firstAttribute="leading" secondItem="3C7-bL-6cI" secondAttribute="leadingMargin" constant="32" id="PS9-uD-9fT"/>
                             <constraint firstItem="Gqn-2i-zXx" firstAttribute="top" secondItem="xNU-pu-1C2" secondAttribute="bottom" constant="65" id="Q31-lS-5zk"/>
@@ -387,6 +398,7 @@
                             <constraint firstItem="4pZ-uh-lpq" firstAttribute="top" secondItem="peY-bs-Vbg" secondAttribute="bottom" constant="18" id="eJQ-MN-Hjb"/>
                             <constraint firstItem="77d-xM-DtI" firstAttribute="top" secondItem="xbW-Af-9n0" secondAttribute="bottom" constant="29" id="hFb-eS-H51"/>
                             <constraint firstItem="peY-bs-Vbg" firstAttribute="leading" secondItem="3C7-bL-6cI" secondAttribute="leadingMargin" constant="21" id="hsk-Ec-Gu1"/>
+                            <constraint firstItem="TT7-FG-Bsk" firstAttribute="top" secondItem="peY-bs-Vbg" secondAttribute="bottom" constant="28" id="jL7-Wc-UpI"/>
                             <constraint firstItem="r7i-Oc-kaU" firstAttribute="top" secondItem="peY-bs-Vbg" secondAttribute="bottom" constant="24" id="l24-HN-BZO"/>
                             <constraint firstItem="VGb-Np-gxm" firstAttribute="leading" secondItem="77d-xM-DtI" secondAttribute="trailing" constant="14" id="lAa-Ec-W34"/>
                             <constraint firstItem="XFi-Jp-hKe" firstAttribute="top" secondItem="3C7-bL-6cI" secondAttribute="topMargin" id="nBm-8v-2hA"/>
@@ -1555,6 +1567,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Rectangle" width="8" height="6"/>
         <image name="course_history" width="15" height="15"/>
         <image name="course_live" width="21" height="14"/>
         <image name="course_news" width="14" height="14"/>

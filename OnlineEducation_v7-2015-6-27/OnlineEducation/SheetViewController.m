@@ -69,6 +69,7 @@
    
     //
     NSArray *titles = @[@"答对",@"答错",@"未答",@"简答题"];
+    NSArray *images = @[@"Rounded Rectangle2",@"Rounded Rectangle3",@"Rounded Rectangle",@"Rounded Rectangle4"];
     int height = 36;
     UIView *bgV = [[UIView alloc] initWithFrame:CGRectMake(7, self.view.bounds.size.height-height-18-36, self.view.bounds.size.width-14, height)];
     bgV.backgroundColor = kCyColorFromRGB(228, 224, 225);
@@ -77,11 +78,12 @@
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(i*((self.view.bounds.size.width-14)/titles.count),0 , (self.view.bounds.size.width-14)/titles.count, height);
         [button setTitle:titles[i] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:images[i]] forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize:15.0f];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        button.backgroundColor = [UIColor whiteColor];
-        button.layer.borderWidth = 0.5;
-        button.layer.borderColor = [kCyColorFromRGB(211, 211, 211) CGColor];
+        button.backgroundColor = [UIColor clearColor];
+        button.titleEdgeInsets = UIEdgeInsetsMake(0, button.titleLabel.frame.size.width+5, 0, 0);
+        button.imageEdgeInsets = UIEdgeInsetsMake(0, -button.imageView.frame.size.width, 0, 0);
         [bgV addSubview:button];
     }
     [self.view addSubview:bgV];
