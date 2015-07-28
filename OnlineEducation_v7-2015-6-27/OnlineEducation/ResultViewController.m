@@ -64,7 +64,7 @@
             cell.totalTime.text = @"总题数：10";
             cell.resultTime.textColor = kCyColorFromRGB(69, 163, 77);
             
-            UILabel *lb = [[UILabel alloc] initWithFrame:CGRectMake(cell.customView.frame.size.width/2-8,cell.customView.frame.size.height-30, 1, 30)];
+            UILabel *lb = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2-15,cell.customView.frame.size.height-30, 1, 30)];
             lb.backgroundColor = [UIColor lightGrayColor];
             [cell.customView addSubview:lb];
             

@@ -25,7 +25,9 @@
 @property (nonatomic,strong) Stack *tempStack;
 @property (nonatomic,strong) CustomView *answerView;
 @property (nonatomic,assign) BOOL isMulSelected;
+@property (nonatomic,assign) CGRect originRect;
 @property (nonatomic,strong) UIView *answerV;
+@property (nonatomic,strong) UIButton *splitBtn;
 @end
 
 @implementation ExaminationViewController
@@ -45,7 +47,6 @@
     [self customUI];
     self.isMulSelected = NO;
     [self commonUI];
-//    [self shortAnswerUI ];
 
 }
 
@@ -77,14 +78,21 @@
     [self.pagesButton setTitle:[NSString stringWithFormat:@"%li",(long)self.index] forState:UIControlStateNormal];
 }
 -  (void)rightButtonAction{
+    [self hiddenAnswer];
      [self.leftButton setImage:[UIImage imageNamed:@"arrow-left-black"] forState:UIControlStateNormal];
     NSInteger index = self.index - 1;
     if (index == self.dataArray.count) {return;}
       self.index ++ ;
     if (self.index <= self.dataArray.count) {
+        if (self.index == 4) {
+            self.splitBtn.hidden = NO;
+        }else{
+            self.splitBtn.hidden = YES;
+        }
         [self loadTitleWith:[[self.dataArray objectAtIndex:index] integerValue]];
     }
-    if (self.index == self.dataArray.count) {
+    if (self.index == self.dataArray.count+1) {
+        self.index --;
         [self.rightButton setImage:[UIImage imageNamed:@"arrow-right-gray"] forState:UIControlStateNormal];
         UIStoryboard * storyboard = [ UIStoryboard storyboardWithName:@"Main" bundle:nil ];
         ResultViewController *result = [storyboard instantiateViewControllerWithIdentifier:@"ResultViewID"];
@@ -92,6 +100,7 @@
     }
 }
 - (void)leftButtonAction{
+    [self hiddenAnswer];
     NSInteger index = self.index - 1;
     if (index == 0) {return;}
     self.index --;
@@ -103,8 +112,16 @@
         [self loadTitleWith:[[self.dataArray objectAtIndex:index] integerValue]];
     }
 }
+- (void)hiddenAnswer{
+    [self.answers setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.answers setImage:[UIImage imageNamed:@"answer-black"] forState:UIControlStateNormal];
+    self.bgV.frame = self.originRect;
+    if (self.answerV) {
+        [self.answerV removeFromSuperview];
+        self.answerV = nil;
+    }
+}
 - (void)answer{
-    
     self.bgV.frame = CGRectMake(self.bgV.frame.origin.x, self.textView.frame.origin.y+self.textView.frame.size.height+20, self.bgV.frame.size.width, self.bgV.frame.size.height);
     
     self.answerV = [[UIView alloc] initWithFrame:CGRectMake(10, self.bgV.frame.origin.y+self.bgV.frame.size.height+20, self.view.bounds.size.width-20, 130)];
@@ -113,12 +130,12 @@
     [self.view addSubview:_answerV];
     
     UIButton *icon = [UIButton buttonWithType:UIButtonTypeCustom];
-    icon.frame = CGRectMake(8, _answerV.frame.origin.y+6, 42, 17);
+    icon.frame = CGRectMake(0, 6, 42, 17);
     icon.backgroundColor = [UIColor clearColor];
     icon.titleLabel.font = [UIFont systemFontOfSize:12.0];
     [icon setTitle:@"解析" forState:UIControlStateNormal];
     [icon setBackgroundImage:[UIImage imageNamed:@"flag"] forState:UIControlStateNormal];
-    [self.view addSubview:icon];
+    [_answerV addSubview:icon];
     
     UILabel *right = [[UILabel alloc] initWithFrame:CGRectMake(10, 26, 60, 21)];
     right.backgroundColor = [UIColor clearColor];
@@ -185,6 +202,8 @@
 - (void)commonUI{
     self.bgV = [[UIView alloc] initWithFrame:CGRectMake(40, _textView.frame.size.height + _textView.frame.origin.y + 60, self.view.bounds.size.width-80, 105)];
     _bgV.backgroundColor = [UIColor clearColor];
+    _bgV.clipsToBounds = YES;
+    self.originRect = self.bgV.frame;
     
     CGFloat height = 40;
     CGFloat width = 85;
@@ -247,17 +266,22 @@
 }
 - (void)shortAnswerUI{
     self.bgV.hidden = YES;
-     self.shortAnswerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.shortAnswerBtn.frame = CGRectMake(10,_textView.frame.size.height + _textView.frame.origin.y + 60,self.view.bounds.size.width-20, 40);
-    [self.shortAnswerBtn setTitle:@"开始作答" forState:UIControlStateNormal];
-    self.shortAnswerBtn.titleLabel.font = [UIFont systemFontOfSize:15.0f];
-    [self.shortAnswerBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    self.shortAnswerBtn.backgroundColor = [UIColor whiteColor];
-    self.shortAnswerBtn.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-    self.shortAnswerBtn.layer.borderWidth = 0.5;
-    self.shortAnswerBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -235, 0, 0);
-    [self.shortAnswerBtn addTarget:self action:@selector(answerQuestion) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.shortAnswerBtn];
+    if (self.shortAnswerBtn) {
+        self.shortAnswerBtn.hidden = NO;
+    }else{
+        [self.shortAnswerBtn removeFromSuperview];
+        self.shortAnswerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.shortAnswerBtn.frame = CGRectMake(10,_textView.frame.size.height + _textView.frame.origin.y + 60,self.view.bounds.size.width-20, 40);
+        [self.shortAnswerBtn setTitle:@"开始作答" forState:UIControlStateNormal];
+        self.shortAnswerBtn.titleLabel.font = [UIFont systemFontOfSize:15.0f];
+        [self.shortAnswerBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        self.shortAnswerBtn.backgroundColor = [UIColor whiteColor];
+        self.shortAnswerBtn.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+        self.shortAnswerBtn.layer.borderWidth = 0.5;
+        self.shortAnswerBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -235, 0, 0);
+        [self.shortAnswerBtn addTarget:self action:@selector(answerQuestion) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:self.shortAnswerBtn];
+    }
 }
 - (void)showCommonUI:(BOOL)isMulSelected{
     NSString *imageName;
@@ -311,6 +335,19 @@
      self.textView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     self.textView.editable = NO;
      [self.view addSubview: self.textView];
+    
+    self.splitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.splitBtn.frame = CGRectMake(0,_textView.frame.size.height + _textView.frame.origin.y + 8,self.view.bounds.size.width, 29);
+    self.splitBtn.backgroundColor = [UIColor clearColor];
+//    [self.splitBtn setImage:[UIImage imageNamed:@"split-bar"] forState:UIControlStateNormal];
+    [self.splitBtn setBackgroundImage:[UIImage imageNamed:@"split-bar"] forState:UIControlStateNormal];
+    self.splitBtn.hidden = YES;
+    [self.splitBtn addTarget:self action:@selector(splitBtnAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.splitBtn];
+    
+}
+- (void)splitBtnAction{
+    
 }
 - (void)AButtonAction:(UIButton *)sender{
     if (self.isMulSelected) {
@@ -367,7 +404,6 @@
 
 }
 - (void)buttonAction{
-        
     [self.answers setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.answers setImage:[UIImage imageNamed:@"answer-black"] forState:UIControlStateNormal];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[[SheetViewController alloc]init]];
@@ -376,10 +412,17 @@
     }];
 }
 - (void)anButtonAction{
-    [self.list setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [self.list setImage:[UIImage imageNamed:@"topic-card"] forState:UIControlStateNormal];
-    [self.answers setTitleColor:kRedColor forState:UIControlStateNormal];
-    [self.answers setImage:[UIImage imageNamed:@"answer-red"] forState:UIControlStateNormal];
-    [self answer];
+    if (self.answerV) {
+        [self hiddenAnswer];
+        
+    }else{
+        if (![self.titleButton.titleLabel.text isEqualToString:@"简答题"]) {
+            [self answer];
+            [self.list setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [self.list setImage:[UIImage imageNamed:@"topic-card"] forState:UIControlStateNormal];
+            [self.answers setTitleColor:kRedColor forState:UIControlStateNormal];
+            [self.answers setImage:[UIImage imageNamed:@"answer-red"] forState:UIControlStateNormal];
+        }
+    }
 }
 @end

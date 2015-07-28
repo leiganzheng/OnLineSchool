@@ -866,7 +866,7 @@
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6l6-ki-IfX">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="50%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6l6-ki-IfX">
                                                             <rect key="frame" x="188" y="43" width="40" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="wNw-vW-14a"/>
@@ -916,7 +916,6 @@
                                                         <constraint firstItem="zNc-t6-2K3" firstAttribute="top" secondItem="40q-Yu-xRD" secondAttribute="bottom" constant="14" id="fga-rc-vZd"/>
                                                         <constraint firstAttribute="trailing" secondItem="0hM-5w-2fc" secondAttribute="trailing" constant="12" id="p32-4A-a3O"/>
                                                         <constraint firstItem="LnM-ZK-hl1" firstAttribute="leading" secondItem="40q-Yu-xRD" secondAttribute="trailing" constant="8" id="xYj-eW-dCp"/>
-                                                        <constraint firstItem="Qz3-cn-YSc" firstAttribute="leading" secondItem="6l6-ki-IfX" secondAttribute="trailing" constant="34" id="xjU-s9-bqp"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>

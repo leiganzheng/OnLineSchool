@@ -82,7 +82,12 @@
         
         [_footer addSubview:button];
         if (i == 1) {//答题卡
-            button.titleEdgeInsets = UIEdgeInsetsMake(30, -15, 0, 0);
+            if (kScreenWidth>=375) {
+                 button.titleEdgeInsets = UIEdgeInsetsMake(30, -button.frame.size.width/2+5, 0, 0);
+            }else {
+                 button.titleEdgeInsets = UIEdgeInsetsMake(30, -15, 0, 0);
+            }
+           
             button.imageEdgeInsets = UIEdgeInsetsMake(-14, 20, 0, 0);
             [button setImage:[UIImage imageNamed:@"topic-card"] forState:UIControlStateNormal];
             self.list = button;

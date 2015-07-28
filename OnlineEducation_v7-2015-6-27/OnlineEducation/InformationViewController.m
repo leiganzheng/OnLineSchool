@@ -215,10 +215,10 @@
     return header;
 }
 - (void)buttonAction1:(UIButton *)sender{
-    [sender setTitleColor:kRedColor forState:UIControlStateNormal];
-    [sender setImage:[UIImage imageNamed:@"arrow-up"] forState:UIControlStateNormal];
     NSInteger tag = sender.tag;
     if (tag > 101) {//类型、项目等选择
+        [sender setTitleColor:kRedColor forState:UIControlStateNormal];
+        [sender setImage:[UIImage imageNamed:@"arrow-up"] forState:UIControlStateNormal];
         [self toggleMenu];
     }else if(tag==100){//未完成答题
         [self layoutButtonWith:101 andButton:sender];

@@ -210,10 +210,11 @@ typedef NS_ENUM(NSInteger, finishType) {
         return header;
 }
 - (void)buttonAction:(UIButton *)sender{
-    [sender setTitleColor:kRedColor forState:UIControlStateNormal];
-    [sender setImage:[UIImage imageNamed:@"arrow-up"] forState:UIControlStateNormal];
+    
     NSInteger tag = sender.tag;
     if (tag > 102) {//类型、项目等选择
+        [sender setTitleColor:kRedColor forState:UIControlStateNormal];
+        [sender setImage:[UIImage imageNamed:@"arrow-up"] forState:UIControlStateNormal];
         [self toggleMenu];
     }else if(tag==100){//全部
         [self layoutButtonWith:101 andButton:sender];
