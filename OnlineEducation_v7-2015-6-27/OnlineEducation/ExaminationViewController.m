@@ -72,18 +72,23 @@
         default:
             break;
     }
-    //    self.ABtn.titleEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
-    //    self.ABtn.imageEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
     [self.titleButton setTitle:temStr forState:UIControlStateNormal];
     [self.titleButton setImage:[UIImage imageNamed:@"list"] forState:UIControlStateNormal];
     [self.pagesButton setTitle:[NSString stringWithFormat:@"%li",(long)self.index] forState:UIControlStateNormal];
 }
 -  (void)rightButtonAction{
+     [self.leftButton setImage:[UIImage imageNamed:@"arrow-left-black"] forState:UIControlStateNormal];
     NSInteger index = self.index - 1;
     if (index == self.dataArray.count) {return;}
-    self.index ++ ;
+      self.index ++ ;
     if (self.index <= self.dataArray.count) {
         [self loadTitleWith:[[self.dataArray objectAtIndex:index] integerValue]];
+    }
+    if (self.index == self.dataArray.count) {
+        [self.rightButton setImage:[UIImage imageNamed:@"arrow-right-gray"] forState:UIControlStateNormal];
+        UIStoryboard * storyboard = [ UIStoryboard storyboardWithName:@"Main" bundle:nil ];
+        ResultViewController *result = [storyboard instantiateViewControllerWithIdentifier:@"ResultViewID"];
+        [self.navigationController pushViewController:result animated:YES];
     }
 }
 - (void)leftButtonAction{
@@ -91,14 +96,12 @@
     if (index == 0) {return;}
     self.index --;
     if (index >=0) {
+        if (index==1) {
+            [self.leftButton setImage:[UIImage imageNamed:@"arrow-left-gray"] forState:UIControlStateNormal];
+        }
+        [self.rightButton setImage:[UIImage imageNamed:@"arrow-right-black"] forState:UIControlStateNormal];
         [self loadTitleWith:[[self.dataArray objectAtIndex:index] integerValue]];
     }
-    if (self.index == self.dataArray.count-1) {
-        UIStoryboard * storyboard = [ UIStoryboard storyboardWithName:@"Main" bundle:nil ];
-        ResultViewController *result = [storyboard instantiateViewControllerWithIdentifier:@"ResultViewID"];
-        [self.navigationController pushViewController:result animated:YES];
-    }
-
 }
 - (void)answer{
     
@@ -117,12 +120,60 @@
     [icon setBackgroundImage:[UIImage imageNamed:@"flag"] forState:UIControlStateNormal];
     [self.view addSubview:icon];
     
+    UILabel *right = [[UILabel alloc] initWithFrame:CGRectMake(10, 26, 60, 21)];
+    right.backgroundColor = [UIColor clearColor];
+    right.textColor = [UIColor darkGrayColor];
+    right.font = [UIFont systemFontOfSize:12.0];
+    right.text = @"正确答案：";
+    [_answerV addSubview:right];
     
-    self.answerTextView = [[UITextView  alloc] initWithFrame:CGRectMake(0, 26, self.view.bounds.size.width-20, 100)];
+    UILabel *an = [[UILabel alloc] initWithFrame:CGRectMake(70, 26, 20, 21)];
+    an.backgroundColor = [UIColor clearColor];
+    an.font = [UIFont systemFontOfSize:12.0];
+    an.textColor = kGreenColor;
+    an.text = @"C";
+    [_answerV addSubview:an];
+    
+    UILabel *your = [[UILabel alloc] initWithFrame:CGRectMake(100, 26, 60, 21)];
+    your.backgroundColor = [UIColor clearColor];
+    your.textColor = [UIColor darkGrayColor];
+    your.font = [UIFont systemFontOfSize:12.0];
+    your.text = @"您的答案：";
+    [_answerV addSubview:your];
+    
+    UILabel *yourAn = [[UILabel alloc] initWithFrame:CGRectMake(160, 26, 20, 21)];
+    yourAn.backgroundColor = [UIColor clearColor];
+    yourAn.font = [UIFont systemFontOfSize:12.0];
+    yourAn.textColor = kGreenColor;
+    yourAn.text = @"A";
+    [_answerV addSubview:yourAn];
+    
+    UILabel *total = [[UILabel alloc] initWithFrame:CGRectMake(10, 46, 60, 21)];
+    total.backgroundColor = [UIColor clearColor];
+    total.textColor = [UIColor darkGrayColor];
+    total.font = [UIFont systemFontOfSize:12.0];
+    total.text = @"统     计：";
+    [_answerV addSubview:total];
+    
+    UILabel *count = [[UILabel alloc] initWithFrame:CGRectMake(60, 46, 200, 21)];
+    count.backgroundColor = [UIColor clearColor];
+    count.textColor = [UIColor darkGrayColor];
+    count.font = [UIFont systemFontOfSize:12.0];
+    count.text = @"共计有1126人答过，共有538人答对";
+    [_answerV addSubview:count];
+    
+    UILabel *explain = [[UILabel alloc] initWithFrame:CGRectMake(10, 66, 60, 21)];
+    explain.backgroundColor = [UIColor clearColor];
+    explain.textColor = [UIColor darkGrayColor];
+    explain.font = [UIFont systemFontOfSize:12.0];
+    explain.text = @"参考解析：";
+    [_answerV addSubview:explain];
+
+    self.answerTextView = [[UITextView  alloc] initWithFrame:CGRectMake(10, explain.frame.origin.y+12, self.view.bounds.size.width-40, 50)];
     self.answerTextView.textColor = [UIColor blackColor];
-    self.answerTextView.font = [UIFont fontWithName:@"Arial" size:13.0];
+    self.answerTextView.font = [UIFont fontWithName:@"Arial" size:12.0];
     self.answerTextView.backgroundColor = [UIColor clearColor];
-    self.answerTextView.text = @"取得建造师资格证并经()后，方有资格以建造师名义担任建设工程项目施工的想买经理。\n    A.登记B.注册C.备案D.所在单位考核合格";
+    self.answerTextView.text = @"解析解析解析解析解析解析解析解析解析解析解析解析解析解析解析解析解析解析解析解析解析解析解析解析解析解析解析解析解析解析";
     self.answerTextView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     self.answerTextView.editable = NO;
     self.answerTextView.scrollEnabled = NO;
@@ -130,18 +181,7 @@
     [_answerV addSubview: self.answerTextView];
 
 }
-- (void)mulSelectedUI{
-    
-    
-}
-- (void)sigleSelecteUI{
-    for(UIButton * btn in self.bgV.subviews){
-        btn.backgroundColor = kCyColorFromRGB(243, 242, 241);
-        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [btn setImage:[UIImage imageNamed:@"radio"] forState:UIControlStateNormal];
-    }
- 
-}
+
 - (void)commonUI{
     self.bgV = [[UIView alloc] initWithFrame:CGRectMake(40, _textView.frame.size.height + _textView.frame.origin.y + 60, self.view.bounds.size.width-80, 105)];
     _bgV.backgroundColor = [UIColor clearColor];
@@ -215,7 +255,7 @@
     self.shortAnswerBtn.backgroundColor = [UIColor whiteColor];
     self.shortAnswerBtn.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     self.shortAnswerBtn.layer.borderWidth = 0.5;
-    self.shortAnswerBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -240, 0, 0);
+    self.shortAnswerBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -235, 0, 0);
     [self.shortAnswerBtn addTarget:self action:@selector(answerQuestion) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.shortAnswerBtn];
 }
@@ -327,13 +367,19 @@
 
 }
 - (void)buttonAction{
-    [self.navigationController pushViewController:[[SheetViewController alloc]init] animated:YES];
-//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[[SheetViewController alloc]init]];
-//    [self presentViewController:nav animated:YES completion:^{
-//        
-//    }];
+        
+    [self.answers setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.answers setImage:[UIImage imageNamed:@"answer-black"] forState:UIControlStateNormal];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[[SheetViewController alloc]init]];
+    [self presentViewController:nav animated:YES completion:^{
+        
+    }];
 }
 - (void)anButtonAction{
+    [self.list setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.list setImage:[UIImage imageNamed:@"topic-card"] forState:UIControlStateNormal];
+    [self.answers setTitleColor:kRedColor forState:UIControlStateNormal];
+    [self.answers setImage:[UIImage imageNamed:@"answer-red"] forState:UIControlStateNormal];
     [self answer];
 }
 @end

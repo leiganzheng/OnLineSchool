@@ -17,9 +17,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"答题卡";
-    // Do any additional setup after loading the view.
+    [self.list setTitleColor:kRedColor forState:UIControlStateNormal];
+    [self.list setImage:[UIImage imageNamed:@"topic-card-red"] forState:UIControlStateNormal];
     [self contentButtons];
     self.header.hidden = YES;
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    NSString *imgName = @"navigation_back_icon";
+    if (imgName) {
+        UIImage *normal = [UIImage imageNamed:imgName];
+        [button setImage:normal forState:UIControlStateNormal];
+        button.frame = CGRectMake(0.0f, .0f, normal.size.width, normal.size.height);
+    }
+    //  ios7系统会把self.navigationItem.rightBarButtonItem 这个button左移20像素
+    BOOL isIOS7 = [[UIDevice currentDevice].systemVersion floatValue] >= 7.0;
+    if (isIOS7) {
+    }else{
+        button.imageEdgeInsets = UIEdgeInsetsMake(0, 20, 0, 0);
+    }
+    [button addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,9 +53,9 @@
     for (int i = 0; i< titles1.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         if (i<8) {
-            button.frame = CGRectMake(i*((self.view.bounds.size.width)/titles1.count)+20,88 , height1, height1);
+            button.frame = CGRectMake(i*((self.view.bounds.size.width)/titles1.count)+35,88 , height1, height1);
         }else{
-            button.frame = CGRectMake((i-8)*((self.view.bounds.size.width)/titles1.count)+20,138 , height1, height1);
+            button.frame = CGRectMake((i-8)*((self.view.bounds.size.width)/titles1.count)+35,138 , height1, height1);
 
         }
         [button setTitle:titles1[i] forState:UIControlStateNormal];
@@ -71,8 +87,12 @@
     [self.view addSubview:bgV];
 
 }
+- (void)backAction{
+    [self buttonAction];
+}
 - (void)buttonAction{
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+//    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

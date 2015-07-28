@@ -575,7 +575,7 @@
                                                                 <constraint firstAttribute="width" constant="54" id="rn5-nf-FEx"/>
                                                                 <constraint firstAttribute="height" constant="15" id="whp-UX-kC3"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                             <state key="normal" title="做题" image="pencil">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
@@ -693,10 +693,10 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uW-6g-tms">
-                                                            <rect key="frame" x="8" y="95" width="68" height="21"/>
+                                                            <rect key="frame" x="8" y="95" width="90" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="JVx-rP-ICT"/>
-                                                                <constraint firstAttribute="width" constant="68" id="PqS-qx-XXC"/>
+                                                                <constraint firstAttribute="width" constant="90" id="PqS-qx-XXC"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -849,7 +849,7 @@
                                                                 <constraint firstAttribute="width" constant="46" id="B5u-ub-lda"/>
                                                                 <constraint firstAttribute="height" constant="15" id="eIk-S2-djm"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                             <state key="normal" title="做题" image="pencil">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
@@ -870,7 +870,7 @@
                                                                 <constraint firstAttribute="width" constant="46" id="V8E-0g-jhA"/>
                                                                 <constraint firstAttribute="height" constant="15" id="fj9-Bb-6nw"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                             <state key="normal" title="查看解析">
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>

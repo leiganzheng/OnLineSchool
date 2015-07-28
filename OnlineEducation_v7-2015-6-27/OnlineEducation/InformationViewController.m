@@ -81,8 +81,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self pushVC:indexPath];
 }
 #pragma mark - private method
 - (void)loadMenu{
@@ -171,8 +171,11 @@
 }
 - (void)buttonAction:(UIButton *)sender{
     NSIndexPath *indexpath = [self.myTableview indexPathForCell:(UITableViewCell *)([[sender superview] superview])];
+    [self pushVC:indexpath];
+}
+- (void)pushVC:(NSIndexPath *)indexPath{
     ExaminationViewController *vc = [[ExaminationViewController alloc] init];
-    vc.customTitle = self.dataArray[indexpath.row];
+    vc.customTitle = self.dataArray[indexPath.row];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }

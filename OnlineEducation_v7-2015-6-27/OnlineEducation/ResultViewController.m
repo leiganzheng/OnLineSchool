@@ -42,6 +42,7 @@
     {
         // Use the default cell style.
         cell = [[ResultTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier];
+        cell.selectionStyle =  UITableViewCellSelectionStyleNone;
     }
     // Set up the cell.
     NSInteger index = indexPath.row;
@@ -49,20 +50,33 @@
     switch (index) {
         case 0:
             cell.resultTime.text = @"0.0分";
-            cell.totalTime.text = @"总分数";
+            cell.totalTime.text = @"总分数：100";
             cell.resultTime.textColor = kCyColorFromRGB(227, 73, 61);
             break;
         case 1:
             cell.resultTime.text = @"／分／秒";
-            cell.totalTime.text = @"总时间";
+            cell.totalTime.text = @"总时间：/";
 
             break;
         case 2:
-            cell.resultTime.text = @"0％";
-            cell.totalTime.text = @"总题数";
+        {
+            cell.resultTime.text = @"0%";
+            cell.totalTime.text = @"总题数：10";
             cell.resultTime.textColor = kCyColorFromRGB(69, 163, 77);
-            break;
             
+            UILabel *lb = [[UILabel alloc] initWithFrame:CGRectMake(cell.customView.frame.size.width/2-8,cell.customView.frame.size.height-30, 1, 30)];
+            lb.backgroundColor = [UIColor lightGrayColor];
+            [cell.customView addSubview:lb];
+            
+            UILabel *lb1 = [[UILabel alloc] initWithFrame:CGRectMake(lb.frame.origin.x+15, cell.totalTime.frame.origin.y, 60, 21)];
+            lb1.backgroundColor = [UIColor clearColor];
+            lb1.textColor = kGreenColor;
+            lb1.font = [UIFont systemFontOfSize:12.0];
+            lb1.text = @"答对：0道";
+            [cell.customView addSubview:lb1];
+
+        }
+            break;
         default:
             break;
     }
@@ -77,8 +91,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - private method
@@ -97,12 +110,14 @@
         [button setTitle:titles[i] forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize:15.0f];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        
+        [button addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
         [Tools configureView:button isCorner:YES];
 
         [header addSubview:button];
     }
     return header;
 }
-
+- (void)buttonAction{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

@@ -44,7 +44,7 @@
     [_header addSubview:self.titleButton];
     
     self.pagesButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _pagesButton.frame = CGRectMake(self.view.bounds.size.width-70+8,0 , 20, height);
+    _pagesButton.frame = CGRectMake(self.view.bounds.size.width-70+3,0 , 22, height);
     [_pagesButton setTitle:@"1" forState:UIControlStateNormal];
     _pagesButton.titleLabel.textAlignment = NSTextAlignmentRight;
     _pagesButton.titleLabel.font = [UIFont systemFontOfSize:18.0f];
